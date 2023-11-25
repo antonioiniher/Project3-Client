@@ -1,0 +1,13 @@
+.Navbar {
+    background-color: #D2D7DF;
+    color: #353535;
+}
+
+.Navbar img {
+    width: 100%;
+}
+
+.custom-nav {
+    position: relative;
+    width: 40px;
+}

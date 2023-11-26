@@ -1,7 +1,8 @@
 import './App.css'
 import Navigation from './components/Navigation/Navigation'
-import HomePage from './pages/HomePage/HomePage'
+// import HomePage from './pages/HomePage/HomePage'
 import Footer from './components/Footer/Footer'
+import NewUser from './pages/NewUser/NewUser'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <div className='App'>
 
       <Navigation />
-      <HomePage />
+      <NewUser />
       <Footer />
 
     </div>

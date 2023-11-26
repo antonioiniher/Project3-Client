@@ -1,7 +1,7 @@
 import './App.css'
 import Navigation from './components/Navigation/Navigation'
-import HomePage from './pages/HomePage/HomePage'
 import Footer from './components/Footer/Footer'
+import LoginPage from './pages/Login/Login'
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
     <div className='App'>
 
       <Navigation />
-      <HomePage />
+      <LoginPage />
       <Footer />
 
     </div>

@@ -5,7 +5,7 @@ import user from './../../assets/user-icon2.png'
 const Navigation = () => {
 
     return (
-        <Navbar fixed="top" className='mb-5 Navbar' expand="lg">
+        <Navbar className='Navbar' expand="lg">
             <Container>
                 <Navbar.Brand href="/">Clases particulares</Navbar.Brand>
                 <Navbar.Toggle />

@@ -5,7 +5,7 @@ import login3 from "../../assets/login3.png"
 
 import { Container, Row, Col } from 'react-bootstrap'
 import LoginForm from '../../components/LoginForm/LoginForm'
-import "./Login.css"
+import "./LoginPage.css"
 
 const LoginPage = () => {
 

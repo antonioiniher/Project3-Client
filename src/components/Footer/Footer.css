@@ -1,23 +1,8 @@
 footer {
-    color: white;
-    bottom: 0;
-    position: fixed;
+    color: black;
+    position: relative;
     width: 100%;
-    /* padding-bottom: 0; */
-    background-color: #6c6a5b;
+    background-color: #D2D7DF;
+    padding-bottom: 0.1px;
     margin-bottom: 0;
-}
-
-/* .text-muted {
-    
-} */
-
-a.nav-link.px-2.text-muted {
-    --bs-text-opacity: 1;
-    color: rgb(255, 255, 255) !important;
-}
-
-p.text-center.text-muted {
-    --bs-text-opacity: 1;
-    color: rgb(255, 255, 255) !important;
 }

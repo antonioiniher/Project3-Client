@@ -10,7 +10,7 @@ const Navigation = () => {
     const { loggedUser, logout } = useContext(AuthContext)
 
     return (
-        <Navbar sticky='top' className='mb-5 Navbar' expand="lg">
+        <Navbar sticky='top' className='Navbar' expand="lg">
             <Container>
                 <Navbar.Brand><Link to={'/'}>Clases particulares</Link></Navbar.Brand>
                 <Navbar.Toggle />

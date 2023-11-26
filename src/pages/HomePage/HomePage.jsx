@@ -6,6 +6,7 @@ import javascript from "../../assets/javascript.png"
 import python from "../../assets/python.png"
 import ruby from "../../assets/ruby.png"
 import sql from "../../assets/sql.png"
+
 import SearchBar from "../../components/SearchBar/SearchBar"
 import { Row, Col, Container } from "react-bootstrap"
 import "./HomePage.css"

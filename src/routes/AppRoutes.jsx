@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './../pages/HomePage/HomePage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
+import LoginPage from '../pages/LoginPage/LoginPage'
 
 const AppRoutes = () => {
 
@@ -8,7 +9,7 @@ const AppRoutes = () => {
         <Routes>
             <Route path={'/'} element={<HomePage />} />
             <Route path={'/registro'} element={<h1>HOLA</h1>} />
-            <Route path={'/inicio-sesion'} element={<h1>HOLA</h1>} />
+            <Route path={'/inicio-sesion'} element={<LoginPage />} />
             <Route path={'/perfil'} element={<h1>HOLA</h1>} />
             <Route path={'/perfil/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/clases'} element={<h1>HOLA</h1>} />

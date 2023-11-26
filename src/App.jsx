@@ -13,7 +13,7 @@ function App() {
       <AppRoutes />
       <Footer />
 
-    </div>
+    </div >
 
   )
 }

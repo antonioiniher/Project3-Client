@@ -1,7 +1,9 @@
 import { useState } from "react"
-import { Form, Button, Row, Col, Container } from "react-bootstrap"
+import { Form, Button, Row, Col } from "react-bootstrap"
 import './NewUserForm.css'
-import foto from './../../assets/c++.png'
+import { useNavigate } from "react-router-dom"
+
+import authService from "../../services/Auth.services"
 
 
 const NewUserForm = () => {
@@ -21,13 +23,18 @@ const NewUserForm = () => {
         setUser({ ...user, [name]: value })
     }
 
+    const navigate = useNavigate()
+
     const handleUserSubmit = e => {
 
         e.preventDefault()
 
+        authService
+            .signup(user)
+            .then(() => navigate('/inicio-sesion'))
+            .catch(err => console.log(err))
+
         console.log(user)
-
-
     }
 
     return (
@@ -92,7 +99,6 @@ const NewUserForm = () => {
 
 
 
-            <img src={foto} alt="" />
 
         </div>
     )

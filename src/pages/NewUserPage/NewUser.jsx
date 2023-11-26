@@ -1,4 +1,4 @@
-import NewUserForm from './../../components/NewUserForm/NewUserForm'
+import NewUserForm from '../../components/NewUserForm/NewUserForm'
 import { Container } from 'react-bootstrap'
 
 

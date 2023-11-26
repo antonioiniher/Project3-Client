@@ -2,13 +2,14 @@ import { Routes, Route } from 'react-router-dom'
 import HomePage from './../pages/HomePage/HomePage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
+import NewUserPage from '../pages/NewUserPage/NewUserPage'
 
 const AppRoutes = () => {
 
     return (
         <Routes>
             <Route path={'/'} element={<HomePage />} />
-            <Route path={'/registro'} element={<h1>HOLA</h1>} />
+            <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
             <Route path={'/perfil'} element={<h1>HOLA</h1>} />
             <Route path={'/perfil/editar'} element={<h1>HOLA</h1>} />

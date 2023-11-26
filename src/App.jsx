@@ -1,7 +1,7 @@
 import './App.css'
 import Navigation from './components/Navigation/Navigation'
 import AppRoutes from './routes/AppRoutes'
-import Footer from './components/Footer/Footer'
+import Footer from './pages/Footer/Footer'
 
 function App() {
 

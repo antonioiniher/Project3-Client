@@ -3,6 +3,7 @@ import HomePage from './../pages/HomePage/HomePage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import NewUserPage from '../pages/NewUserPage/NewUserPage'
+import AboutUs from '../pages/AboutUsPage/AboutUs'
 
 const AppRoutes = () => {
 
@@ -17,7 +18,7 @@ const AppRoutes = () => {
             <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
-            <Route path={'/nosotros'} element={<h1>HOLA</h1>} />
+            <Route path={'/nosotros'} element={<AboutUs />} />
             <Route path={'/como-funciona'} element={<h1>HOLA</h1>} />
             <Route path={'/contacto'} element={<h1>HOLA</h1>} />
 

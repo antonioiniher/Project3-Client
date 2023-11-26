@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Form, Button, Row, Col } from "react-bootstrap"
+import { Form, Button, Row, Col, FormSelect } from "react-bootstrap"
 import './NewUserForm.css'
 import { useNavigate } from "react-router-dom"
 
@@ -14,6 +14,7 @@ const NewUserForm = () => {
         password: '',
         avatar: '',
         address: '',
+        role: '',
         phoneNumber: '',
         idSkype: '',
     })
@@ -65,13 +66,23 @@ const NewUserForm = () => {
                             <Form.Control type="text" value={user.address} name="address" onChange={handleInputChange} />
                         </Form.Group>
 
+                        <Form.Group className="mb-3" controlId="avatar">
+                            <Form.Label>Avatar</Form.Label>
+                            <Form.Control type="text" value={user.avatar} name="avatar" onChange={handleInputChange} />
+                        </Form.Group>
+
                         <Row>
                             <Col>
-                                <Form.Group className="mb-3" controlId="avatar">
-                                    <Form.Label>Avatar</Form.Label>
-                                    <Form.Control type="text" value={user.avatar} name="avatar" onChange={handleInputChange} />
+                                <Form.Group className="mb-3" controlId="role">
+                                    <Form.Label>Rol</Form.Label>
+                                    <Form.Select aria-label="Default select example" onChange={handleInputChange} name="role">
+                                        <option>Selección</option>
+                                        <option value="STUDENT">Estudiante</option>
+                                        <option value="TEACHER">Profesor</option>
+                                    </Form.Select>
                                 </Form.Group>
                             </Col>
+
                             <Col>
                                 <Form.Group className="mb-3" controlId="phoneNumber">
                                     <Form.Label>Teléfono de contacto</Form.Label>
@@ -96,7 +107,6 @@ const NewUserForm = () => {
 
 
             </Row>
-
 
 
 

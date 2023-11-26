@@ -1,6 +1,6 @@
 import './App.css'
 import Navigation from './components/Navigation/Navigation'
-// import HomePage from './pages/HomePage/HomePage'
+import AppRoutes from './routes/AppRoutes'
 import Footer from './components/Footer/Footer'
 import NewUser from './pages/NewUser/NewUser'
 
@@ -11,10 +11,10 @@ function App() {
     <div className='App'>
 
       <Navigation />
-      <NewUser />
+      <AppRoutes />
       <Footer />
 
-    </div>
+    </div >
 
   )
 }

@@ -4,6 +4,7 @@ import user from './../../assets/user-icon2.png'
 import { AuthContext } from '../../contexts/auth.context'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import logo from "../../assets/logo.png"
 
 const Navigation = () => {
 
@@ -13,7 +14,7 @@ const Navigation = () => {
 
         <Navbar sticky='top' className='Navbar' expand="lg">
             <Container>
-                <Navbar.Brand><Link to={'/'}>Clases particulares</Link></Navbar.Brand>
+                <Navbar.Brand><Link to={'/'}> <img src={logo} alt="logoNavbar" style={{ width: 60 }} /> CodeConnect </Link></Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <NavDropdown drop='down-centered' className='custom-nav' title={<img src={user} alt="" />} id="basic-nav-dropdown">

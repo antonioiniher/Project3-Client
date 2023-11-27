@@ -8,6 +8,8 @@ import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
 import PrivateRoute from './PrivateRoute'
 import EditProfilePage from '../pages/EditProfilePage/EditProfilePage'
 import TeacherPrivateRoute from './TeacherPrivateRoute'
+import ContactPage from '../pages/ContactPage/ContactPage'
+import HowItWorksPage from '../pages/HowItWorksPage/HowItWorksPage'
 
 const AppRoutes = () => {
 
@@ -16,10 +18,8 @@ const AppRoutes = () => {
             <Route path={'/'} element={<HomePage />} />
             <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
-            <Route element={<PrivateRoute />}>
-                <Route path={'/perfil'} element={<UserProfilePage />} />
-                <Route path={'/perfil/editar'} element={<EditProfilePage />} />
-            </Route>
+
+            <Route path={'/perfil/editar'} element={<EditProfilePage />} />
             <Route path={'/clases'} element={<h1>HOLA</h1>} />
             <Route element={<TeacherPrivateRoute />}>
                 <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />
@@ -27,8 +27,12 @@ const AppRoutes = () => {
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/nosotros'} element={<AboutUsPage />} />
-            <Route path={'/como-funciona'} element={<h1>HOLA</h1>} />
-            <Route path={'/contacto'} element={<h1>HOLA</h1>} />
+            <Route path={'/como-funciona'} element={<HowItWorksPage />} />
+            <Route path={'/contacto'} element={<ContactPage />} />
+
+            <Route element={<PrivateRoute />}>
+                <Route path={'/perfil'} element={<UserProfilePage />} />
+            </Route>
 
             <Route path={'*'} element={<ErrorPage />} />
         </Routes>

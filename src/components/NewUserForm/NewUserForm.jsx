@@ -20,9 +20,19 @@ const NewUserForm = () => {
     })
 
     const handleInputChange = e => {
+        console.log(e)
         const { value, name } = e.currentTarget
+        console.log(value, name)
         setUser({ ...user, [name]: value })
     }
+
+    // const uploadImage = e => {
+    //     console.log(e)
+    //     const { value, name } = e.target.files[0]
+    //     console.log(value, name)
+    //     setUser({ ...user, [name]: value })
+    //     console.log(user)
+    // }
 
     const navigate = useNavigate()
 
@@ -70,6 +80,11 @@ const NewUserForm = () => {
                             <Form.Label>Avatar</Form.Label>
                             <Form.Control type="text" value={user.avatar} name="avatar" onChange={handleInputChange} />
                         </Form.Group>
+                        {/* 
+                        <Form.Group className="mb-3" controlId="avatar">
+                            <Form.Label>Avatar</Form.Label>
+                            <Form.Control type="file" value={user.avatar} name="avatar" onChange={uploadImage} />
+                        </Form.Group> */}
 
                         <Row>
                             <Col>

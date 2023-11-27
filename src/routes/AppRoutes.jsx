@@ -4,6 +4,7 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import NewUserPage from '../pages/NewUserPage/NewUserPage'
 import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
+import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
 
 const AppRoutes = () => {
 
@@ -18,7 +19,7 @@ const AppRoutes = () => {
             <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
-            <Route path={'/nosotros'} element={<h1>HOLA</h1>} />
+            <Route path={'/nosotros'} element={<AboutUsPage />} />
             <Route path={'/como-funciona'} element={<h1>HOLA</h1>} />
             <Route path={'/contacto'} element={<h1>HOLA</h1>} />
 

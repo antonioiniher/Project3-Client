@@ -19,17 +19,12 @@ const NewUserForm = () => {
     role: '',
     phoneNumber: '',
     idSkype: '',
+    description: ''
   })
 
   const handleInputChange = e => {
     const { value, name } = e.currentTarget
-    console.log(value, name)
-
-
-
-
     setUser({ ...user, [name]: value })
-
   }
 
   // const uploadImage = e => {
@@ -80,19 +75,19 @@ const NewUserForm = () => {
               <Col>
                 <Form.Group className="mb-3" controlId="street">
                   <Form.Label>Calle</Form.Label>
-                  <Form.Control type="text" value={user.address.street} name="street" onChange={handleInputChange} />
+                  <Form.Control type="text" value={user.street} name="street" onChange={handleInputChange} />
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group className="mb-3" controlId="city">
                   <Form.Label>Ciudad</Form.Label>
-                  <Form.Control type="text" value={user.address.city} name="city" onChange={handleInputChange} />
+                  <Form.Control type="text" value={user.city} name="city" onChange={handleInputChange} />
                 </Form.Group>
               </Col>
               <Col>
                 <Form.Group className="mb-3" controlId="country">
                   <Form.Label>Pais</Form.Label>
-                  <Form.Control type="text" value={user.address.country} name="country" onChange={handleInputChange} />
+                  <Form.Control type="text" value={user.country} name="country" onChange={handleInputChange} />
                 </Form.Group>
               </Col>
 
@@ -137,7 +132,7 @@ const NewUserForm = () => {
 
             <Form.Group className="mb-3" controlId="description">
               <Form.Label>Cuéntanos algo sobre ti</Form.Label>
-              <Form.Control type="textarea" value={user.description} name="description" onChange={handleInputChange} rows="4" />
+              <Form.Control type="textarea" value={user.description} name="description" onChange={handleInputChange} />
             </Form.Group>
 
             <div className="d-grid">

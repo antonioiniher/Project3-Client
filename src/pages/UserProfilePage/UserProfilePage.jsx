@@ -7,9 +7,10 @@ const UserProfilePage = () => {
     const { loggedUser } = useContext(AuthContext)
     const [user, setUser] = useState(loggedUser)
 
+
     useEffect(() => {
         loadUser()
-    }, [loggedUser])
+    }, [])
 
     const loadUser = () => {
         if (loggedUser) {

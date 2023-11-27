@@ -5,6 +5,7 @@ import LoginPage from '../pages/LoginPage/LoginPage'
 import NewUserPage from '../pages/NewUserPage/NewUserPage'
 import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
+import PrivateRoute from './PrivateRoute'
 
 const AppRoutes = () => {
 
@@ -13,8 +14,10 @@ const AppRoutes = () => {
             <Route path={'/'} element={<HomePage />} />
             <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
-            <Route path={'/perfil'} element={<UserProfilePage />} />
-            <Route path={'/perfil/editar'} element={<h1>HOLA</h1>} />
+            <Route element={<PrivateRoute />}>
+                <Route path={'/perfil'} element={<UserProfilePage />} />
+                <Route path={'/perfil/editar'} element={<h1>HOLA</h1>} />
+            </Route>
             <Route path={'/clases'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />

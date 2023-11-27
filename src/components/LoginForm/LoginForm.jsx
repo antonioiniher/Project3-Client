@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { Form, Button } from "react-bootstrap"
-import authService from "../../services/auth.services"
+import authService from "../../services/Auth.services"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
 
@@ -13,9 +13,10 @@ const LoginForm = () => {
 
     const navigate = useNavigate()
 
-    function redirectHome() {
+    const redirectHome = () => {
         navigate("/")
     }
+
     const { authenticateUser } = useContext(AuthContext)
 
     const handleInputChange = e => {
@@ -32,6 +33,7 @@ const LoginForm = () => {
             .then(({ data }) => {
                 localStorage.setItem('authToken', data.authToken)
                 authenticateUser()
+                redirectHome()
             })
             .catch(err => console.log(err))
     }
@@ -51,7 +53,7 @@ const LoginForm = () => {
             </Form.Group>
 
             <div className="d-grid">
-                <Button variant="dark" type="submit" onClick={redirectHome}>Entrar</Button>
+                <Button variant="dark" type="submit">Entrar</Button>
             </div>
 
         </Form>

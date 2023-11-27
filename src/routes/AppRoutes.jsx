@@ -3,6 +3,7 @@ import HomePage from './../pages/HomePage/HomePage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import NewUserPage from '../pages/NewUserPage/NewUserPage'
+import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 
 const AppRoutes = () => {
 
@@ -11,7 +12,7 @@ const AppRoutes = () => {
             <Route path={'/'} element={<HomePage />} />
             <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
-            <Route path={'/perfil'} element={<h1>HOLA</h1>} />
+            <Route path={'/perfil'} element={<UserProfilePage />} />
             <Route path={'/perfil/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/clases'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />

@@ -12,11 +12,11 @@ function AuthProviderWrapper(props) {
         const token = localStorage.getItem('authToken')
 
         if (token) {
-
             authService
                 .verify(token)
                 .then(({ data }) => {
                     setLoggedUser(data.loggedUser)
+                    console.log(data.loggedUser)
                 })
                 .catch(err => console.log(err))
         }

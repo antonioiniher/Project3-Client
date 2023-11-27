@@ -1,11 +1,11 @@
 .Navbar {
-    background-color: #D2D7DF;
-    color: #353535;
+    background-color: white;
+    color: black;
 }
 
 .Navbar a {
     text-decoration: none;
-    color: #353535;
+    color: black;
 }
 
 .Navbar img {

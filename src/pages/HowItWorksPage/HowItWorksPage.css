@@ -1,15 +1,25 @@
 .titleHowItWorksPage {
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     padding: 100px;
 }
-
-
 
 .subtitleHowItWorksPage {
     font-size: 15px;
     text-align: center;
     padding: 50;
+}
+
+.HowItWorksContainer {
+    font-size: 22px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.allPageHowItWorks {
+    background-image: url("../../assets/programmingBackground.jpeg");
+    background-size: cover;
+    background-position: center;
 }
 
 .row1 {
@@ -26,4 +36,6 @@
 
 .row4 {
     padding: 30px;
+    text-align: center;
+    font-size: 40px;
 }

@@ -6,7 +6,9 @@ import NewUserPage from '../pages/NewUserPage/NewUserPage'
 import UserProfilePage from '../pages/UserProfilePage/UserProfilePage'
 import AboutUsPage from '../pages/AboutUsPage/AboutUsPage'
 import PrivateRoute from './PrivateRoute'
-import EditProfilePage from '../components/EditProfilePage/EditProfilePage'
+import EditProfilePage from '../pages/EditProfilePage/EditProfilePage'
+import ContactPage from '../pages/ContactPage/ContactPage'
+import HowItWorksPage from '../pages/HowItWorksPage/HowItWorksPage'
 
 const AppRoutes = () => {
 
@@ -24,8 +26,8 @@ const AppRoutes = () => {
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/nosotros'} element={<AboutUsPage />} />
-            <Route path={'/como-funciona'} element={<h1>HOLA</h1>} />
-            <Route path={'/contacto'} element={<h1>HOLA</h1>} />
+            <Route path={'/como-funciona'} element={<HowItWorksPage />} />
+            <Route path={'/contacto'} element={<ContactPage />} />
 
             <Route path={'*'} element={<ErrorPage />} />
         </Routes>

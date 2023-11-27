@@ -1,0 +1,33 @@
+.titleContactPage {
+    margin-top: 50px;
+    font-size: 80px;
+}
+
+.logoContact img {
+    width: 300px;
+    margin-left: 50px;
+}
+
+.contactContainer {
+    margin-bottom: 250px;
+}
+
+.subtitleContactPage {
+    font-size: 50px;
+}
+
+.iconsSocials {
+    margin-top: 200px;
+    margin-left: 70px;
+}
+
+.imgFacebook {
+    height: 65px;
+    margin-top: -10px;
+}
+
+.descriptionContact {
+    display: flex;
+    margin-top: 300px;
+    font-size: 35px;
+}

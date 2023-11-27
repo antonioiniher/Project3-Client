@@ -12,6 +12,10 @@ class UserService {
         return this.api.get(`/${user_id}`)
     }
 
+    editUserById(user_id, user) {
+        return this.api.put(`/edit/${user_id}`, user)
+    }
+
 
 }
 

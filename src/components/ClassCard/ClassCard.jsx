@@ -2,6 +2,9 @@ import { Button, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const ClassCard = ({ _id, languages, description, classType, title, owner }) => {
+
+    console.log(owner)
+
     return (
         <Card className="text-center">
             <Card.Header>Lenguajes: {languages.map(e => { return e })} | Se imparte de forma: {classType}
@@ -15,8 +18,8 @@ const ClassCard = ({ _id, languages, description, classType, title, owner }) => 
                     Más detalles
                 </Link>
             </Card.Body>
-            <Card.Footer className="text-muted">Profe: {owner}</Card.Footer>
-        </Card>
+            <Card.Footer className="text-muted">Profe: <Link to={`/perfil/${owner._id}`} className="btn btn-dark mb-4"> {owner.username} </Link> </Card.Footer>
+        </Card >
     )
 }
 

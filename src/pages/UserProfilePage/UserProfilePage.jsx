@@ -24,6 +24,7 @@ const UserProfilePage = () => {
   }, [])
 
   const loadUser = () => {
+
     userService
       .profile(loggedUser._id)
       .then(({ data }) => {

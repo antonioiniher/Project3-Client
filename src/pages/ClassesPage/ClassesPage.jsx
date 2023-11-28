@@ -1,28 +1,40 @@
 import { useEffect, useState } from "react"
-import ClassesList from "../../components/ClassesList/ClassesList"
 import { Container } from "react-bootstrap"
+import ClassesList from "../../components/ClassesList/ClassesList"
+import classService from "../../services/Class.services"
+import Loader from "../../components/Loader/Loader"
 
 const ClassesPage = () => {
 
-  // const [classes, setClasses] = useState
+  const [classes, setClasses] = useState()
 
-  // useEffect(() => {
-  //   loadClasses()
-  // }, [])
+  useEffect(() => {
+    loadClasses()
+  }, [])
 
-  // const loadClasses = () => {
-  //   classesService
-  //   .getClasses
-  // }
+  const loadClasses = () => {
+
+    classService
+      .getClasses()
+      .then(({ data }) => {
+        setClasses(data)
+      })
+      .catch(error => console.log(error))
+  }
+
+  console.log(classes)
 
   return (
-    <div className="classContainer">
-      <Container>
-        <h1>Listado de clases</h1>
-        {/* hay que pasarle las clases por props */}
-        <ClassesList />
-      </Container>
-    </div>
+    classes
+      ?
+      <div className="classContainer">
+        <Container>
+          <h1>Listado de clases</h1>
+          <ClassesList classes={classes} />
+        </Container>
+      </div>
+      :
+      <Loader />
   )
 }
 

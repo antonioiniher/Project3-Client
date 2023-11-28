@@ -51,7 +51,7 @@ const UserProfilePage = () => {
             <h4 className="mb-4"><img src={iconRole} alt="iconRole" />   {user.role}</h4>
             <h5 className="mb-4"><img src={iconPhone} />   {user.phoneNumber}</h5>
             <h5 className="mb-4"><img src={iconSkype} />   {user.idSkype} </h5>
-            <h5 className="mb-5"><img src={iconAdress} /> {user.address.street} </h5>
+            <h5 className="mb-5"><img src={iconAdress} /> {user.address?.street} </h5>
             <Link to={"/perfil/editar"} className="btn btn-dark mb-4">
               Editar
             </Link>

@@ -11,11 +11,12 @@ const TeacherPrivateRoute = () => {
         return <Loader />
     }
 
-    if (loggedUser.role != 'TEACHER' || loggedUser.role != 'ADMIN') {
-        return <Navigate to="/inicio-sesion" />
+    if (loggedUser.role === 'TEACHER' || loggedUser.role === 'ADMIN') {
+        return <Outlet />
     }
 
-    return <Outlet />
+    return <Navigate to="/inicio-sesion" />
+
 }
 
 export default TeacherPrivateRoute

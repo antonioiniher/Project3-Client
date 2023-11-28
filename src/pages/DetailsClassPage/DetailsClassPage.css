@@ -1,0 +1,23 @@
+.allPage {
+    margin-bottom: 300px;
+    padding: 50px;
+}
+
+.titleDetails {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.descriptionTitle {
+    padding-bottom: 50px;
+    font-size: 60px;
+}
+
+.languagesCol {
+    font-size: 30px;
+}
+
+.languagesName {
+    font-size: 70px;
+    margin-top: 60px;
+}

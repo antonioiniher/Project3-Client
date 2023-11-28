@@ -22,8 +22,6 @@ const ClassesPage = () => {
       .catch(error => console.log(error))
   }
 
-  console.log(classes)
-
   return (
     classes
       ?

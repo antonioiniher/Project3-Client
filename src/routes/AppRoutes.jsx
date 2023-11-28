@@ -19,7 +19,6 @@ const AppRoutes = () => {
             <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
 
-            <Route path={'/perfil/editar'} element={<EditProfilePage />} />
             <Route path={'/clases'} element={<h1>HOLA</h1>} />
             <Route element={<TeacherPrivateRoute />}>
                 <Route path={'/clase/crear'} element={<h1>HOLA</h1>} />
@@ -32,6 +31,7 @@ const AppRoutes = () => {
 
             <Route element={<PrivateRoute />}>
                 <Route path={'/perfil'} element={<UserProfilePage />} />
+                <Route path={'/perfil/editar'} element={<EditProfilePage />} />
             </Route>
 
             <Route path={'*'} element={<ErrorPage />} />

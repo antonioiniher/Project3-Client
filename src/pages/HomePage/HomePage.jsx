@@ -66,9 +66,35 @@ const HomePage = () => {
                         <h2 className="newFormOfLearning">Una nueva forma de aprender en el mundo digital</h2>
                     </Col>
                 </Row>
-                <Row className="">
-                    <h4>1. Encuentra clases según el lenguaje</h4>
-                    <p></p>
+                <Row className="rowSearch">
+                    <Col md={{ span: 4, offset: 8 }}>
+                        <h4>1. Busca</h4>
+                        <p>Encuentra cursos y tutores en programación ajustados a tus necesidades y nivel de habilidad.</p>
+                    </Col>
+                </Row>
+                <Row className="rowChoose">
+                    <Col md={{ span: 4, offset: 2 }}>
+                        <h4>2. Elige</h4>
+                        <p>
+                            Selecciona tu instructor ideal basado en calificaciones y especialización.
+                        </p>
+                    </Col>
+                </Row>
+                <Row className="rowLearn">
+                    <Col md={{ span: 4, offset: 8 }}>
+                        <h4>3. Aprende</h4>
+                        <p>
+                            Asiste a clases interactivas y mejora tus habilidades de programación con proyectos prácticos.
+                        </p>
+                    </Col>
+                </Row>
+                <Row className="rowRate">
+                    <Col md={{ span: 4, offset: 2 }}>
+                        <h4>4. Valora</h4>
+                        <p>
+                            Evalúa tus sesiones para mejorar la experiencia y orientar a futuros estudiantes.
+                        </p>
+                    </Col>
                 </Row>
             </Container>
 

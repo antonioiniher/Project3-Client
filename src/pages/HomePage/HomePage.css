@@ -1,11 +1,9 @@
 .allHomePage {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 30px;
     padding-top: 50px;
     height: 100vh;
     margin-top: 25px;
-    margin-bottom: 400px;
-
+    margin-bottom: 1800px;
 }
 
 .titleHomePage {
@@ -50,4 +48,56 @@
     font-size: 60px;
     padding: 50px;
     margin-top: 70px;
+}
+
+.rowSearch {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.rowChoose {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.rowLearn {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.rowRate {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.rowSearch h4 {
+    font-size: 70px;
+}
+
+.rowChoose h4 {
+    font-size: 70px;
+}
+
+.rowLearn h4 {
+    font-size: 70px;
+}
+
+.rowRate h4 {
+    font-size: 70px;
+}
+
+.rowSearch p {
+    font-size: 25px;
+}
+
+.rowChoose p {
+    font-size: 25px;
+}
+
+.rowLearn p {
+    font-size: 25px;
+}
+
+.rowRate p {
+    font-size: 25px;
 }

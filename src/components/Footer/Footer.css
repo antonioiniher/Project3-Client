@@ -3,7 +3,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    background-color: #cce7e1;
+    background: linear-gradient(to top, white, #cce7e1);
     padding-bottom: 0.1px;
     margin-bottom: 0;
 }

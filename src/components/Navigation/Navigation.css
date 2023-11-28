@@ -1,6 +1,7 @@
 .Navbar {
-    background-color: white;
+    background: linear-gradient(to top, #cce7e1, white);
     color: black;
+
 }
 
 .Navbar a {

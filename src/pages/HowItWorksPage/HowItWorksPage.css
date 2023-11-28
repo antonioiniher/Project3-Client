@@ -17,25 +17,28 @@
 }
 
 .allPageHowItWorks {
-    background-image: url("../../assets/programmingBackground.jpeg");
     background-size: cover;
     background-position: center;
 }
 
 .row1 {
     padding: 30px;
+    font-size: 80px;
+    text-align: center;
 }
 
 .row2 {
     padding: 30px;
+    font-size: 30px;
 }
 
 .row3 {
     padding: 30px;
+    font-size: 30px;
 }
 
 .row4 {
     padding: 30px;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
 }

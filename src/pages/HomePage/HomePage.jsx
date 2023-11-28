@@ -61,6 +61,15 @@ const HomePage = () => {
 
                     </Col>
                 </Row>
+                <Row>
+                    <Col md={{ span: 6, offset: 1 }}>
+                        <h2 className="newFormOfLearning">Una nueva forma de aprender en el mundo digital</h2>
+                    </Col>
+                </Row>
+                <Row className="">
+                    <h4>1. Encuentra clases según el lenguaje</h4>
+                    <p></p>
+                </Row>
             </Container>
 
         </div >

@@ -30,7 +30,6 @@ const EditUserProfile = () => {
 
   const handleInputChange = e => {
     const { value, name } = e.currentTarget
-    console.log("-----", value, name)
     setUser({ ...user, [name]: value })
   }
 

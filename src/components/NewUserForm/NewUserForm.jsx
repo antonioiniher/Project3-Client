@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Form, Button, Row, Col, FormSelect } from "react-bootstrap"
+import { Form, Button, Row, Col } from "react-bootstrap"
 import './NewUserForm.css'
 import { useNavigate } from "react-router-dom"
 

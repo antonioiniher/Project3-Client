@@ -1,17 +1,13 @@
-import userIcon from "../../assets/user-icon2.png"
-import iconAdress from "../../assets/iconAdress.svg"
-import iconEmail from "../../assets/iconEmail.png"
-import iconPhone from "../../assets/iconPhone.png"
-import iconRole from "../../assets/iconRole.png"
-import iconSkype from "../../assets/iconSkype.png"
+
 
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../contexts/auth.context"
 import userService from "../../services/User.services"
-import { Col, Row, Button } from "react-bootstrap"
+import { Col, Row, Button, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import "./UserProfilePage.css"
 import Loader from "../../components/Loader/Loader"
+import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
 
 const UserProfilePage = () => {
 
@@ -33,36 +29,17 @@ const UserProfilePage = () => {
       .catch(err => console.log(err))
   }
 
-
-
   return (
 
     user
       ?
-      <div>
-        <Row className="contentUser">
-          <Col className="contentUserImg" >
-            <img src={user.avatar === "" ? userIcon : user.avatar} alt="imageProfile" style={{ height: 350 }} />
+      <Container>
 
-          </Col>
-          <Col className="colInfo">
-            <h1> {user.username}</h1>
-            <hr />
-            <h4 className="mb-4"><img src={iconEmail} alt="iconEmail" />   {user.email}</h4>
-            <h4 className="mb-4"><img src={iconRole} alt="iconRole" />   {user.role}</h4>
-            <h5 className="mb-4"><img src={iconPhone} />   {user.phoneNumber}</h5>
-            <h5 className="mb-4"><img src={iconSkype} />   {user.idSkype} </h5>
-            <h5 className="mb-5"><img src={iconAdress} /> {user.address?.street}, {user.address?.city}, {user.address?.country} </h5>
-            <Link to={"/perfil/editar"} className="btn btn-dark mb-4">
-              Editar
-            </Link>
-          </Col>
-        </Row>
+        <UserProfileCard {...user} key={user._id} />
 
-      </div>
+      </Container>
       :
       <Loader />
-
   )
 
 }

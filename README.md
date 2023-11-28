@@ -6,6 +6,7 @@
 | `/registro`               | User register     |           |
 | `/inicio-sesion`          | Login             |           |
 | `/perfil`                 | User profile page |    ✔️      |
+| `/perfil/:profile_id      | Teacher page      |    ✔️      |
 | `/perfil/editar`          | Edit my profile   |    ✔️      |
 | `/clases`                 | All classes       |           |
 | `/clase/crear`            | Create a class    |    ✔️      |

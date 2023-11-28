@@ -13,6 +13,7 @@ import HowItWorksPage from '../pages/HowItWorksPage/HowItWorksPage'
 import NewClassPage from '../pages/NewClassPage/NewClassPage'
 import ClassesPage from '../pages/ClassesPage/ClassesPage'
 import DetailsClassPage from '../pages/DetailsClassPage/DetailsClassPage'
+import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
 
 const AppRoutes = () => {
 
@@ -23,6 +24,7 @@ const AppRoutes = () => {
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
             <Route path={'/clases'} element={<ClassesPage />} />
             <Route path={'/clase/:class_id'} element={<DetailsClassPage />} />
+            <Route path={'/perfil/:owner_id'} element={<TeacherProfilePage />} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/nosotros'} element={<AboutUsPage />} />
             <Route path={'/como-funciona'} element={<HowItWorksPage />} />

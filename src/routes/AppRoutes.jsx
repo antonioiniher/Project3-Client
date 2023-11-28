@@ -11,6 +11,7 @@ import TeacherPrivateRoute from './TeacherPrivateRoute'
 import ContactPage from '../pages/ContactPage/ContactPage'
 import HowItWorksPage from '../pages/HowItWorksPage/HowItWorksPage'
 import NewClassPage from '../pages/NewClassPage/NewClassPage'
+import ClassesPage from '../pages/ClassesPage/ClassesPage'
 
 const AppRoutes = () => {
 
@@ -19,7 +20,7 @@ const AppRoutes = () => {
             <Route path={'/'} element={<HomePage />} />
             <Route path={'/registro'} element={<NewUserPage />} />
             <Route path={'/inicio-sesion'} element={<LoginPage />} />
-            <Route path={'/clases'} element={<h1>HOLA</h1>} />
+            <Route path={'/clases'} element={<ClassesPage />} />
             <Route path={'/clase/:class_id'} element={<h1>HOLA</h1>} />
             <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
             <Route path={'/nosotros'} element={<AboutUsPage />} />

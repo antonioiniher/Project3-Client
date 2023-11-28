@@ -5,7 +5,7 @@ import iconInstagram from "../../assets/iconInstagram.png"
 
 
 import "./ContactPage.css"
-import { Row, Col, Button, Container } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 

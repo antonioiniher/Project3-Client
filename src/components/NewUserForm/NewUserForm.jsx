@@ -4,6 +4,7 @@ import './NewUserForm.css'
 import { useNavigate } from "react-router-dom"
 
 import authService from "../../services/Auth.services"
+import uploadServices from "../../services/Upload.services"
 
 
 const NewUserForm = () => {
@@ -22,18 +23,12 @@ const NewUserForm = () => {
     description: ''
   })
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const handleInputChange = e => {
     const { value, name } = e.currentTarget
     setUser({ ...user, [name]: value })
   }
-
-  // const uploadImage = e => {
-  //     console.log(e)
-  //     const { value, name } = e.target.files[0]
-  //     console.log(value, name)
-  //     setUser({ ...user, [name]: value })
-  //     console.log(user)
-  // }
 
   const navigate = useNavigate()
 
@@ -45,6 +40,25 @@ const NewUserForm = () => {
       .signup(user)
       .then(() => navigate('/inicio-sesion'))
       .catch(err => console.log(err))
+  }
+
+  const handleFileUpload = e => {
+
+    setIsLoading(true)
+
+    const formData = new FormData()
+    formData.append('imageData', e.target.files[0])
+
+    uploadServices
+      .uploadimage(formData)
+      .then(res => {
+        setUser({ ...user, avatar: res.data.cloudinary_url })
+        setIsLoading(false)
+      })
+      .catch(err => {
+        console.log(err)
+        setIsLoading(false)
+      })
   }
 
   return (
@@ -93,15 +107,15 @@ const NewUserForm = () => {
 
             </Row>
 
-            <Form.Group className="mb-3" controlId="avatar">
+            {/* <Form.Group className="mb-3" controlId="avatar">
               <Form.Label>Avatar</Form.Label>
               <Form.Control type="text" value={user.avatar} name="avatar" onChange={handleInputChange} />
+            </Form.Group> */}
+
+            <Form.Group className="mb-3" controlId="avatar">
+              <Form.Label>Avatar(URL)</Form.Label>
+              <Form.Control type="file" onChange={handleFileUpload} />
             </Form.Group>
-            {/* 
-                        <Form.Group className="mb-3" controlId="avatar">
-                            <Form.Label>Avatar</Form.Label>
-                            <Form.Control type="file" value={user.avatar} name="avatar" onChange={uploadImage} />
-                        </Form.Group> */}
 
             <Row>
               <Col>
@@ -136,7 +150,7 @@ const NewUserForm = () => {
             </Form.Group>
 
             <div className="d-grid">
-              <Button variant="dark" type="submit">Crear usuario</Button>
+              <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
             </div>
           </Form>
 

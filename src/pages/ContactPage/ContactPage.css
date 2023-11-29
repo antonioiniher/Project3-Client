@@ -1,33 +1,110 @@
-.titleContactPage {
-    margin-top: 50px;
-    font-size: 80px;
-}
-
-.logoContact img {
-    width: 300px;
-    margin-left: 50px;
-}
-
 .contactContainer {
-    margin-bottom: 250px;
+    text-align: center;
 }
 
-.subtitleContactPage {
-    font-size: 50px;
+.titleContact {
+    margin-top: 100px;
+    text-align: center;
+    color: #12F7D6;
+    font-family: Ubuntu;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    border-bottom: 3px solid #12F7D6;
+    display: inline-block;
+    padding-bottom: 20px;
 }
 
-.iconsSocials {
-    margin-top: 200px;
-    margin-left: 70px;
+.sendMessage {
+    margin-top: 100px;
+    padding: 16px 40px;
+    color: #12F7D6;
+    font-family: IBM Plex Mono;
+    font-size: 32px;
+    font-style: normal;
+    text-transform: capitalize;
+    border: 3px solid #12F7D6;
+    display: inline-block;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
 
-.imgFacebook {
-    height: 65px;
-    margin-top: -10px;
+.contactForm {
+    padding-top: 40px;
+    display: inline-block;
+    width: 700px;
+    text-align: left;
+    margin-bottom: 100px;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
 }
 
-.descriptionContact {
-    display: flex;
-    margin-top: 300px;
-    font-size: 35px;
+.contactForm p {
+    color: #12F7D6;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+.contactControl {
+    background-color: #1A1E23;
+    border: none;
+    border-bottom: 2px solid #12F7D6;
+    border-radius: 0;
+    border-color: none;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+.contactControl:focus {
+    background-color: #1A1E23;
+    border: none;
+    border-bottom: 2px solid #12F7D6;
+    border-radius: 0;
+    color: white;
+}
+
+.contactControl:valid {
+    color: white;
+}
+
+.contactControl::placeholder {
+    color: white;
+}
+
+.formButton {
+    background-color: #12F7D6;
+    display: inline-block;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 32px;
+    margin-bottom: 100px;
+    padding: 16px 32px;
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.formButton:hover {
+    background-color: #12F7D6;
+}
+
+.formButton:active {
+    background-color: #12F7D6;
+}
+
+.buttonImg {
+    padding-left: 15px;
 }

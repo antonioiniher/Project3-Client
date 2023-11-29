@@ -1,15 +1,12 @@
 .Navbar {
     background-color: #292F36;
     font-size: 32px;
+    flex-direction: column;
 }
 
 .Navbar a {
     text-decoration: none;
     color: black;
-}
-
-.Navbar img {
-    width: 100%;
 }
 
 .custom-nav {
@@ -30,7 +27,7 @@
     color: #12F7D6;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 24px;
-    padding-left: 40px;
+    padding-left: 70px;
 }
 
 .custom-nav {
@@ -38,4 +35,65 @@
     align-items: flex-start;
     border-radius: 2.5rem;
     background: var(--White, #FFF);
+}
+
+.accordion-button::after {
+    content: none !important;
+    background-image: none !important;
+}
+
+.accordion-button,
+.accordion-body {
+    background-color: black;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-header {
+    background-color: #292F36;
+}
+
+.accordion-button {
+    border-top-right-radius: 40px 40px !important;
+    border-top-left-radius: 40px 40px !important;
+    border-bottom-right-radius: 40px 40px !important;
+    border-bottom-left-radius: 40px 40px !important;
+}
+
+.accordion-body {
+    border-bottom-right-radius: 40px 40px !important;
+    border-bottom-left-radius: 40px 40px !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: #000000 !important;
+    border-bottom-right-radius: 0px 0px !important;
+    border-bottom-left-radius: 0px 0px !important;
+
+}
+
+.accordion {
+    --bs-accordion-border-color: none !important;
+    border-radius: 50px !important;
+    display: flex;
+    position: fixed;
+    top: 3.5px;
+    left: 1370px;
+    background-color: #292F36;
+
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+    border-bottom-right-radius: 40px 40px !important;
+    border-bottom-left-radius: 40px 40px !important;
+    background-color: #292F36;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 40px 40px !important;
+    border-bottom-left-radius: 40px 40px !important;
+    background-color: #292F36;
 }

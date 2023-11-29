@@ -1,6 +1,6 @@
 import './Navigation.css'
 import { Container, NavDropdown, Navbar } from "react-bootstrap"
-import user from './../../assets/user-icon2.png'
+import iconGrid from './../../assets/icon-grid.png'
 import { AuthContext } from '../../contexts/auth.context'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -14,12 +14,17 @@ const Navigation = () => {
 
         <Navbar sticky='top' className='Navbar' expand="lg">
             <Container>
-                <Navbar.Brand><Link to={'/'}>
-                    <span className='homeC'> &lt;C &#47;&gt;</span> <span className='home2'>  {loggedUser && "Hola, " + loggedUser.username + "!"} </span>
-                </Link></Navbar.Brand>
+                <Navbar.Brand>
+                    <Link to={'/'}>
+                        <span className='homeC'> &lt;C &#47;&gt;</span> <span className='home2'>  {loggedUser && "Hola, " + loggedUser.username + "!"} </span>
+                    </Link>
+                    <Link to={"/clases"}>
+                        <span className='homeTextNav'> Clases </span>
+                    </Link>
+                </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <NavDropdown drop='down-centered' className='custom-nav' title={<img src={user} alt="" />} id="basic-nav-dropdown">
+                    <NavDropdown drop='down-centered' className='custom-nav' title={<img src={iconGrid} alt="iconGrid" />} id="basic-nav-dropdown">
                         {
                             !loggedUser
                                 ?

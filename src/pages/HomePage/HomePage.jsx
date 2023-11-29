@@ -15,8 +15,6 @@ import { useState } from "react"
 const HomePage = () => {
 
     const [results, setResults] = useState([])
-    console.log("RESULTADOS DESDE HOME", results)
-
 
     return (
         <div className="allHomePage">

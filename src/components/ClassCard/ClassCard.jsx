@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 const ClassCard = ({ _id, languages, description, classType, title, owner }) => {
 
-    console.log(owner)
-
     return (
         <Card className="text-center">
             <Card.Header>Lenguajes: {languages.map(e => { return e })} | Se imparte de forma: {classType}
@@ -23,6 +21,5 @@ const ClassCard = ({ _id, languages, description, classType, title, owner }) => 
     )
 }
 
-// titulo, lenguajes, classtype(remoto), owner
 
 export default ClassCard

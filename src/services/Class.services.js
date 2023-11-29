@@ -26,6 +26,15 @@ class ClassServices {
     getClasses() {
         return this.api.get("/all")
     }
+
+    getClassbySearch(language, city, classType) {
+        return this.api.get('', {
+            params: {
+                language, city, classType
+            }
+        })
+    }
+
     getOneClass(class_id) {
         return this.api.get(`/${class_id}`)
     }

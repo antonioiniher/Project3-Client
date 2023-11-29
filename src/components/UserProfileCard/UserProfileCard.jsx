@@ -12,8 +12,6 @@ import { Link } from "react-router-dom"
 
 const UserProfileCard = ({ username, email, role, avatar, phoneNumber, idSkype, address }) => {
 
-    // const address = { street, city, country }
-
     return (
         <Container>
             <Row className="contentUser">

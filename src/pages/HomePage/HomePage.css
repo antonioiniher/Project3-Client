@@ -18,6 +18,82 @@
     color: white;
 }
 
+.languagesHomePage {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+
+}
+
+.htmlLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 200px;
+    margin-top: 100px;
+}
+
+.htmlLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 183px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+.cssLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 470px;
+    height: 25px;
+    margin-top: 100px;
+}
+
+.cssLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 450px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+.jsLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 750px;
+    height: 25px;
+    margin-top: 100px;
+}
+
+.jsLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 720px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+.reactLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 1000px;
+    height: 25px;
+    margin-top: 100px;
+}
+
+.reactLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 1000px;
+    height: 100px;
+    margin-top: -25px;
+}
+
+.colLanguages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .titleHomePage {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 120px;
@@ -51,10 +127,6 @@
     color: #12F7D6;
 }
 
-.languagesHomePage {
-    padding: 30px;
-    padding-top: 30px;
-}
 
 .newFormOfLearning {
     font-size: 60px;
@@ -70,6 +142,39 @@
 .rowChoose {
     padding: 50px;
     margin-bottom: 20px;
+}
+
+.tickImg {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 1100px;
+    margin-top: 20px;
+
+}
+
+.bookImg {
+    display: flex;
+    position: absolute;
+    padding-left: 485px;
+    margin-top: -200px;
+    height: 120px;
+}
+
+.thumbUp {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 950px;
+    margin-top: 20px;
+}
+
+.thumbDown {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 1200px;
+    margin-top: 20px;
 }
 
 .rowLearn {
@@ -112,4 +217,27 @@
 
 .rowRate p {
     font-size: 25px;
+}
+
+.mouse1 {
+    display: flex;
+    height: 120px;
+    position: absolute;
+    padding-left: 450px;
+}
+
+.mouse2 {
+    display: flex;
+    position: absolute;
+    height: 20px;
+    padding-left: 488px;
+    margin-top: 20px;
+}
+
+.arrowMouse {
+    display: flex;
+    position: absolute;
+    padding-left: 485px;
+    margin-top: 140px;
+    height: 120px;
 }

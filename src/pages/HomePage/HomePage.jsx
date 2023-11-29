@@ -1,3 +1,8 @@
+import "./HomePage.css"
+import { useState } from "react"
+import { Row, Col, Container } from "react-bootstrap"
+import SearchBar from "../../components/SearchBar/SearchBar"
+import SearchResultsClassesList from "../../components/SearchResultsClassesList/SearchResultsClassesList"
 import teacher from "../../assets/teacher.jpg"
 import cplusplus from "../../assets/c++.png"
 import csharp from "../../assets/csharp.png"
@@ -6,11 +11,6 @@ import javascript from "../../assets/javascript.png"
 import python from "../../assets/python.png"
 import ruby from "../../assets/ruby.png"
 import sql from "../../assets/sql.png"
-import SearchBar from "../../components/SearchBar/SearchBar"
-import { Row, Col, Container } from "react-bootstrap"
-import "./HomePage.css"
-import SearchResultsClassesList from "../../components/SearchResultsClassesList/SearchResultsClassesList"
-import { useState } from "react"
 
 const HomePage = () => {
 

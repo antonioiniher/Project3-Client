@@ -30,7 +30,7 @@ const TeacherProfilePage = () => {
         user
             ?
             <Container>
-                <h1> Perfil profesor {user.username}  </h1>
+                <h1> Perfil de {user.username}  </h1>
                 <UserProfileCard {...user} key={user._id} />
                 <CommentForm />
             </Container>

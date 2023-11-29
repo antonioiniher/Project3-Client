@@ -1,7 +1,5 @@
 import "./HowItWorksPage.css"
-
 import { Row, Col, Button, Container } from "react-bootstrap"
-import { Link } from "react-router-dom"
 
 
 const HowItWorksPage = () => {

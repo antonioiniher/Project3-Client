@@ -4,15 +4,16 @@ import iconEmail from "../../assets/iconEmail.png"
 import iconPhone from "../../assets/iconPhone.png"
 import iconRole from "../../assets/iconRole.png"
 import iconSkype from "../../assets/iconSkype.png"
-
 import { Container, Col, Row } from "react-bootstrap"
 import './UserProfileCard.css'
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../contexts/auth.context"
+import { useContext } from "react"
 
 
-const UserProfileCard = ({ username, email, role, avatar, phoneNumber, idSkype, address }) => {
+const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSkype, address }) => {
 
-    // const address = { street, city, country }
+    const { loggedUser } = useContext(AuthContext)
 
     return (
         <Container>
@@ -28,13 +29,16 @@ const UserProfileCard = ({ username, email, role, avatar, phoneNumber, idSkype, 
                     <h5 className="mb-4"><img src={iconPhone} />   {phoneNumber}</h5>
                     <h5 className="mb-4"><img src={iconSkype} />   {idSkype} </h5>
                     <h5 className="mb-5"><img src={iconAdress} /> {address.street}, {address.city}, {address.country} </h5>
-                    <Link to={"/perfil/editar"} className="btn btn-dark mb-4">
-                        Editar
-                    </Link>
+                    {
+                        loggedUser?._id === _id &&
+                        < Link to={"/perfil/editar"} className="btn btn-dark mb-4">
+                            Editar
+                        </Link>
+                    }
                 </Col>
             </Row>
 
-        </Container>
+        </Container >
     )
 }
 

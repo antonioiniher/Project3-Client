@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Form, Button, Row, Col } from "react-bootstrap"
 import './NewUserForm.css'
 import { useNavigate } from "react-router-dom"
-
 import authService from "../../services/Auth.services"
 import uploadServices from "../../services/Upload.services"
 
@@ -107,13 +106,8 @@ const NewUserForm = () => {
 
             </Row>
 
-            {/* <Form.Group className="mb-3" controlId="avatar">
-              <Form.Label>Avatar</Form.Label>
-              <Form.Control type="text" value={user.avatar} name="avatar" onChange={handleInputChange} />
-            </Form.Group> */}
-
             <Form.Group className="mb-3" controlId="avatar">
-              <Form.Label>Avatar(URL)</Form.Label>
+              <Form.Label>Avatar</Form.Label>
               <Form.Control type="file" onChange={handleFileUpload} />
             </Form.Group>
 

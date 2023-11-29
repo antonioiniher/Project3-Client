@@ -1,12 +1,10 @@
+import "./ContactPage.css"
+import { Row, Col, Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import iconFacebook from "../../assets/iconFacebook.png"
 import iconLinkedin from "../../assets/iconLinkedin.png"
 import iconTwitter from "../../assets/iconTwitter.png"
 import iconInstagram from "../../assets/iconInstagram.png"
-
-
-import "./ContactPage.css"
-import { Row, Col, Container } from "react-bootstrap"
-import { Link } from "react-router-dom"
 
 
 const ContactPage = () => {

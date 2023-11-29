@@ -1,10 +1,7 @@
-
-
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../contexts/auth.context"
 import userService from "../../services/User.services"
-import { Col, Row, Button, Container } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Container } from "react-bootstrap"
 import "./UserProfilePage.css"
 import Loader from "../../components/Loader/Loader"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"

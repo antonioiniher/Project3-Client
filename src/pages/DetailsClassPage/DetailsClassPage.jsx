@@ -1,7 +1,6 @@
-import { Container, Col, Row, Button } from "react-bootstrap"
 import "./DetailsClassPage.css"
+import { Container, Col, Row } from "react-bootstrap"
 import classService from "../../services/Class.services"
-import userService from "../../services/User.services"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Loader from "../../components/Loader/Loader"

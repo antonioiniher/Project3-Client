@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 const SearchResultsClassesList = ({ results }) => {
-    console.log("los results desde el listado", results)
 
     return (
         <div>

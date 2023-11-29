@@ -15,8 +15,6 @@ import sql from "../../assets/sql.png"
 const HomePage = () => {
 
     const [results, setResults] = useState([])
-    console.log("RESULTADOS DESDE HOME", results)
-
 
     return (
         <div className="allHomePage">

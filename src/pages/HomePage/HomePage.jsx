@@ -9,8 +9,13 @@ import sql from "../../assets/sql.png"
 import SearchBar from "../../components/SearchBar/SearchBar"
 import { Row, Col, Container } from "react-bootstrap"
 import "./HomePage.css"
+import SearchResultsClassesList from "../../components/SearchResultsClassesList/SearchResultsClassesList"
+import { useState } from "react"
 
 const HomePage = () => {
+
+    const [results, setResults] = useState([])
+    console.log("RESULTADOS DESDE HOME", results)
 
 
     return (
@@ -26,7 +31,8 @@ const HomePage = () => {
                 </Row>
                 <Row>
                     <Col md={{ span: 3, offset: 4 }} className="searchBarHomePage">
-                        <SearchBar />
+                        <SearchBar setResults={setResults} />
+                        <SearchResultsClassesList to={'/clases'} results={results} />
                     </Col>
                 </Row>
                 <Row>

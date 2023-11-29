@@ -1,9 +1,12 @@
 footer {
-    color: black;
     position: relative;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(to top, white, #cce7e1);
+    background-color: #1A1E23;
     padding-bottom: 0.1px;
     margin-bottom: 0;
+}
+
+.linksFooter {
+    color: white;
 }

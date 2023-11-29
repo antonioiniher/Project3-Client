@@ -14,7 +14,9 @@ const Navigation = () => {
 
         <Navbar sticky='top' className='Navbar' expand="lg">
             <Container>
-                <Navbar.Brand><Link to={'/'}> <img src={logo} alt="logoNavbar" style={{ width: 60 }} />  </Link></Navbar.Brand>
+                <Navbar.Brand><Link to={'/'}>
+                    <span className='homeC'> &lt;C &#47;&gt;</span> <span className='home2'>  {loggedUser && "Hola, " + loggedUser.username + "!"} </span>
+                </Link></Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <NavDropdown drop='down-centered' className='custom-nav' title={<img src={user} alt="" />} id="basic-nav-dropdown">

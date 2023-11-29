@@ -5,6 +5,7 @@ import userService from './../../services/User.services'
 import Loader from "../../components/Loader/Loader"
 import { Container } from "react-bootstrap"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
+import CommentForm from "../../components/CommentForm/CommentForm"
 
 
 const TeacherProfilePage = () => {
@@ -31,6 +32,7 @@ const TeacherProfilePage = () => {
             <Container>
                 <h1> Perfil profesor {user.username}  </h1>
                 <UserProfileCard {...user} key={user._id} />
+                <CommentForm />
             </Container>
             :
             <Loader />

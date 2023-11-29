@@ -1,7 +1,6 @@
 .Navbar {
-    background: linear-gradient(to top, #cce7e1, white);
-    color: black;
-
+    background-color: #292F36;
+    font-size: 32px;
 }
 
 .Navbar a {
@@ -16,4 +15,13 @@
 .custom-nav {
     position: relative;
     width: 40px;
+}
+
+.homeC {
+    color: #12F7D6;
+}
+
+.home2 {
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
 }

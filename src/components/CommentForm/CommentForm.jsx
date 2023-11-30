@@ -35,6 +35,7 @@ const CommentForm = () => {
 
     return (
         <div>
+
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="text">
                     <Form.Label>Deja tu Comentario</Form.Label>

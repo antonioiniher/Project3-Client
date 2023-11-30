@@ -36,11 +36,10 @@ const UserProfilePage = () => {
         {
           loggedUser?.role === 'STUDENT'
             ?
-            <UserClassesList user_id={user._id} />
+            <UserClassesList />
             :
-            <div>no estas apuntado a nada</div>
+            <h3>Todavía no estás apuntado a ninguna clase. Anímate!!!</h3>
         }
-
 
       </Container>
       :

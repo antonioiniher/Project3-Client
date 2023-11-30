@@ -38,6 +38,10 @@ class ClassServices {
     getOneClass(class_id) {
         return this.api.get(`/${class_id}`)
     }
+
+    putClassRequest(student_id, class_id) {
+        return this.api.put(`/putClassRequest/${class_id}`, student_id)
+    }
 }
 
 const classService = new ClassServices()

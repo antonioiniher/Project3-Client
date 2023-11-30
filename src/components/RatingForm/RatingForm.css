@@ -1,0 +1,25 @@
+.ratingButton {
+    background-color: #12F7D6;
+    display: inline-block;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 32px;
+    margin-bottom: 100px;
+    padding: 16px 32px;
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: white;
+}
+
+.ratingButton:hover {
+    background-color: #12F7D6;
+}
+
+.ratingButton:active {
+    background-color: #12F7D6;
+}

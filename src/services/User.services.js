@@ -28,6 +28,10 @@ class UserService {
         return this.api.put(`/edit/${user_id}`, user)
     }
 
+    editUserWithRating(owner_id, rating) {
+        return this.api.post(`/rating/${owner_id}`, rating)
+    }
+
 
 }
 

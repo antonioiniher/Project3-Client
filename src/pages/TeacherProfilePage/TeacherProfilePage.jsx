@@ -6,10 +6,14 @@ import Loader from "../../components/Loader/Loader"
 import { Container } from "react-bootstrap"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
 import CommentForm from "../../components/CommentForm/CommentForm"
+import RatingForm from "../../components/RatingForm/RatingForm"
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/auth.context"
 
 
 const TeacherProfilePage = () => {
 
+    const { loggedUser } = useContext(AuthContext)
     const [user, setUser] = useState()
     const { owner_id } = useParams()
 
@@ -32,7 +36,13 @@ const TeacherProfilePage = () => {
             <Container>
                 <h1> Perfil de {user.username}  </h1>
                 <UserProfileCard {...user} key={user._id} />
-                <CommentForm />
+                {
+                    loggedUser &&
+                    <>
+                        <CommentForm />
+                        <RatingForm />
+                    </>
+                }
             </Container>
             :
             <Loader />

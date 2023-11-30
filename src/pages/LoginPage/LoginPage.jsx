@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import "./LoginPage.css"
+import iconLogin from '../../assets/icon-log-in.svg'
 
 const LoginPage = () => {
 
@@ -11,7 +12,9 @@ const LoginPage = () => {
             <Row>
                 <Col>
                     <h1 className='loginTitle'>Login</h1>
-
+                    <div>
+                        <img src={iconLogin} alt="iconLogin" className="iconLogin" />
+                    </div>
                     <Col md={{ offset: 4, span: 4 }}>
                         <hr />
                         <LoginForm />

@@ -6,7 +6,11 @@ const EditUserProfilePage = () => {
     return (
         <Container>
             <h1 className='text-center mb-4'>Edita tu perfil</h1>
-            <EditUserForm />
+            <Row>
+                <Col lg={{ span: 8, offset: 2 }}>
+                    <EditUserForm />
+                </Col>
+            </Row>
         </Container>
     )
 }

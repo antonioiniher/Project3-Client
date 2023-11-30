@@ -11,7 +11,6 @@ const UserProfilePage = () => {
   const { loggedUser } = useContext(AuthContext)
   const [user, setUser] = useState()
 
-
   useEffect(() => {
     loadUser()
   }, [])

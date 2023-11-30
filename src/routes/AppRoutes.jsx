@@ -29,10 +29,10 @@ const AppRoutes = () => {
             <Route path={'/nosotros'} element={<AboutUsPage />} />
             <Route path={'/como-funciona'} element={<HowItWorksPage />} />
             <Route path={'/contacto'} element={<ContactPage />} />
-            <Route path={'*'} element={<ErrorPage />} />
             <Route path={'/perfil/:owner_id'} element={<TeacherProfilePage />} />
 
-            <Route element={<PrivateRoute />}>
+            {/* TODO: DISPONER DE UNA ÚNICA RUTA PRIVADA */}
+            <Route element={<PrivateRoute acceptedRoles={'TEACHER'} />}>
                 <Route path={'/perfil'} element={<UserProfilePage />} />
                 <Route path={'/perfil/editar'} element={<EditProfilePage />} />
             </Route>
@@ -41,6 +41,8 @@ const AppRoutes = () => {
                 <Route path={'/clase/crear'} element={<NewClassPage />} />
                 <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
             </Route>
+
+            <Route path={'*'} element={<ErrorPage />} />
 
         </Routes>
     )

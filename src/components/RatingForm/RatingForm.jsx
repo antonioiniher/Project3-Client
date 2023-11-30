@@ -11,7 +11,7 @@ const RatingForm = () => {
     const [rating, setRating] = useState(0)
     const { owner_id } = useParams()
 
-    const fireFinalActions = () => {
+    const finalActions = () => {
         setShowModal(false)
     }
 
@@ -44,8 +44,8 @@ const RatingForm = () => {
                         <Form.Group className="mb-3" controlId="rating">
                             <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota con un número del 1 al 10' />
                         </Form.Group>
+                        <Button type='submit' className='ratingButton' onClick={finalActions}>Enviar</Button>
                     </Form>
-                    <Button className='ratingButton' onClick={fireFinalActions}>Enviar</Button>
                 </Modal.Body>
             </Modal>
         </div>

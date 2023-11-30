@@ -29,7 +29,7 @@ class UserService {
     }
 
     editUserWithRating(owner_id, rating) {
-        return this.api.post(`/rating/${owner_id}`, rating)
+        return this.api.post(`/rating/${owner_id}`, { rating })
     }
 
 

@@ -10,7 +10,7 @@ const DetailsClassPage = () => {
 
     const { class_id } = useParams()
     const { loggedUser } = useContext(AuthContext)
-    const [classes, setClasses] = useState({})
+    const [classes, setClasses] = useState()
 
     useEffect(() => {
         loadClassDetails()
@@ -28,7 +28,7 @@ const DetailsClassPage = () => {
             .catch(err => console.log(err))
     }
 
-    const handleClassRequest = e => {
+    const handleClassRequest = () => {
         classService
             .putClassRequest(loggedUser._id, class_id)
             .then(() => navigate('/'))
@@ -37,6 +37,7 @@ const DetailsClassPage = () => {
 
     return (
         classes ?
+            // TODO: RENOMINAR CLASES DE ACCESO A COMPONENTES
             <div className="allPage">
                 <Container>
                     <Row className="titleDetails">
@@ -52,9 +53,9 @@ const DetailsClassPage = () => {
                         </Col>
                         <Col md={{ span: 3, offset: 2 }} className="languagesCol">
                             <p className="languagesName">Languages</p>
-                            {classes.languages?.map((e, i) =>
-                                <p key={i}>{e}</p>
-                            )}
+                            {
+                                classes.languages?.map((e, i) => <p key={i}>{e}</p>)
+                            }
                         </Col>
                     </Row>
                     <Row>
@@ -63,7 +64,7 @@ const DetailsClassPage = () => {
                                 ?
                                 <Button onClick={handleClassRequest}>Solicitar clase</Button>
                                 :
-                                <div>logeate</div>
+                                <div>logueate</div>
                         }
                     </Row>
                 </Container>

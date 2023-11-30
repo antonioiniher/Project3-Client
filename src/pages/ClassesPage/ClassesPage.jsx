@@ -11,9 +11,9 @@ const ClassesPage = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  let languageQuery = (searchParams.get("language"))
-  let cityQuery = (searchParams.get("city"))
-  let classType = (searchParams.get("classType"))
+  let languageQuery = searchParams.get("language")
+  let cityQuery = searchParams.get("city")
+  let classType = searchParams.get("classType")
 
   useEffect(() => {
     loadClasses()
@@ -35,7 +35,6 @@ const ClassesPage = () => {
     classService
       .getClassbySearch(languageQuery, cityQuery)
       .then(({ data }) => {
-        console.log(data)
         setClasses(data)
       })
       .catch(error => console.log(error))
@@ -44,7 +43,6 @@ const ClassesPage = () => {
 
   const setTypeClass = e => {
     cityQuery = e.target.value
-    console.log('holi')
     loadClasses()
   }
 

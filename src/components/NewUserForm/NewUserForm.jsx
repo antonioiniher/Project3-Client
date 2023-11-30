@@ -55,7 +55,6 @@ const NewUserForm = () => {
         setIsLoading(false)
       })
       .catch(err => {
-        console.log(err)
         setIsLoading(false)
       })
   }
@@ -63,100 +62,88 @@ const NewUserForm = () => {
   return (
 
     <div className="NewUserForm">
+      <Form onSubmit={handleUserSubmit}>
+        <Form.Group className="mb-3 nameText" controlId="name">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control className="signupControl" type="text" value={user.username} name="username" onChange={handleInputChange} />
+        </Form.Group>
 
-      <Row >
+        <Form.Group className="mb-3 emailText" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control className="signupControl" type="email" value={user.email} name="email" onChange={handleInputChange} />
+        </Form.Group>
 
-        <Col lg={{ span: 8, offset: 2 }}>
-          <Form onSubmit={handleUserSubmit}>
-            <Form.Group className="mb-3 nameText" controlId="name">
-              <Form.Label>Nombre</Form.Label>
-              <Form.Control className="signupControl" type="text" value={user.username} name="username" onChange={handleInputChange} />
+        <Form.Group className="mb-3 passwordText" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control className="signupControl" type="password" value={user.password} name="password" onChange={handleInputChange} />
+        </Form.Group>
+
+        <Row>
+
+          <Col>
+            <Form.Group className="mb-3 streetText" controlId="street">
+              <Form.Label>Calle</Form.Label>
+              <Form.Control className="signupControl" type="text" value={user.street} name="street" onChange={handleInputChange} />
             </Form.Group>
-
-            <Form.Group className="mb-3 emailText" controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control className="signupControl" type="email" value={user.email} name="email" onChange={handleInputChange} />
+          </Col>
+          <Col>
+            <Form.Group className="mb-3 cityText" controlId="city">
+              <Form.Label>Ciudad</Form.Label>
+              <Form.Control className="signupControl" type="text" value={user.city} name="city" onChange={handleInputChange} />
             </Form.Group>
-
-            <Form.Group className="mb-3 passwordText" controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control className="signupControl" type="password" value={user.password} name="password" onChange={handleInputChange} />
+          </Col>
+          <Col>
+            <Form.Group className="mb-3 countryText" controlId="country">
+              <Form.Label>Pais</Form.Label>
+              <Form.Control className="signupControl" type="text" value={user.country} name="country" onChange={handleInputChange} />
             </Form.Group>
+          </Col>
 
-            <Row>
+        </Row>
 
-              <Col>
-                <Form.Group className="mb-3 streetText" controlId="street">
-                  <Form.Label>Calle</Form.Label>
-                  <Form.Control className="signupControl" type="text" value={user.street} name="street" onChange={handleInputChange} />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-3 cityText" controlId="city">
-                  <Form.Label>Ciudad</Form.Label>
-                  <Form.Control className="signupControl" type="text" value={user.city} name="city" onChange={handleInputChange} />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-3 countryText" controlId="country">
-                  <Form.Label>Pais</Form.Label>
-                  <Form.Control className="signupControl" type="text" value={user.country} name="country" onChange={handleInputChange} />
-                </Form.Group>
-              </Col>
+        <Form.Group className="mb-3 avatarText" controlId="avatar">
+          <Form.Label>Avatar</Form.Label>
+          <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
+          <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
+        </Form.Group>
 
-            </Row>
 
-            <Form.Group className="mb-3 avatarText" controlId="avatar">
-              <Form.Label>Avatar</Form.Label>
-              <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
-              <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
+        <Row>
+          <Col>
+            <Form.Group className="mb-3 rolText" controlId="role">
+              <Form.Label>Rol</Form.Label>
+              <Form.Select aria-label="Default select example" onChange={handleInputChange} name="role" className="selectRol">
+                <option className="selectionText">Selección</option>
+                <option value="STUDENT" className="optionsRol">Estudiante</option>
+                <option value="TEACHER" className="optionsRol">Profesor</option>
+              </Form.Select>
             </Form.Group>
+          </Col>
 
-
-            <Row>
-              <Col>
-                <Form.Group className="mb-3 rolText" controlId="role">
-                  <Form.Label>Rol</Form.Label>
-                  <Form.Select aria-label="Default select example" onChange={handleInputChange} name="role" className="selectRol">
-                    <option className="selectionText">Selección</option>
-                    <option value="STUDENT" className="optionsRol">Estudiante</option>
-                    <option value="TEACHER" className="optionsRol">Profesor</option>
-                  </Form.Select>
-                </Form.Group>
-              </Col>
-
-              <Col>
-                <Form.Group className="mb-3 phoneText" controlId="phoneNumber">
-                  <Form.Label>Teléfono de contacto</Form.Label>
-                  <Form.Control className="signupControl" type="number" value={user.phoneNumber} name="phoneNumber" onChange={handleInputChange} />
-                </Form.Group>
-              </Col>
-
-              <Col>
-                <Form.Group className="mb-3 skypeText" controlId="idSkype">
-                  <Form.Label>Cuenta de Skype</Form.Label>
-                  <Form.Control className="signupControl" type="text" value={user.idSkype} name="idSkype" onChange={handleInputChange} />
-                </Form.Group>
-              </Col>
-            </Row>
-
-            <Form.Group className="mb-3 descriptionText" controlId="description">
-              <Form.Label>Cuéntanos algo sobre ti</Form.Label>
-              <Form.Control className="signupControl" type="textarea" value={user.description} name="description" onChange={handleInputChange} />
+          <Col>
+            <Form.Group className="mb-3 phoneText" controlId="phoneNumber">
+              <Form.Label>Teléfono de contacto</Form.Label>
+              <Form.Control className="signupControl" type="number" value={user.phoneNumber} name="phoneNumber" onChange={handleInputChange} />
             </Form.Group>
+          </Col>
 
-            <div className="d-grid buttonSignUp">
-              <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
-            </div>
-          </Form>
+          <Col>
+            <Form.Group className="mb-3 skypeText" controlId="idSkype">
+              <Form.Label>Cuenta de Skype</Form.Label>
+              <Form.Control className="signupControl" type="text" value={user.idSkype} name="idSkype" onChange={handleInputChange} />
+            </Form.Group>
+          </Col>
+        </Row>
 
-        </Col>
+        <Form.Group className="mb-3 descriptionText" controlId="description">
+          <Form.Label>Cuéntanos algo sobre ti</Form.Label>
+          <Form.Control className="signupControl" type="textarea" value={user.description} name="description" onChange={handleInputChange} />
+        </Form.Group>
 
-
-      </Row>
-
-
-
+        <div className="d-grid buttonSignUp">
+          <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
+        </div>
+      </Form>
     </div>
   )
 }

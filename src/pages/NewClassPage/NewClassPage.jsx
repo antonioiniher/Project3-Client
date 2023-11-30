@@ -7,7 +7,11 @@ const NewClassPage = () => {
 
         <Container>
             <h1 className='text-center mb-4'>Nueva clase</h1>
-            <NewClassForm />
+            <Row >
+                <Col lg={{ span: 8, offset: 2 }}>
+                    <NewClassForm />
+                </Col>
+            </Row>
         </Container>
 
     )

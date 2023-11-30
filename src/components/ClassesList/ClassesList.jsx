@@ -1,5 +1,5 @@
 import Loader from "../Loader/Loader"
-import { Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import ClassCard from "../ClassCard/ClassCard"
 
 const ClassesList = ({ classes }) => {
@@ -8,9 +8,11 @@ const ClassesList = ({ classes }) => {
         classes
             ?
             <Row>
-                {
-                    classes.map(e => <ClassCard {...e} key={e._id} />)
-                }
+                <Col md={3}>
+                    {
+                        classes.map(e => <ClassCard {...e} key={e._id} />)
+                    }
+                </Col>
             </Row>
             :
             <Loader />

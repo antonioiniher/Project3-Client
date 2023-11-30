@@ -17,39 +17,22 @@ const ClassesPage = () => {
 
   useEffect(() => {
     loadClasses()
-    // loadClasses()
   }, [])
-
-  // const loadClasses = () => {
-  // 
-  //   classService
-  //     .getClasses()
-  //     .then(({ data }) => {
-  //       setClasses(data)
-  //     })
-  //     .catch(error => console.log(error))
-  // }
 
   const loadClasses = () => {
 
     classService
       .getClassbySearch(languageQuery, cityQuery)
       .then(({ data }) => {
-        console.log(data)
         setClasses(data)
       })
       .catch(error => console.log(error))
   }
 
-
   const setTypeClass = e => {
     cityQuery = e.target.value
-    console.log('holi')
     loadClasses()
   }
-
-  // if (languageQuery === null) loadClasses()
-  // else loadLanguage()
 
   return (
     classes

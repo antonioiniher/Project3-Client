@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container } from "react-bootstrap"
+import { Container, ButtonGroup, } from "react-bootstrap"
 import ClassesList from "../../components/ClassesList/ClassesList"
 import classService from "../../services/Class.services"
 import Loader from "../../components/Loader/Loader"
@@ -11,17 +11,17 @@ const ClassesPage = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const languageQuery = (searchParams.get("language"))
-  const cityQuery = (searchParams.get("city"))
-  const classType = (searchParams.get("classType"))
+  let languageQuery = (searchParams.get("language"))
+  let cityQuery = (searchParams.get("city"))
+  let classType = (searchParams.get("classType"))
 
   useEffect(() => {
+    loadClasses()
     // loadClasses()
-    loadLanguage()
   }, [])
 
   // const loadClasses = () => {
-
+  // 
   //   classService
   //     .getClasses()
   //     .then(({ data }) => {
@@ -30,15 +30,26 @@ const ClassesPage = () => {
   //     .catch(error => console.log(error))
   // }
 
-  const loadLanguage = () => {
+  const loadClasses = () => {
 
     classService
-      .getClassbySearch(languageQuery)
+      .getClassbySearch(languageQuery, cityQuery)
       .then(({ data }) => {
-        setSearchParams(data)
+        console.log(data)
+        setClasses(data)
       })
       .catch(error => console.log(error))
   }
+
+
+  const setTypeClass = e => {
+    cityQuery = e.target.value
+    console.log('holi')
+    loadClasses()
+  }
+
+  // if (languageQuery === null) loadClasses()
+  // else loadLanguage()
 
   return (
     classes
@@ -46,7 +57,15 @@ const ClassesPage = () => {
       <div className="classContainer">
         <Container>
           <h1>Listado de clases</h1>
-          <ClassesList searchParams={searchParams} />
+          <label style={{ color: 'white' }}>
+            Tipo de clase
+            <select className="typeClass" name="typeClass" onChange={setTypeClass}>
+              <option value="On-site">Presencial</option>
+              <option value="Hybrid">Semipresencial</option>
+              <option value="Remote">Online</option>
+            </select>
+          </label>
+          <ClassesList classes={classes} />
         </Container>
       </div>
       :

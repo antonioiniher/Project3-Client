@@ -9,4 +9,11 @@ footer {
 
 .linksFooter {
     color: white;
+    text-decoration: none;
+    color: var(--White, #FFF);
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.125rem;
 }

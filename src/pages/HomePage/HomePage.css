@@ -1,9 +1,15 @@
+body {
+    overflow-x: hidden;
+}
+
+
 .allHomePage {
     padding: 30px;
     padding-top: 50px;
     height: 100vh;
     margin-top: 25px;
     margin-bottom: 1800px;
+    max-width: 100%;
 }
 
 .allHomePage h1,
@@ -18,98 +24,267 @@
     color: white;
 }
 
+.languagesHomePage {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+
+}
+
+.htmlLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 200px;
+    margin-top: 100px;
+    max-width: 100%;
+}
+
+.htmlLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 183px;
+    height: 100px;
+    margin-top: -25px;
+    max-width: 100%;
+}
+
+.cssLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 470px;
+    height: 25px;
+    margin-top: 100px;
+    max-width: 100%;
+}
+
+.cssLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 450px;
+    height: 100px;
+    margin-top: -25px;
+    max-width: 100%;
+}
+
+.jsLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 750px;
+    height: 25px;
+    margin-top: 100px;
+    max-width: 100%;
+}
+
+.jsLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 720px;
+    height: 100px;
+    margin-top: -25px;
+    max-width: 100%;
+}
+
+.reactLanguage {
+    display: flex;
+    position: absolute;
+    padding-left: 1000px;
+    height: 25px;
+    margin-top: 100px;
+    max-width: 100%;
+}
+
+.reactLanguageIcon {
+    display: flex;
+    position: absolute;
+    padding-left: 1000px;
+    height: 100px;
+    margin-top: -25px;
+    max-width: 100%;
+}
+
+.colLanguages {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
 .titleHomePage {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 120px;
     padding: 30px;
     padding-bottom: 80px;
     text-align: center;
+    max-width: 100%;
 }
 
 .teacherTextHomePage {
     font-size: 70px;
     color: #12F7D6;
+    max-width: 100%;
 }
 
 .imgTeacherHomePage {
     text-align: center;
     border-radius: 300px;
+    max-width: 100%;
 }
 
 .containerHomePage {
     justify-content: space-around;
+    max-width: 100%;
 }
 
 .searchBarHomePage {
     padding: 15px;
     padding-top: 30px;
+    max-width: 100%;
 }
 
 .demandHomePage {
     text-align: center;
     font-size: 45px;
     color: #12F7D6;
+    max-width: 100%;
 }
 
-.languagesHomePage {
-    padding: 30px;
-    padding-top: 30px;
-}
 
 .newFormOfLearning {
     font-size: 60px;
     padding: 50px;
     margin-top: 70px;
+    max-width: 100%;
 }
 
 .rowSearch {
     padding: 50px;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .rowChoose {
     padding: 50px;
     margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.tickImg {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 400px;
+    margin-top: 20px;
+    max-width: 100%;
+
+}
+
+.bookImg {
+    display: flex;
+    position: absolute;
+    padding-left: 185px;
+    margin-top: -200px;
+    height: 120px;
+    max-width: 100%;
+}
+
+.thumbUp {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 500px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.thumbDown {
+    display: flex;
+    position: absolute;
+    height: 125px;
+    padding-left: 300px;
+    margin-top: 20px;
+    max-width: 100%;
 }
 
 .rowLearn {
     padding: 50px;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .rowRate {
     padding: 50px;
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .rowSearch h4 {
     font-size: 70px;
+    max-width: 100%;
 }
 
 .rowChoose h4 {
     font-size: 70px;
+    max-width: 100%;
 }
 
 .rowLearn h4 {
     font-size: 70px;
+    max-width: 100%;
 }
 
 .rowRate h4 {
     font-size: 70px;
+    max-width: 100%;
 }
 
 .rowSearch p {
     font-size: 25px;
+    max-width: 100%;
 }
 
 .rowChoose p {
     font-size: 25px;
+    max-width: 100%;
 }
 
 .rowLearn p {
     font-size: 25px;
+    max-width: 100%;
 }
 
 .rowRate p {
     font-size: 25px;
+    max-width: 100%;
+}
+
+.mouse1 {
+    display: flex;
+    height: 120px;
+    position: absolute;
+    padding-left: 220px;
+    max-width: 100%;
+}
+
+.mouse2 {
+    display: flex;
+    position: absolute;
+    height: 20px;
+    padding-left: 258px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.arrowMouse {
+    display: flex;
+    position: absolute;
+    padding-left: 255px;
+    margin-top: 140px;
+    height: 120px;
+    max-width: 100%;
+}
+
+.mouseGeneral {
+    display: flex;
+    position: absolute;
+    max-width: 100%;
 }

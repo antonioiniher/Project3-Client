@@ -74,12 +74,12 @@ const HomePage = () => {
                     </div>
                 </Row>
                 <Row>
-                    <Col md={{ span: 6, offset: 1 }}>
+                    <Col md={{ span: 6 }}>
                         <h2 className="newFormOfLearning">Una nueva forma de aprender en el mundo digital</h2>
                     </Col>
                 </Row>
                 <Row className="rowSearch">
-                    <Col>
+                    <Col className="mouseGeneral">
                         <img src={vector1} alt="vector" className="mouse1" />
                         <img src={vector2} alt="vector2" className="mouse2" />
                         <img src={arrow} alt="arrow" className="arrowMouse" />
@@ -90,7 +90,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
                 <Row className="rowChoose">
-                    <Col md={{ span: 4, offset: 2 }}>
+                    <Col md={{ span: 4, offset: 1 }}>
                         <h4>2. Elige</h4>
                         <p>
                             Selecciona tu instructor ideal basado en calificaciones y especialización.
@@ -112,7 +112,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
                 <Row className="rowRate">
-                    <Col md={{ span: 4, offset: 2 }}>
+                    <Col md={{ span: 4, offset: 1 }}>
                         <h4>4. Valora</h4>
                         <p>
                             Evalúa tus sesiones para mejorar la experiencia y orientar a futuros estudiantes.

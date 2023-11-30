@@ -9,7 +9,7 @@ const SearchBar = ({ setResults }) => {
 
   const [query, setQuery] = useState('');
 
-  const items = ['JavaScript', 'Ruby', 'C++', 'Java', 'Python']
+  const items = ['JavaScript', 'Ruby', 'C++', 'Java', 'Python', 'PHP']
 
   const handleSearch = (e) => {
     setQuery(e.target.value);

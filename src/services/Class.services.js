@@ -42,6 +42,10 @@ class ClassServices {
     putClassRequest(student_id, class_id) {
         return this.api.put(`/putClassRequest/${class_id}`, student_id)
     }
+
+    getClassByStudent(student_id) {
+        return this.apit.get(`/getClassByStudent/${student_id}`)
+    }
 }
 
 const classService = new ClassServices()

@@ -17,18 +17,7 @@ const ClassesPage = () => {
 
   useEffect(() => {
     loadClasses()
-    // loadClasses()
   }, [])
-
-  // const loadClasses = () => {
-  // 
-  //   classService
-  //     .getClasses()
-  //     .then(({ data }) => {
-  //       setClasses(data)
-  //     })
-  //     .catch(error => console.log(error))
-  // }
 
   const loadClasses = () => {
 
@@ -40,14 +29,10 @@ const ClassesPage = () => {
       .catch(error => console.log(error))
   }
 
-
   const setTypeClass = e => {
     cityQuery = e.target.value
     loadClasses()
   }
-
-  // if (languageQuery === null) loadClasses()
-  // else loadLanguage()
 
   return (
     classes

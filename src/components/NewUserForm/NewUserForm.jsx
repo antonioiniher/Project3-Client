@@ -118,6 +118,13 @@ const NewUserForm = () => {
                 <option value="TEACHER" className="optionsRol">Profesor</option>
               </Form.Select>
             </Form.Group>
+            <Row>
+              <p className="text-center avatarP">Avatar</p>
+            </Row>
+            <Form.Group className="mb-3 avatarText" controlId="avatar">
+              <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
+              <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
+            </Form.Group>
           </Col>
 
           <Col>
@@ -133,7 +140,7 @@ const NewUserForm = () => {
               <Form.Control className="signupControl" type="text" value={user.idSkype} name="idSkype" onChange={handleInputChange} />
             </Form.Group>
           </Col>
-        </Row>
+        </Row >
 
         <Form.Group className="mb-3 descriptionText" controlId="description">
           <Form.Label>Cuéntanos algo sobre ti</Form.Label>
@@ -141,10 +148,11 @@ const NewUserForm = () => {
         </Form.Group>
 
         <div className="d-grid buttonSignUp">
-          <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
+          <Button className="buttonInside" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
         </div>
-      </Form>
-    </div>
+
+      </Form >
+    </div >
   )
 }
 

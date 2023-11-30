@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap"
 import "./UserProfilePage.css"
 import Loader from "../../components/Loader/Loader"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
+import UserClassesList from "../../components/UserClassesList/UserClassesList"
 
 const UserProfilePage = () => {
 
@@ -32,6 +33,14 @@ const UserProfilePage = () => {
       <Container>
 
         <UserProfileCard {...user} key={user._id} />
+        {
+          loggedUser?.role === 'STUDENT'
+            ?
+            <UserClassesList user_id={user._id} />
+            :
+            <div>no estas apuntado a nada</div>
+        }
+
 
       </Container>
       :

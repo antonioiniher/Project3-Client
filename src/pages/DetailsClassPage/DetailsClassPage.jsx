@@ -31,7 +31,7 @@ const DetailsClassPage = () => {
     const handleClassRequest = () => {
         classService
             .putClassRequest(loggedUser._id, class_id)
-            .then(() => navigate('/'))
+            .then(() => navigate('/perfil'))
             .catch(error => console.log(error))
     }
 

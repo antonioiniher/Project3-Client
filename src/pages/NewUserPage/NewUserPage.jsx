@@ -7,7 +7,7 @@ const NewUser = () => {
     return (
 
         <Container>
-            <h1 className='text-center mb-4 titleSignUp'>Nuevo usuario</h1>
+            <h1 className='text-center mb-4 titleSignUp'>Registro</h1>
             <NewUserForm />
         </Container>
 

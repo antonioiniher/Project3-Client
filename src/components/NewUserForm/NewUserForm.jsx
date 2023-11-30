@@ -105,9 +105,10 @@ const NewUserForm = () => {
               </Col>
 
             </Row>
-
+            <Row>
+              <p className="text-center avatarP">Avatar</p>
+            </Row>
             <Form.Group className="mb-3 avatarText" controlId="avatar">
-              <Form.Label>Avatar</Form.Label>
               <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
               <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
             </Form.Group>
@@ -146,7 +147,7 @@ const NewUserForm = () => {
             </Form.Group>
 
             <div className="d-grid buttonSignUp">
-              <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
+              <Button className="buttonInside" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
             </div>
           </Form>
 

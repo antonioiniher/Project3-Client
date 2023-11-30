@@ -57,10 +57,9 @@ input::-webkit-inner-spin-button {
 
 .buttonAvatar {
     background-color: #12F7D6;
-    display: inline-block;
+    display: flex;
     padding: 12px 32px;
     justify-content: center;
-    align-items: center;
     gap: 16px;
     border-radius: 32px;
     margin: 10px;
@@ -70,6 +69,13 @@ input::-webkit-inner-spin-button {
     font-style: normal;
     font-weight: 200px;
     line-height: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.avatarP {
+    color: white;
+    margin-top: 5px;
 }
 
 .signupControl {
@@ -192,4 +198,58 @@ input::-webkit-inner-spin-button {
 
 .formButton {
     color: black;
+}
+
+.buttonSignUp {
+    margin-top: 90px;
+    padding: 16px 40px;
+    color: #12F7D6;
+    font-family: IBM Plex Mono;
+    font-size: 32px;
+    font-style: normal;
+    text-transform: capitalize;
+    border: 3px solid #12F7D6;
+    display: inline-block;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.buttonInside {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.buttonInside:focus {
+    background-color: transparent !important;
+    box-shadow: none;
+    outline: none;
+}
+
+.buttonInside:valid {
+    color: white;
+    box-shadow: none;
+    outline: none;
+}
+
+.buttonInside::placeholder {
+    color: white;
+    box-shadow: none;
+    outline: none;
+}
+
+.buttonInside:hover {
+    background-color: #1A1E23;
+    box-shadow: none;
+    outline: none;
+}
+
+.buttonInside:active {
+    background-color: #1A1E23;
+    box-shadow: none;
+    outline: none;
 }

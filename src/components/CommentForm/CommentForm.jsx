@@ -20,8 +20,12 @@ const CommentForm = () => {
 
         commentService
             .create(comment)
-            .then(() => navigate(`/perfil/${owner._id}`))
+            .then(() =>
+                navigate(`/perfil/${owner._id}`),
+                setComment({ text: "" }),
+            )
             .catch(err => console.log(err))
+
     }
 
     const handleInputChange = e => {

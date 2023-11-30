@@ -1,30 +1,38 @@
 import "./DetailsClassPage.css"
-import { Container, Col, Row } from "react-bootstrap"
+import { Container, Col, Row, Button } from "react-bootstrap"
 import classService from "../../services/Class.services"
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
 import Loader from "../../components/Loader/Loader"
+import { AuthContext } from "../../contexts/auth.context"
 
 const DetailsClassPage = () => {
 
     const { class_id } = useParams()
-
+    const { loggedUser } = useContext(AuthContext)
     const [classes, setClasses] = useState({})
 
     useEffect(() => {
         loadClassDetails()
     }, [])
 
+    const navigate = useNavigate()
 
 
     const loadClassDetails = () => {
         classService
             .getOneClass(class_id)
             .then(({ data }) => {
-                console.log("esto es data", data)
                 setClasses(data)
             })
             .catch(err => console.log(err))
+    }
+
+    const handleClassRequest = e => {
+        classService
+            .putClassRequest(loggedUser._id, class_id)
+            .then(() => navigate('/'))
+            .catch(error => console.log(error))
     }
 
     return (
@@ -50,6 +58,13 @@ const DetailsClassPage = () => {
                         </Col>
                     </Row>
                     <Row>
+                        {
+                            loggedUser?.role === 'STUDENT'
+                                ?
+                                <Button onClick={handleClassRequest}>Solicitar clase</Button>
+                                :
+                                <div>logeate</div>
+                        }
                     </Row>
                 </Container>
             </div>

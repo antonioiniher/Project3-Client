@@ -3,7 +3,7 @@ import { Button, Col, Form, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import FormError from "../FormError/FormError"
 import * as CLASS_CONSTS from './../../consts/class-consts'
-
+import "./NewClassForm.css"
 import classService from "../../services/Class.services"
 
 const NewClassForm = () => {
@@ -44,37 +44,36 @@ const NewClassForm = () => {
 
             <Form onSubmit={handleClassSubmit}>
                 <Form.Group className="mb-3" controlId="title">
-                    <Form.Label>Nombre:</Form.Label>
-                    <Form.Control type="text" value={classes.title} name="title" onChange={handleInputChange} />
+                    <Form.Label>Nombre</Form.Label>
+                    <Form.Control type="text" value={classes.title} name="title" onChange={handleInputChange} className="classControl" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="description">
-                    <Form.Label>Descripción:</Form.Label>
-                    <Form.Control type="text" value={classes.description} name="description" onChange={handleInputChange} />
+                    <Form.Label>Descripción</Form.Label>
+                    <Form.Control type="text" value={classes.description} name="description" onChange={handleInputChange} className="classControl" />
                 </Form.Group>
-
-                <Form.Group className="mb-3" controlId="languages">
-                    <Form.Label>Lenguajes:</Form.Label>
-                    <Form.Select multiple onChange={handleInputChange} name="languages">
+                <Form.Group className="mb-4 rolText" controlId="role">
+                    <Form.Label>Lenguajes </Form.Label>
+                    <Form.Select multiple onChange={handleInputChange} name="languages" className="selectLanguage">
                         {
-                            CLASS_CONSTS.LANGUAGES.map(elm => <option value={elm} key={elm}>{elm}</option>)
+                            CLASS_CONSTS.LANGUAGES.map(elm => <option className="options" value={elm} key={elm}>{elm}</option>)
                         }
                     </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="classType">
-                    <Form.Label>Tipo de clase:</Form.Label>
-                    <Form.Select onChange={handleInputChange} name="classType">
-                        <option>Selecciona una opción</option>
-                        <option value="On-site">Presencial</option>
-                        <option value="Hybrid">Híbrida</option>
-                        <option value="Remote">En remoto</option>
+                <Form.Group className="mb-3 classText" controlId="classType">
+                    <Form.Label>Tipo de clase</Form.Label>
+                    <Form.Select aria-label="Default select example" onChange={handleInputChange} name="classType" className="selectType">
+                        <option className="selectionText">Selecciona una opción</option>
+                        <option value="On-site" className="options">Presencial</option>
+                        <option value="Hybrid" className="options">Híbrida</option>
+                        <option value="Remote" className="options">En remoto</option>
                     </Form.Select>
                 </Form.Group>
 
-                <div className="d-grid">
-                    {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
-                    <Button variant="dark" type="submit">Crear clase</Button>
+                <div className="d-grid buttonCreateClass">
+                    {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
+                    <Button className="buttonInside btn-sm" type="submit">Crear clase</Button>
                 </div>
             </Form>
 

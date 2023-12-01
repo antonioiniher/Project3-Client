@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import NewClassForm from "../../components/NewClassForm/NewClassForm"
 
 const NewClassPage = () => {
@@ -6,7 +6,7 @@ const NewClassPage = () => {
     return (
 
         <Container>
-            <h1 className='text-center mb-4'>Nueva clase</h1>
+            <h1 className='text-center mb-4 titleCreateClass'>Nueva clase</h1>
             <Row >
                 <Col lg={{ span: 8, offset: 2 }}>
                     <NewClassForm />

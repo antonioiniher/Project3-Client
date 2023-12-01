@@ -25,7 +25,7 @@ const CommentForm = ({ loadComments }) => {
                 setComment({ text: "" })
                 setErrors([])
             })
-            .catch(err => setErrors(err.response?.data.errorMessages))
+            .catch(err => setErrors(err.response.data.errorMessages))
     }
 
     const handleInputChange = e => {

@@ -18,7 +18,6 @@ const UserClassesList = () => {
     classService
       .getClassByStudent(loggedUser._id)
       .then(({ data }) => {
-        console.log(data)
         setClasses(data)
       })
       .catch(err => console.log(err))

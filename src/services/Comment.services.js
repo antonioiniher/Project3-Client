@@ -20,8 +20,12 @@ class CommentService {
 
     }
 
-    create(commentData) {
-        return this.api.post("/create", commentData)
+    create(comment) {
+        return this.api.post("/create", comment)
+    }
+
+    getCommentsByTeacher(teacher_id) {
+        return this.api.get(`/${teacher_id}`)
     }
 
 

@@ -8,7 +8,6 @@ function AuthProviderWrapper(props) {
     const [loggedUser, setLoggedUser] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
 
-
     const authenticateUser = () => {
 
         const token = localStorage.getItem('authToken')
@@ -23,7 +22,6 @@ function AuthProviderWrapper(props) {
                 console.log(err)
                 setIsLoading(false)
             })
-
     }
 
     useEffect(() => {
@@ -37,7 +35,6 @@ function AuthProviderWrapper(props) {
         localStorage.removeItem('authToken')
         setLoggedUser(null)
         setIsLoading(false)
-
     }
 
     return (

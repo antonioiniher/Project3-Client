@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-
+import FormError from "../FormError/FormError"
 import * as CLASS_CONSTS from './../../consts/class-consts'
 
 import classService from "../../services/Class.services"
@@ -14,6 +14,7 @@ const NewClassForm = () => {
         languages: [],
         classType: ''
     })
+    const [errors, setErrors] = useState([])
 
     const navigate = useNavigate()
 
@@ -33,7 +34,7 @@ const NewClassForm = () => {
         classService
             .create(classes)
             .then(() => navigate('/'))
-            .catch(err => console.log(err))
+            .catch(err => setErrors(err.response.data.errorMessages))
 
     }
 
@@ -87,6 +88,7 @@ const NewClassForm = () => {
                 </Form.Group>
 
                 <div className="d-grid">
+                    {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
                     <Button variant="dark" type="submit">Crear clase</Button>
                 </div>
             </Form>

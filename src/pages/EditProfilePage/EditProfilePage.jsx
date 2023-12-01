@@ -1,5 +1,5 @@
 import EditUserForm from "../../components/EditUserForm/EditUserForm"
-import { Container, Row } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 const EditUserProfilePage = () => {
 

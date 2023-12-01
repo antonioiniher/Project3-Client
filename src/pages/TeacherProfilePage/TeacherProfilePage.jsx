@@ -30,22 +30,24 @@ const TeacherProfilePage = () => {
             .catch(error => console.log(error))
     }
 
+    if (!user) {
+        return <Loader />
+    }
+
     return (
-        user
-            ?
-            <Container>
-                <h1> Perfil de {user.username}  </h1>
-                <UserProfileCard {...user} key={user._id} />
-                {
-                    loggedUser &&
-                    <>
-                        <CommentForm />
-                        <RatingForm />
-                    </>
-                }
-            </Container>
-            :
-            <Loader />
+
+        <Container>
+            <h1> Perfil de {user.username}  </h1>
+            <UserProfileCard {...user} key={user._id} />
+            {
+                loggedUser &&
+                <>
+                    <CommentForm />
+                    <RatingForm />
+                </>
+            }
+        </Container>
+
     )
 }
 

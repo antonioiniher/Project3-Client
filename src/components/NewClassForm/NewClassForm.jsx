@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-
+import FormError from "../FormError/FormError"
 import * as CLASS_CONSTS from './../../consts/class-consts'
 
 import classService from "../../services/Class.services"
@@ -14,6 +14,7 @@ const NewClassForm = () => {
         languages: [],
         classType: ''
     })
+    const [errors, setErrors] = useState([])
 
     const navigate = useNavigate()
 
@@ -33,11 +34,12 @@ const NewClassForm = () => {
         classService
             .create(classes)
             .then(() => navigate('/'))
-            .catch(err => console.log(err))
+            .catch(err => setErrors(err.response.data.errorMessages))
 
     }
 
     return (
+
         <div className="NewClassForm">
 
             <Form onSubmit={handleClassSubmit}>
@@ -57,22 +59,6 @@ const NewClassForm = () => {
                         {
                             CLASS_CONSTS.LANGUAGES.map(elm => <option value={elm} key={elm}>{elm}</option>)
                         }
-                        {/* <option value="Java">Java</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="PHP">PHP</option>
-                        <option value="C++">C++</option>
-                        <option value="C#">C#</option>
-                        <option value="Python">Python</option>
-                        <option value="SQL">SQL</option>
-                        <option value="React">React JS</option>
-                        <option value="Javascript">Javascript</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Ruby">Ruby</option> */}
                     </Form.Select>
                 </Form.Group>
 
@@ -87,6 +73,7 @@ const NewClassForm = () => {
                 </Form.Group>
 
                 <div className="d-grid">
+                    {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
                     <Button variant="dark" type="submit">Crear clase</Button>
                 </div>
             </Form>

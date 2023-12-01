@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Form, Button } from "react-bootstrap"
 import commentService from "../../services/Comment.services"
 import { useNavigate, useParams } from "react-router-dom"
+import FormError from "../FormError/FormError"
 
 const CommentForm = () => {
 
@@ -11,6 +12,8 @@ const CommentForm = () => {
         teacher: teacher,
         text: ""
     })
+
+    const [errors, setErrors] = useState([])
 
     const navigate = useNavigate()
 
@@ -24,8 +27,7 @@ const CommentForm = () => {
                 navigate(`/perfil/${owner._id}`),
                 setComment({ text: "" }),
             )
-            .catch(err => console.log(err))
-
+            .catch(err => setErrors(err.response.data.errorMessages))
     }
 
     const handleInputChange = e => {
@@ -35,6 +37,7 @@ const CommentForm = () => {
 
     return (
         <div>
+
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="text">
                     <Form.Label>Deja tu Comentario</Form.Label>
@@ -47,6 +50,7 @@ const CommentForm = () => {
                         name="text"
                     />
                 </Form.Group>
+                {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
                 <Button variant="primary" type="submit">
                     Comentar
                 </Button>

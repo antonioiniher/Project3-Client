@@ -23,6 +23,7 @@ const NewUserForm = () => {
   })
 
   const [isLoading, setIsLoading] = useState(false)
+  const [errors, setErrors] = useState([])
 
   const handleInputChange = e => {
     const { value, name } = e.currentTarget
@@ -38,7 +39,7 @@ const NewUserForm = () => {
     authService
       .signup(user)
       .then(() => navigate('/inicio-sesion'))
-      .catch(err => console.log(err))
+      .catch(err => setErrors(err.response.data.errorMessages))
   }
 
   const handleFileUpload = e => {
@@ -148,6 +149,7 @@ const NewUserForm = () => {
         </Form.Group>
 
         <div className="d-grid buttonSignUp">
+          {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
           <Button className="buttonInside" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
         </div>
 

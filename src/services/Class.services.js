@@ -43,8 +43,8 @@ class ClassServices {
         return this.api.put(`/putClassRequest/${class_id}`, student_id)
     }
 
-    getClassByStudent(student_id) {
-        return this.apit.get(`/getClassByStudent/${student_id}`)
+    getClassByStudent(user_id) {
+        return this.api.get(`/getClassByStudent/${user_id}`)
     }
 }
 

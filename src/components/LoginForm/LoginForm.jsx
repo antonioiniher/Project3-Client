@@ -1,10 +1,9 @@
 import { useContext, useState } from "react"
 import { Form, Button, Row, Col } from "react-bootstrap"
-import { Link } from "react-router-dom"
 import authService from "../../services/Auth.services"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
-
+import FormError from "../FormError/FormError"
 import icon from '../../assets/icon-send.svg'
 
 
@@ -14,6 +13,9 @@ const LoginForm = () => {
         email: '',
         password: ''
     })
+
+    const [errors, setErrors] = useState([])
+
 
     const navigate = useNavigate()
 
@@ -39,7 +41,7 @@ const LoginForm = () => {
                 authenticateUser()
                 redirectHome()
             })
-            .catch(err => console.log(err))
+            .catch(err => setErrors(err.response.data.errorMessages))
     }
 
     return (
@@ -58,6 +60,7 @@ const LoginForm = () => {
                     </Form.Group>
                 </div>
                 <div className="buttonLogin">
+                    {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
                     <Button className="formButton btn mt-3" type="submit"> Entrar <img src={icon} alt="loginButton" /></Button>
                 </div>
 

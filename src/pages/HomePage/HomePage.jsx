@@ -3,9 +3,6 @@ import { useState } from "react"
 import { Row, Col, Container } from "react-bootstrap"
 import SearchBar from "../../components/SearchBar/SearchBar"
 import SearchResultsClassesList from "../../components/SearchResultsClassesList/SearchResultsClassesList"
-
-
-
 import vector1 from "../../assets/Vector.svg"
 import vector2 from "../../assets/Vector-1.svg"
 import arrow from "../../assets/arrow.svg"
@@ -21,6 +18,8 @@ import mouse from "../../assets/icon-mouse.svg"
 import book from "../../assets/icon-book.svg"
 import thumbUp from "../../assets/icon-thumbs-down.svg"
 import thumbDown from "../../assets/icon-thumbs-up.svg"
+import homeImage1 from "../../assets/homeImage1.jpg"
+import homeImage2 from "../../assets/homeImage2.jpg"
 
 
 const HomePage = () => {
@@ -34,8 +33,15 @@ const HomePage = () => {
                     <Col md={{ span: 6 }}>
                         <h1 className="teacherTextHomePage">Encuentra a los mejores profesores en programación</h1>
                     </Col>
-                    <Col md={{ span: 6 }} className="imgTeacherHomePage">
-                        {/* <img src={teacher} alt="teacherHomePage" style={{ height: 250 }} className="imgTeacherHomePage" /> */}
+                    <Col md={{ span: 3 }} className="imgTeacherHomePage">
+                        <div className="homeImage1">
+                            <img src={homeImage1} alt="homeImage1" />
+                        </div>
+                    </Col>
+                    <Col md={{ span: 3 }} className="imgTeacherHomePage">
+                        <div className="homeImage2">
+                            <img src={homeImage2} alt="homeImage2" />
+                        </div>
                     </Col>
                 </Row>
                 <Row>

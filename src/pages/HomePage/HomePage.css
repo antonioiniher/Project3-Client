@@ -288,3 +288,13 @@ body {
     position: absolute;
     max-width: 100%;
 }
+
+.homeImage1 {
+    width: 50px !important;
+    height: auto !important;
+}
+
+.homeImage2 {
+    width: 50px !important;
+    height: auto !important;
+}

@@ -4,7 +4,7 @@ import './NewUserForm.css'
 import { useNavigate } from "react-router-dom"
 import authService from "../../services/Auth.services"
 import uploadServices from "../../services/Upload.services"
-
+import FormError from "../FormError/FormError"
 
 const NewUserForm = () => {
 
@@ -24,6 +24,7 @@ const NewUserForm = () => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
+
 
   const handleInputChange = e => {
     const { value, name } = e.currentTarget
@@ -102,16 +103,15 @@ const NewUserForm = () => {
 
         </Row>
 
-        <Form.Group className="mb-3 avatarText" controlId="avatar">
+        <Form.Group className="mb-3" controlId="avatar">
           <Form.Label>Avatar</Form.Label>
-          <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
-          <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
+          <Form.Control className="buttonAvatar" type="file" onChange={handleFileUpload} />
         </Form.Group>
 
 
         <Row>
           <Col>
-            <Form.Group className="mb-3 rolText" controlId="role">
+            <Form.Group className="mb-4 rolText" controlId="role">
               <Form.Label>Rol</Form.Label>
               <Form.Select aria-label="Default select example" onChange={handleInputChange} name="role" className="selectRol">
                 <option className="selectionText">Selección</option>
@@ -119,13 +119,7 @@ const NewUserForm = () => {
                 <option value="TEACHER" className="optionsRol">Profesor</option>
               </Form.Select>
             </Form.Group>
-            <Row>
-              <p className="text-center avatarP">Avatar</p>
-            </Row>
-            <Form.Group className="mb-3 avatarText" controlId="avatar">
-              <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
-              <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
-            </Form.Group>
+
           </Col>
 
           <Col>
@@ -147,13 +141,15 @@ const NewUserForm = () => {
           <Form.Label>Cuéntanos algo sobre ti</Form.Label>
           <Form.Control className="signupControl" type="textarea" value={user.description} name="description" onChange={handleInputChange} />
         </Form.Group>
-
+        {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
         <div className="d-grid buttonSignUp">
-          {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
           <Button className="buttonInside" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
         </div>
 
       </Form >
+
+
+
     </div >
   )
 }

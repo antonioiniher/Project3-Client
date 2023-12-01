@@ -8,11 +8,9 @@ const ClassesList = ({ classes }) => {
         classes
             ?
             <Row>
-                <Col md={3}>
-                    {
-                        classes.map(e => <ClassCard {...e} key={e._id} />)
-                    }
-                </Col>
+                {
+                    classes.map(e => <ClassCard {...e} key={e._id} />)
+                }
             </Row>
             :
             <Loader />

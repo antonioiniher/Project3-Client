@@ -26,6 +26,7 @@ const CommentForm = () => {
             .then(() =>
                 navigate(`/perfil/${owner._id}`),
                 setComment({ text: "" }),
+                setErrors([])
             )
             .catch(err => setErrors(err.response.data.errorMessages))
     }

@@ -60,10 +60,9 @@ const LoginForm = () => {
                     </Form.Group>
                 </div>
                 <div className="buttonLogin">
-                    {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
+                    {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
                     <Button className="formButton btn mt-3" type="submit"> Entrar <img src={icon} alt="loginButton" /></Button>
                 </div>
-
             </Form>
         </div >
     )

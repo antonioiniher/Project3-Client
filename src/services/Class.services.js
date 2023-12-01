@@ -40,11 +40,15 @@ class ClassServices {
     }
 
     putClassRequest(student_id, class_id) {
-        return this.api.put(`/putClassRequest/${class_id}`, student_id)
+        return this.api.put(`/putClassRequest/${class_id}`, { student_id })
     }
 
     getClassByStudent(user_id) {
         return this.api.get(`/getClassByStudent/${user_id}`)
+    }
+
+    getClassByTeacher() {
+        return this.api.get(`/getClassByTeacher`)
     }
 }
 

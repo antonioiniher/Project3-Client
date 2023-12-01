@@ -4,7 +4,7 @@ import classService from "../../services/Class.services"
 import { AuthContext } from "../../contexts/auth.context"
 
 
-const UserClassesList = () => {
+const StudentClassesList = () => {
 
   const [classes, setClasses] = useState([])
   const { loggedUser } = useContext(AuthContext)
@@ -18,7 +18,6 @@ const UserClassesList = () => {
     classService
       .getClassByStudent(loggedUser._id)
       .then(({ data }) => {
-        console.log(data)
         setClasses(data)
       })
       .catch(err => console.log(err))
@@ -30,7 +29,7 @@ const UserClassesList = () => {
       {
         classes
         &&
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Nombre de la clase</th>
@@ -45,7 +44,14 @@ const UserClassesList = () => {
                   <tr>
                     <td>{e.title}</td>
                     <td>{e.description}</td>
-                    <td>{e.booking?.status}</td>
+                    {
+                      e.booking.map((elm, i) => {
+                        console.log(elm.students, loggedUser._id, elm.status)
+                        if (elm.students === loggedUser._id) {
+                          return (<td>{elm.status}</td>)
+                        }
+                      })
+                    }
                   </tr>
                 )
               })
@@ -57,4 +63,4 @@ const UserClassesList = () => {
   )
 }
 
-export default UserClassesList
+export default StudentClassesList

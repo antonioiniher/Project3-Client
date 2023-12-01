@@ -5,7 +5,8 @@ import { Container } from "react-bootstrap"
 import "./UserProfilePage.css"
 import Loader from "../../components/Loader/Loader"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
-import UserClassesList from "../../components/UserClassesList/UserClassesList"
+import StudentClassesList from "../../components/StudentClassesList/StudentClassesList"
+import TeacherClassesList from "../../components/TeacherClassesList/TeacherClassesList"
 
 const UserProfilePage = () => {
 
@@ -36,9 +37,13 @@ const UserProfilePage = () => {
         {
           loggedUser?.role === 'STUDENT'
             ?
-            <UserClassesList />
+            <StudentClassesList />
             :
-            <h3>Todavía no estás apuntado a ninguna clase. Anímate!!!</h3>
+            loggedUser?.role === 'TEACHER'
+              ?
+              <TeacherClassesList />
+              :
+              <></>
         }
 
       </Container>

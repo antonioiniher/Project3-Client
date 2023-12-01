@@ -8,7 +8,7 @@ body {
     padding-top: 50px;
     height: 100vh;
     margin-top: 25px;
-    margin-bottom: 1800px;
+    margin-bottom: 2000px;
     max-width: 100%;
 }
 
@@ -29,6 +29,10 @@ body {
     padding-bottom: 100px;
     display: flex;
 
+}
+
+.rowHomePage {
+    margin-bottom: 60px;
 }
 
 .htmlLanguage {
@@ -122,6 +126,7 @@ body {
     font-size: 70px;
     color: #12F7D6;
     max-width: 100%;
+    padding-top: 80px;
 }
 
 .imgTeacherHomePage {
@@ -290,11 +295,15 @@ body {
 }
 
 .homeImage1 {
-    width: 50px !important;
-    height: auto !important;
+    width: 220px;
+    height: 400px;
+    border-radius: 100px;
+    border: 4px solid black;
 }
 
 .homeImage2 {
-    width: 50px !important;
-    height: auto !important;
+    width: 220px;
+    height: 400px;
+    border-radius: 100px;
+    border: 4px solid black;
 }

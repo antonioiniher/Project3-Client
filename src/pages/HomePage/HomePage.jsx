@@ -18,8 +18,8 @@ import mouse from "../../assets/icon-mouse.svg"
 import book from "../../assets/icon-book.svg"
 import thumbUp from "../../assets/icon-thumbs-down.svg"
 import thumbDown from "../../assets/icon-thumbs-up.svg"
-import homeImage1 from "../../assets/homeImage1.jpg"
-import homeImage2 from "../../assets/homeImage2.jpg"
+import homeImage1 from "../../assets/homeImage1.png"
+import homeImage2 from "../../assets/homeImage2.png"
 
 
 const HomePage = () => {
@@ -34,14 +34,10 @@ const HomePage = () => {
                         <h1 className="teacherTextHomePage">Encuentra a los mejores profesores en programación</h1>
                     </Col>
                     <Col md={{ span: 3 }} className="imgTeacherHomePage">
-                        <div className="homeImage1">
-                            <img src={homeImage1} alt="homeImage1" />
-                        </div>
+                        <img className="homeImage1" src={homeImage1} alt="homeImage1" />
                     </Col>
                     <Col md={{ span: 3 }} className="imgTeacherHomePage">
-                        <div className="homeImage2">
-                            <img src={homeImage2} alt="homeImage2" />
-                        </div>
+                        <img className="homeImage2" src={homeImage2} alt="homeImage2" />
                     </Col>
                 </Row>
                 <Row>

@@ -1,21 +1,18 @@
 import { useState } from "react"
 import { Form, Button } from "react-bootstrap"
 import commentService from "../../services/Comment.services"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import FormError from "../FormError/FormError"
 
-const CommentForm = () => {
+const CommentForm = ({ loadComments }) => {
 
-    const { teacher } = useParams()
-
+    const { owner_id } = useParams()
     const [comment, setComment] = useState({
-        teacher: teacher,
+        teacher: owner_id,
         text: ""
     })
 
     const [errors, setErrors] = useState([])
-
-    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
 
@@ -23,16 +20,17 @@ const CommentForm = () => {
 
         commentService
             .create(comment)
-            .then(() =>
-                navigate(`/perfil/${owner._id}`),
-                setComment({ text: "" }),
-            )
+            .then(() => {
+                loadComments()
+                setComment({ text: "" })
+                setErrors([])
+            })
             .catch(err => setErrors(err.response.data.errorMessages))
     }
 
     const handleInputChange = e => {
         const { value, name } = e.currentTarget
-        setComment({ ...comment, [name]: value })
+        setComment({ teacher: owner_id, [name]: value })
     }
 
     return (
@@ -50,7 +48,7 @@ const CommentForm = () => {
                         name="text"
                     />
                 </Form.Group>
-                {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
+                {errors?.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
                 <Button variant="primary" type="submit">
                     Comentar
                 </Button>

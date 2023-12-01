@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container, ButtonGroup, } from "react-bootstrap"
+import { Container, ButtonGroup, Form } from "react-bootstrap"
 import ClassesList from "../../components/ClassesList/ClassesList"
 import classService from "../../services/Class.services"
 import Loader from "../../components/Loader/Loader"
@@ -42,14 +42,15 @@ const ClassesPage = () => {
       <div className="classContainer">
         <Container>
           <h1>Listado de clases</h1>
-          <label style={{ color: 'white' }}>
-            Tipo de clase
-            <select className="typeClass" name="typeClass" onChange={setTypeClass}>
-              <option value="On-site">Presencial</option>
-              <option value="Hybrid">Semipresencial</option>
-              <option value="Remote">Online</option>
-            </select>
-          </label>
+          <Form.Group className="mb-3 classText" controlId="classType">
+            <Form.Label>Tipo de clase</Form.Label>
+            <Form.Select aria-label="Default select example" onChange={setTypeClass} name="classType" className="selectType">
+              <option className="selectionText">Selecciona una opción</option>
+              <option value="On-site" className="options">Presencial</option>
+              <option value="Hybrid" className="options">Híbrida</option>
+              <option value="Remote" className="options">En remoto</option>
+            </Form.Select>
+          </Form.Group>
           <ClassesList classes={classes} />
         </Container>
       </div>

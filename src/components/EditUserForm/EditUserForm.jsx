@@ -11,6 +11,7 @@ const EditUserProfile = () => {
   const { loggedUser } = useContext(AuthContext)
   const [user, setUser] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const [errors, setErrors] = useState([])
 
   const navigate = useNavigate()
 
@@ -63,7 +64,7 @@ const EditUserProfile = () => {
     userService
       .editUserById(user._id, user)
       .then(() => navigate('/perfil'))
-      .catch(err => console.log(err))
+      .catch(err => setErrors(err.response.data.errorMessages))
   }
 
   return (
@@ -143,6 +144,8 @@ const EditUserProfile = () => {
           </Row>
 
           <div className="d-grid">
+            {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
+
             <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Editar usuario'}</Button>
           </div>
         </Form>

@@ -1,0 +1,47 @@
+.card {
+    margin-bottom: 50px;
+    border-radius: 20px;
+    font-family: IBM Plex Mono;
+    background-color: #292F36;
+    border-color: #12F7D6;
+}
+
+.cardHeader {
+    background-color: transparent;
+    color: #12F7D6;
+    font-size: 25px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.moreDetailsLink {
+    font-family: IBM Plex Mono;
+    color: #98FAEC;
+    text-decoration: none;
+    padding-bottom: 30px;
+}
+
+.moreDetailsLink:hover {
+    color: #E7A020;
+}
+
+.ownerClassLink {
+    font-family: IBM Plex Mono;
+    color: #98FAEC;
+    text-decoration: none;
+}
+
+.ownerClassLink:hover {
+    color: #E7A020;
+}
+
+.eachCard {
+    display: block;
+    flex-wrap: wrap;
+}
+
+.descriptionCard {
+    margin-top: 5px;
+    padding-bottom: 10px;
+}

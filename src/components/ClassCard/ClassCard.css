@@ -23,7 +23,7 @@
 }
 
 .moreDetailsLink:hover {
-    color: #E7A020;
+    color: #25655c;
 }
 
 .ownerClassLink {
@@ -33,7 +33,7 @@
 }
 
 .ownerClassLink:hover {
-    color: #E7A020;
+    color: #25655c;
 }
 
 .eachCard {
@@ -44,4 +44,8 @@
 .descriptionCard {
     margin-top: 5px;
     padding-bottom: 10px;
+}
+
+.custom-card-text {
+    font-size: 13px;
 }

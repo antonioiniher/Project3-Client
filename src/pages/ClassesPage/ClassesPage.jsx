@@ -4,6 +4,8 @@ import ClassesList from "../../components/ClassesList/ClassesList"
 import classService from "../../services/Class.services"
 import Loader from "../../components/Loader/Loader"
 import { useSearchParams } from "react-router-dom"
+import "./ClassesPage.css"
+
 
 const ClassesPage = () => {
 
@@ -22,7 +24,7 @@ const ClassesPage = () => {
   const loadClasses = () => {
 
     classService
-      .getClassbySearch(languageQuery, cityQuery)
+      .getClassbySearch(languageQuery, classType)
       .then(({ data }) => {
         setClasses(data)
       })
@@ -30,16 +32,18 @@ const ClassesPage = () => {
   }
 
   const setTypeClass = e => {
-    cityQuery = e.target.value
+    classType = e.target.value
     loadClasses()
   }
+
+  // dar una vuelta, con jorge intente meter cityQuery
 
   return (
     classes
       ?
       <div className="classContainer">
         <Container>
-          <h1>Listado de clases</h1>
+          <h1 className="listClasses">Listado de clases</h1>
           <Form.Group className="mb-3 classText" controlId="classType">
             <Form.Label>Tipo de clase</Form.Label>
             <Form.Select aria-label="Default select example" onChange={setTypeClass} name="classType" className="selectType">

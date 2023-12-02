@@ -17,9 +17,11 @@ class ClassServices {
 
             return config
         })
-
     }
 
+    searchClassAndAccept(classes_id, student_id) {
+        return this.api.put(`/searchClassAndAccept`, { classes_id, student_id })
+    }
     create(classData) {
         return this.api.post("/create", classData)
     }
@@ -35,17 +37,23 @@ class ClassServices {
         })
     }
 
-    getOneClass(class_id) {
-        return this.api.get(`/${class_id}`)
-    }
-
     putClassRequest(student_id, class_id) {
-        return this.api.put(`/putClassRequest/${class_id}`, student_id)
+        return this.api.put(`/putClassRequest/${class_id}`, { student_id })
     }
 
     getClassByStudent(user_id) {
         return this.api.get(`/getClassByStudent/${user_id}`)
     }
+
+
+    getClassByTeacher() {
+        return this.api.get(`/getClassByTeacher`)
+    }
+
+    getOneClass(class_id) {
+        return this.api.get(`/${class_id}`)
+    }
+
 }
 
 const classService = new ClassServices()

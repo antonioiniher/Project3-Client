@@ -11,7 +11,7 @@ import { useContext } from "react"
 import { AuthContext } from "../../contexts/auth.context"
 import CommentCard from "../../components/CommentCard/CommentCard"
 import commentService from "../../services/Comment.services"
-
+import "./TeacherProfilePage.css"
 
 const TeacherProfilePage = () => {
 
@@ -52,7 +52,7 @@ const TeacherProfilePage = () => {
     return (
 
         <Container>
-            <h1> Perfil de {user.username}  </h1>
+            <h1 className="profileTeacher"> Perfil de {user.username}  </h1>
             <UserProfileCard {...user} key={user._id} />
             <Row>
                 <CommentCard commentList={commentList} />

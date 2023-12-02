@@ -1,0 +1,32 @@
+/* .allNewsPage {
+    background-image: ;
+} */
+.allNewsPage {
+    padding: 25px;
+    padding-bottom: 40px;
+}
+
+.eachNew {
+    padding: 20px;
+    color: #12F7D6;
+    border: solid;
+    border-radius: 20px;
+    font-family: 'IBM Plex Mono', monospace
+}
+
+.linkNews {
+    text-decoration: none;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    color: #12F7D6;
+}
+
+.linkNews:hover {
+    text-decoration: none;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #23d295;
+}
+
+.sourceName {
+    padding-top: 10px;
+}

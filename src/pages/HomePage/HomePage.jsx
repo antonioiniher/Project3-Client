@@ -41,7 +41,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={{ span: 3, offset: 4 }} className="searchBarHomePage">
+                    <Col md={{ span: 4, offset: 4 }} className="text-center mt-5 mb-5 searchBarHomePage">
                         <SearchBar setResults={setResults} />
                         <SearchResultsClassesList to={'/clases'} results={results} />
                     </Col>

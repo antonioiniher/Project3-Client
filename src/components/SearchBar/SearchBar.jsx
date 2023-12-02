@@ -23,12 +23,10 @@ const SearchBar = ({ setResults }) => {
 
   return (
     <Form>
-      <Row>
-        <Form.Group className="mb-3 searchBar" controlId="searcher" style={{ marginLeft: "50px", padding: "30px" }}>
-          <Form.Control type="text" placeholder="Busca una clase" value={query} onChange={handleSearch} />
-        </Form.Group>
-      </Row>
-    </Form >
+      <Form.Group className="searchBar" controlId="searcher">
+        <Form.Control className="searchForm" type="text" placeholder="Busca una clase" value={query} onChange={handleSearch} />
+      </Form.Group>
+    </Form>
   )
 
 }

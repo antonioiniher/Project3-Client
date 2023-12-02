@@ -38,7 +38,7 @@ const UserProfilePage = () => {
             ?
             <UserClassesList />
             :
-            <h3>Todavía no estás apuntado a ninguna clase. Anímate!!!</h3>
+            <h3>Todavía no estás apuntado a ninguna clase. Anímate!</h3>
         }
 
       </Container>

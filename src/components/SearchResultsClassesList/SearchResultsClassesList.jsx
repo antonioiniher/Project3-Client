@@ -1,3 +1,4 @@
+import './SearchResultsClassesList.css'
 import { Link } from "react-router-dom"
 
 const SearchResultsClassesList = ({ results }) => {
@@ -6,7 +7,13 @@ const SearchResultsClassesList = ({ results }) => {
         <div>
             {
                 results.map((e, i) => {
-                    return <Link to={`/clases?language=${e}`}><div key={i}>{e}</div></Link>
+                    return (
+                        <>
+                            <div className="SearchResultsClassesList">
+                                <Link className='searchResultsLink' to={`/clases?language=${e}`}><div key={i}>{e}</div></Link>
+                            </div>
+                        </>
+                    )
                 })
             }
         </div>

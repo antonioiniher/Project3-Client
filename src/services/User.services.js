@@ -32,6 +32,10 @@ class UserService {
         return this.api.post(`/rating/${owner_id}`, { rating })
     }
 
+    deleteUserById(user_id) {
+        return this.api.delete(`/delete/${user_id}`)
+    }
+
 
 }
 

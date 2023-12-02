@@ -15,7 +15,6 @@ import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
 
 import PrivateRoute from './PrivateRoute'
 import TeacherPrivateRoute from './TeacherPrivateRoute'
-import OwnerPrivateRoute from './OwnerPrivateRoute'
 
 const AppRoutes = () => {
 

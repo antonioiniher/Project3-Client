@@ -5,7 +5,6 @@ import iconPhone from "../../assets/icon-phone.svg"
 import iconRole from "../../assets/icon-tool.svg"
 import iconDiscord from "../../assets/discord.svg"
 import iconUser from "../../assets/icon-user2.svg"
-import { Container, Col, Row } from "react-bootstrap"
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
@@ -46,21 +45,15 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                     <h5 className="mb-4"><img src={iconDiscord} className="iconDiscord" />   {idSkype} </h5>
                     <h5 className="mb-5"><img src={iconAdress} className="iconAdress" /> {address.street}, {address.city}, {address.country} </h5>
                     {
-                        loggedUser?._id === _id &&
+                        (loggedUser?.role === 'ADMIN' || loggedUser?._id === _id) &&
                         <>
                             < Link to={"/perfil/editar"} className="btn btn-warning mb-4">
                                 Editar
                             </Link>
-                            <Button onClick={() => deleteUser()} className="btn-danger mb-4">
+                            <Button type="submit" onClick={() => deleteUser()} className="btn-danger mb-4">
                                 Eliminar
                             </Button>
                         </>
-                    }
-                    {
-                        loggedUser.role === 'ADMIN' &&
-                        <Button onClick={() => deleteUser()} className="btn-danger mb-4">
-                            Eliminar
-                        </Button>
                     }
                 </Col>
             </Row>

@@ -18,7 +18,6 @@ const TeacherClassesList = () => {
       .getClassByTeacher()
       .then(({ data }) => {
         setClass(data)
-        console.log('hola')
       })
       .catch(error => console.log(error))
   }

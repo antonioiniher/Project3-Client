@@ -112,16 +112,6 @@ const EditUserProfile = () => {
           </Form.Group>
 
           <Row>
-            <Col>
-              <Form.Group className="mb-3" controlId="role">
-                <Form.Label>Rol</Form.Label>
-                <Form.Select aria-label="Default select example" value={user.rol} onChange={handleInputChange} name="role">
-                  <option>Selección</option>
-                  <option value="STUDENT">Estudiante</option>
-                  <option value="TEACHER">Profesor</option>
-                </Form.Select>
-              </Form.Group>
-            </Col>
 
             <Col>
               <Form.Group className="mb-3" controlId="phoneNumber">
@@ -141,6 +131,7 @@ const EditUserProfile = () => {
               <Form.Label>Cuéntanos algo sobre ti</Form.Label>
               <Form.Control type="textarea" value={user.description} name="description" onChange={handleInputChange} />
             </Form.Group>
+
           </Row>
 
           <div className="d-grid">

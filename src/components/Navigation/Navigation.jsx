@@ -83,6 +83,10 @@ const Navigation = () => {
             <Link to={"/clases"}>
               <span className='homeTextNav'> Clases </span>
             </Link>
+            {
+              (loggedUser?.role === 'TEACHER' || loggedUser?.role === 'ADMIN') &&
+              <Link to={"/clase/crear"}><span className='homeTextNav'>Crear clase</span></Link>
+            }
           </Navbar.Brand>
         </Container>
       </Navbar>

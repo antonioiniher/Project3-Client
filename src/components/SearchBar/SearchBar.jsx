@@ -1,7 +1,7 @@
 
 import { Form, Row } from "react-bootstrap"
 import { useState } from "react";
-
+import "./SearchBar.css"
 
 
 
@@ -22,9 +22,9 @@ const SearchBar = ({ setResults }) => {
   }
 
   return (
-    <Form>
+    <Form autocomplete="off">
       <Form.Group className="searchBar" controlId="searcher">
-        <Form.Control className="searchForm" type="text" placeholder="Busca una clase" value={query} onChange={handleSearch} />
+        <Form.Control className="searchForm" type="text" placeholder="Busca una clase..." value={query} onChange={handleSearch} />
       </Form.Group>
     </Form>
   )

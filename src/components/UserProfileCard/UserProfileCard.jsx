@@ -5,7 +5,6 @@ import iconPhone from "../../assets/icon-phone.svg"
 import iconRole from "../../assets/icon-tool.svg"
 import iconDiscord from "../../assets/discord.svg"
 import iconUser from "../../assets/icon-user2.svg"
-import { Container, Col, Row } from "react-bootstrap"
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
@@ -32,10 +31,9 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
 
     return (
         <Container>
-            <img src={iconUser} alt="iconUser" className="iconUser" />
             <Row className="contentUser">
                 <Col className="contentUserImg" >
-                    <img src={avatar === "" ? userIcon : avatar} alt="imageProfile" style={{ height: 350 }} />
+                    <img src={avatar === "" ? userIcon : avatar} alt="imageProfile" className="imageProfile" />
                 </Col>
                 <Col className="colInfo">
                     <h1 className="nameProfile"> {username}</h1>
@@ -48,17 +46,17 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                     {
                         loggedUser?._id === _id &&
                         <>
-                            < Link to={"/perfil/editar"} className="btn btn-warning mb-4">
+                            < Link to={"/perfil/editar"} className="editButton">
                                 Editar
                             </Link>
-                            <Button onClick={() => deleteUser()} className="btn-danger mb-4">
+                            <Button onClick={() => deleteUser()} className="mb-4">
                                 Eliminar
                             </Button>
                         </>
                     }
                     {
                         loggedUser.role === 'ADMIN' &&
-                        <Button onClick={() => deleteUser()} className="btn-danger mb-4">
+                        <Button onClick={() => deleteUser()} className="mb-4">
                             Eliminar
                         </Button>
                     }

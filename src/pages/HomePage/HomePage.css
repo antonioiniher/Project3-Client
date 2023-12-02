@@ -140,11 +140,14 @@ body {
     max-width: 100%;
 }
 
-.searchBarHomePage {
-    padding: 15px;
-    padding-top: 30px;
-    max-width: 100%;
+
+
+.form-control {
+    background-color: transparent;
+    color: #12F7D6;
 }
+
+
 
 .demandHomePage {
     text-align: center;

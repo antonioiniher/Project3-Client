@@ -22,18 +22,21 @@ const TeacherClassesList = () => {
       .catch(error => console.log(error))
   }
 
-  const setStatusToAccept = (classes_id, student_id) => {
+  const setStatus = (event, classes_id, booking_id) => {
+
+    const status = event.target.value
+
+    console.log(status)
 
     classService
-      .searchClassAndAccept(classes_id, student_id)
-      .then(() => navigate('/perfil'))
+      .searchClassAndAccept(classes_id, booking_id, status)
+      .then(() => {
+        loadClass()
+      })
       .catch(error => console.log(error))
   }
 
-  const setStatusToDecline = e => {
 
-
-  }
 
   return (
     classes
@@ -64,8 +67,8 @@ const TeacherClassesList = () => {
                             elm.status === 'Pending'
                               ?
                               <>
-                                <Button variant="dark" onClick={() => setStatusToAccept(classes._id, elm.students._id)}>Aceptar</Button>
-                                <Button variant="warning" onClick={setStatusToDecline}>Cancelar</Button>
+                                <Button variant="dark" value='Accepted' onClick={(event) => setStatus(event, classes._id, elm._id)}>Aceptar</Button>
+                                <Button variant="warning" value='Cancelled' onClick={(event) => setStatus(event, classes._id, elm._id)}>Cancelar</Button>
                               </>
 
                               :

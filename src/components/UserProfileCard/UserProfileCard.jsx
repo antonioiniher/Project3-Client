@@ -4,7 +4,11 @@ import iconEmail from "../../assets/icon-at-sign.svg"
 import iconPhone from "../../assets/icon-phone.svg"
 import iconRole from "../../assets/icon-tool.svg"
 import iconDiscord from "../../assets/discord.svg"
-import iconUser from "../../assets/icon-user2.svg"
+import userIcon from "../../assets/icon-user2.svg"
+import vector1 from "../../assets/Vector.svg"
+import vector2 from "../../assets/Vector-1.svg"
+import arrow from "../../assets/arrow.svg"
+
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
@@ -45,18 +49,24 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                     <h5 className="mb-5"><img src={iconAdress} className="iconAdress" /> {address.street}, {address.city}, {address.country} </h5>
                     {
                         (loggedUser?.role === 'ADMIN' || loggedUser?._id === _id) &&
-                        <>
-                            < Link to={"/perfil/editar"} className="editButton">
-                                Editar
-                            </Link>
-                            <Button type="submit" onClick={() => deleteUser()} className="btn-danger mb-4">
-                                Eliminar
-                            </Button>
-                        </>
+
+                        <Row>
+                            <Col>
+                                < Link to={"/perfil/editar"} className="editButton">
+                                    Editar
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Button type="submit" onClick={() => deleteUser()} className="deleteButton">
+                                    Eliminar
+                                </Button>
+                            </Col>
+
+                        </Row>
+
                     }
                 </Col >
             </Row >
-
         </Container >
     )
 }

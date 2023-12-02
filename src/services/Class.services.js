@@ -19,9 +19,10 @@ class ClassServices {
         })
     }
 
-    searchClassAndAccept(classes_id, student_id) {
-        return this.api.put(`/searchClassAndAccept`, { classes_id, student_id })
+    searchClassAndAccept(classes_id, booking_id, status) {
+        return this.api.put(`/searchClassAndAccept`, { classes_id, booking_id, status })
     }
+
     create(classData) {
         return this.api.post("/create", classData)
     }

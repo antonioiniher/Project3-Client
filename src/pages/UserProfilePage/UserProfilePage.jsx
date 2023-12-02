@@ -7,6 +7,9 @@ import Loader from "../../components/Loader/Loader"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
 import StudentClassesList from "../../components/StudentClassesList/StudentClassesList"
 import TeacherClassesList from "../../components/TeacherClassesList/TeacherClassesList"
+import iconEdit from "../../assets/icon-edit.svg"
+import iconThrash from "../../assets/icon-trash-2.svg"
+
 
 const UserProfilePage = () => {
 
@@ -31,7 +34,10 @@ const UserProfilePage = () => {
 
     user
       ?
+
       <Container>
+        <img src={iconEdit} alt="iconEdit" className="iconEdit" />
+        <img src={iconThrash} alt="iconTrash" className="iconTrash" />
 
         <UserProfileCard {...user} key={user._id} />
         {

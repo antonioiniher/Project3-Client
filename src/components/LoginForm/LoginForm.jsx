@@ -46,7 +46,7 @@ const LoginForm = () => {
 
     return (
         <div className="loginForm">
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} autocomplete="off">
                 <div className="emailRow">
                     <Form.Group className="mb-3 emailText" controlId="email">
                         <Form.Label >Email</Form.Label>

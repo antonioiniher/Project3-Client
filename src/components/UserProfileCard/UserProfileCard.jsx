@@ -31,10 +31,9 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
 
     return (
         <Container>
-            <img src={iconUser} alt="iconUser" className="iconUser" />
             <Row className="contentUser">
                 <Col className="contentUserImg" >
-                    <img src={avatar === "" ? userIcon : avatar} alt="imageProfile" style={{ height: 350 }} />
+                    <img src={avatar === "" ? userIcon : avatar} alt="imageProfile" className="imageProfile" />
                 </Col>
                 <Col className="colInfo">
                     <h1 className="nameProfile"> {username}</h1>
@@ -47,7 +46,7 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                     {
                         (loggedUser?.role === 'ADMIN' || loggedUser?._id === _id) &&
                         <>
-                            < Link to={"/perfil/editar"} className="btn btn-warning mb-4">
+                            < Link to={"/perfil/editar"} className="editButton">
                                 Editar
                             </Link>
                             <Button type="submit" onClick={() => deleteUser()} className="btn-danger mb-4">
@@ -55,8 +54,8 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                             </Button>
                         </>
                     }
-                </Col>
-            </Row>
+                </Col >
+            </Row >
 
         </Container >
     )

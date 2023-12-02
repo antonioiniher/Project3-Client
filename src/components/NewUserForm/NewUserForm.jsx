@@ -64,7 +64,7 @@ const NewUserForm = () => {
   return (
 
     <div className="NewUserForm">
-      <Form onSubmit={handleUserSubmit}>
+      <Form onSubmit={handleUserSubmit} autocomplete="off">
         <Form.Group className="mb-3 nameText" controlId="name">
           <Form.Label>Nombre</Form.Label>
           <Form.Control className="signupControl" type="text" value={user.username} name="username" onChange={handleInputChange} />

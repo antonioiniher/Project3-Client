@@ -72,7 +72,7 @@ const EditUserProfile = () => {
       ?
       <div className="EditUserForm">
 
-        <Form onSubmit={handleUserSubmit}>
+        <Form onSubmit={handleUserSubmit} autocomplete="off">
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Nombre</Form.Label>
             <Form.Control type="text" value={user.username} name="username" onChange={handleInputChange} />

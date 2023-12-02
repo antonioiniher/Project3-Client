@@ -36,7 +36,7 @@ const CommentForm = ({ loadComments }) => {
     return (
         <div>
 
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} autocomplete="off">
                 <Form.Group controlId="text">
                     <Form.Label>Deja tu Comentario</Form.Label>
                     <Form.Control

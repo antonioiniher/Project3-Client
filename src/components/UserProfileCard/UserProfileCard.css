@@ -1,6 +1,7 @@
 .contentUser {
     padding: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .colInfo img {
@@ -14,7 +15,8 @@
 
 .contentUserImg {
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-right: 80px;
 }
 
 .nameProfile {
@@ -27,4 +29,41 @@
     display: flex;
     position: absolute;
     height: 125px;
+    padding-left: 950px;
+    margin-top: 0px;
+}
+
+.imageProfile {
+    height: 300px;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: #12F7D6 solid;
+}
+
+/* CAMBIAR LOS BOTONES DE ABAJO PARA QUE SEAN EL DE EDITAR Y ELIMINAR */
+.editButton {
+    background-color: #12F7D6;
+    display: inline-block;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 32px;
+    margin-bottom: 100px;
+    padding: 16px 32px;
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border: none;
+}
+
+.editButton:hover {
+    background-color: #12F7D6;
+
+}
+
+.editButton:active {
+    background-color: #12F7D6;
 }

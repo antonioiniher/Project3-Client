@@ -41,7 +41,7 @@ const RatingForm = () => {
                     <Modal.Title>Votar al profesor</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} autocomplete="off">
                         <Form.Group className="mb-3" controlId="rating">
                             <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota con un número del 1 al 10' />
                         </Form.Group>

@@ -1,5 +1,7 @@
 .card {
-    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 160px;
     border-radius: 20px;
     font-family: IBM Plex Mono;
     background-color: #292F36;
@@ -9,7 +11,7 @@
 .cardHeader {
     background-color: transparent;
     color: #12F7D6;
-    font-size: 25px;
+    font-size: 30px;
     padding-bottom: 5px;
     border-bottom: 2px solid white;
     margin-bottom: 10px;
@@ -47,5 +49,5 @@
 }
 
 .custom-card-text {
-    font-size: 13px;
+    font-size: 15px;
 }

@@ -12,6 +12,8 @@ import { AuthContext } from "../../contexts/auth.context"
 import CommentCard from "../../components/CommentCard/CommentCard"
 import commentService from "../../services/Comment.services"
 import "./TeacherProfilePage.css"
+import iconComment from "../../assets/icon-message-square.svg"
+
 
 const TeacherProfilePage = () => {
 
@@ -52,8 +54,11 @@ const TeacherProfilePage = () => {
     return (
 
         <Container>
-            <h1 className="profileTeacher"> Perfil de {user.username}  </h1>
             <UserProfileCard {...user} key={user._id} />
+            <Row>
+                <h1 className="commentsTitle">Comentarios</h1>
+                <img src={iconComment} alt="iconComment" className="iconComment" />
+            </Row>
             <Row>
                 <CommentCard commentList={commentList} />
             </Row>

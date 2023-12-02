@@ -24,7 +24,7 @@ const ClassesPage = () => {
   const loadClasses = () => {
 
     classService
-      .getClassbySearch(languageQuery, cityQuery)
+      .getClassbySearch(languageQuery, classType)
       .then(({ data }) => {
         setClasses(data)
       })
@@ -32,9 +32,11 @@ const ClassesPage = () => {
   }
 
   const setTypeClass = e => {
-    cityQuery = e.target.value
+    classType = e.target.value
     loadClasses()
   }
+
+  // dar una vuelta, con jorge intente meter cityQuery
 
   return (
     classes

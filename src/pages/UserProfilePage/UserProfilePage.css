@@ -20,3 +20,19 @@
 * {
     color: white;
 }
+
+.iconEdit {
+    display: flex;
+    position: absolute;
+    height: 60px;
+    padding-left: 740px;
+    margin-top: 580px;
+}
+
+.iconTrash {
+    display: flex;
+    position: absolute;
+    height: 60px;
+    padding-left: 1130px;
+    margin-top: 580px;
+}

@@ -5,6 +5,7 @@ import userService from './../../services/User.services'
 import Loader from "../../components/Loader/Loader"
 import { Container, Row } from "react-bootstrap"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
+import RatingCard from "../../components/RatingCard/RatingCard"
 import CommentForm from "../../components/CommentForm/CommentForm"
 import RatingForm from "../../components/RatingForm/RatingForm"
 import { useContext } from "react"
@@ -46,7 +47,7 @@ const TeacherProfilePage = () => {
             .catch(err => console.log(err))
 
     }
-
+    console.log(user?.rating)
     if (!user) {
         return <Loader />
     }
@@ -61,6 +62,7 @@ const TeacherProfilePage = () => {
             </Row>
             <Row>
                 <CommentCard commentList={commentList} />
+                <RatingCard rating={user?.rating} />
             </Row>
             {
                 loggedUser &&

@@ -5,7 +5,6 @@ import iconPhone from "../../assets/icon-phone.svg"
 import iconRole from "../../assets/icon-tool.svg"
 import iconDiscord from "../../assets/discord.svg"
 import iconUser from "../../assets/icon-user2.svg"
-import { Container, Col, Row } from "react-bootstrap"
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"

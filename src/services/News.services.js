@@ -8,7 +8,7 @@ class NewsService {
     }
 
     getNews() {
-        return axios.get('https://newsapi.org/v2/everything?q=javascript&language=es&apiKey=a566fa86d9d24b559cab1e0823f2d409')
+        return axios.get('https://newsapi.org/v2/everything?q=javascript&language=es&pageSize=30&apiKey=a566fa86d9d24b559cab1e0823f2d409')
     }
 
 }

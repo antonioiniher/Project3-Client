@@ -15,20 +15,26 @@ const News = () => {
     })
     console.log(news)
     return (
-        news?.map(e => {
-            return (
-                <div className="allNewsPage">
-                    <Container>
-                        <div className="eachNew">
-                            <h2>{e.title}</h2>
-                            <p>{e.description}</p>
-                            <Link to={e.url} className="linkNews">Llévame a la noticia </Link>
-                            <p className="sourceName">Fuente: {e.source.name}</p>
-                        </div>
-                    </Container >
-                </div >
-            )
-        })
+        <div>
+            <h1 className="titleNews">· 30 noticias más populares de JS ·</h1>
+            {
+
+                news?.map(e => {
+                    return (
+                        <div className="allNewsPage">
+                            <Container>
+                                <div className="eachNew">
+                                    <h2>{e.title}</h2>
+                                    <p>{e.description}</p>
+                                    <Link to={e.url} className="linkNews">Llévame a la noticia </Link>
+                                    <p className="sourceName">Fuente: {e.source.name}</p>
+                                </div>
+                            </Container >
+                        </div >
+                    )
+                })
+            }
+        </div>
     )
 }
 

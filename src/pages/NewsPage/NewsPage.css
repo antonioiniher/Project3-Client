@@ -1,6 +1,13 @@
 /* .allNewsPage {
     background-image: ;
 } */
+
+.titleNews {
+    color: #12F7D6;
+    text-align: center;
+    padding: 30px;
+}
+
 .allNewsPage {
     padding: 25px;
     padding-bottom: 40px;

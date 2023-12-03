@@ -54,8 +54,7 @@ const CommentForm = ({ loadComments }) => {
                 </Form.Group>
                 {errors?.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
                 <Button type="submit" className="buttonComment">
-                    Comentar
-                    <img src={messageIcon} alt="messageIcon" className="messageIcon" />
+                    <span>Comentar</span>
                 </Button>
             </Form>
 

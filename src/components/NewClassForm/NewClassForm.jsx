@@ -70,9 +70,11 @@ const NewClassForm = () => {
                         <option value="Remote" className="options">En remoto</option>
                     </Form.Select>
                 </Form.Group>
-
-                <div className="d-grid buttonCreateClass">
+                <div>
                     {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
+
+                </div>
+                <div className="d-grid buttonCreateClass">
                     <Button className="buttonInside btn-sm" type="submit">Crear clase</Button>
                 </div>
             </Form>

@@ -1,17 +1,23 @@
 .allPage {
-    margin-bottom: 300px;
     padding: 50px;
-    color: white
+    color: white;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 .titleDetails {
     margin-bottom: 80px;
     text-align: center;
+    color: #12F7D6;
 }
 
 .descriptionTitle {
     padding-bottom: 50px;
     font-size: 60px;
+    color: #12F7D6;
+}
+
+.descriptionText {
+    font-size: 20px;
 }
 
 .languagesCol {
@@ -21,4 +27,48 @@
 .languagesName {
     font-size: 70px;
     margin-top: 60px;
+    color: #12F7D6;
+}
+
+.loginButton {
+    margin-top: 100px;
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    background-color: white;
+}
+
+.loginButton2 {
+    margin-top: 100px;
+    text-decoration: none;
+    color: white;
+    width: 20%;
+    background-color: white;
+}
+
+.iconCloud {
+    display: flex;
+    position: absolute;
+    height: 100px;
+    padding-left: 100px;
+    margin-top: -50px;
+    z-index: -1;
+}
+
+.iconCloud2 {
+    display: flex;
+    position: absolute;
+    height: 100px;
+    padding-left: 400px;
+    margin-top: -50px;
+    z-index: -1;
+}
+
+.iconCloud3 {
+    display: flex;
+    position: absolute;
+    height: 100px;
+    padding-left: 700px;
+    margin-top: -50px;
+    z-index: -1;
 }

@@ -140,8 +140,17 @@ const NewUserForm = () => {
           <Form.Label>Cuéntanos algo sobre ti</Form.Label>
           <Form.Control className="signupControl" type="textarea" value={user.description} name="description" onChange={handleInputChange} />
         </Form.Group>
+        {errors.length > 0 && (
+          <FormError>
+            <ul>
+              {errors.map((error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          </FormError>
+        )}
         <div className="d-grid buttonSignUp">
-          {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
+
           <Button className="buttonInside" type="submit" style={{ backgroundColor: 'transparent' }} disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
         </div>
 

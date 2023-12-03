@@ -5,6 +5,8 @@ import { AuthContext } from "../../contexts/auth.context"
 import { useContext, useState, useEffect } from "react"
 import userService from "../../services/User.services"
 import uploadServices from "../../services/Upload.services"
+import "./EditUserForm.css"
+
 
 const EditUserProfile = () => {
 

@@ -56,13 +56,14 @@ const TeacherProfilePage = () => {
 
         <Container>
             <UserProfileCard {...user} key={user._id} />
+            <RatingCard rating={user?.rating} />
+
             <Row>
                 <h1 className="commentsTitle">Comentarios</h1>
                 <img src={iconComment} alt="iconComment" className="iconComment" />
             </Row>
             <Row>
                 <CommentCard loadComments={loadComments} commentList={commentList} />
-                <RatingCard rating={user?.rating} />
             </Row>
             {
                 loggedUser &&

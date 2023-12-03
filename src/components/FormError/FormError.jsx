@@ -4,9 +4,9 @@ import "./FormError.css"
 
 const FormError = ({ children }) => {
     return (
-        <Alert variant={'danger'} style={{ textAlign: 'center', fontSize: '2em' }} className='alert'>
+        <div className='alert'>
             {children}
-        </Alert>
+        </div>
     )
 }
 

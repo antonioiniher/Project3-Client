@@ -2,14 +2,13 @@
 import { Form, Row } from "react-bootstrap"
 import { useState } from "react";
 import "./SearchBar.css"
+import * as CLASS_CONSTS from './../../consts/class-consts'
 
 
 
 const SearchBar = ({ setResults }) => {
 
   const [query, setQuery] = useState('');
-
-  const items = ['JavaScript', 'Ruby', 'C++', 'Java', 'Python', 'PHP']
 
   const handleSearch = (e) => {
     setQuery(e.target.value)
@@ -18,7 +17,7 @@ const SearchBar = ({ setResults }) => {
 
   const getFilteredItems = (value) => {
     if (!value) setResults([])
-    else setResults(items.filter(e => e.toLowerCase().startsWith(value.toLowerCase())))
+    else setResults(CLASS_CONSTS.LANGUAGES.filter(e => e.toLowerCase().startsWith(value.toLowerCase())))
   }
 
   return (

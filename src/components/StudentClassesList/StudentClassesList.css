@@ -3,10 +3,12 @@
     margin: auto;
     font-family: 'Ubuntu Mono', monospace;
     margin-bottom: 100px;
+    color: black;
 }
 
 .titleTable {
     padding: 20px;
+    padding-top: 150px;
     padding-bottom: 50px;
     text-align: center;
     color: #12F7D6;
@@ -19,7 +21,7 @@
     position: absolute;
     height: 150px;
     padding-left: 250px;
-    margin-top: -260px;
+    margin-top: -60px;
 }
 
 .tableHeader,
@@ -33,6 +35,7 @@
     flex: 3;
     padding: 10px;
     text-align: left;
+    color: black;
 }
 
 .headerStatus,
@@ -40,6 +43,7 @@
     flex: 1;
     padding: 10px;
     text-align: left;
+    color: black;
 }
 
 .tableHeader {
@@ -62,8 +66,10 @@
 
 .tableHeader {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
 .statusItem {
     padding: 5px 0;
+    color: black;
 }

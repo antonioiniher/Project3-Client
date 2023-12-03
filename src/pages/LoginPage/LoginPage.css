@@ -38,7 +38,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     color: #12F7D6;
     font-family: Ubuntu;
     font-size: 16px;
@@ -125,10 +124,6 @@
 
 .passwordText {
     color: white;
-}
-
-.buttonLogin {
-    padding-left: 80px;
 }
 
 .formButton {

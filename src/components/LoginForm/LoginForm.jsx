@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
 import FormError from "../FormError/FormError"
 import icon from '../../assets/icon-send.svg'
-
+import "./LoginForm.css"
 
 const LoginForm = () => {
 
@@ -57,8 +57,21 @@ const LoginForm = () => {
                     </Form.Group>
                 </div>
                 <div className="buttonLogin">
-                    {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
-                    <Button className="formButton btn mt-3" type="submit"> Entrar <img src={icon} alt="loginButton" /></Button>
+                    <div>
+                        {errors.length > 0 && (
+                            <FormError>
+                                <ul>
+                                    {errors.map((error, index) => (
+                                        <li key={index}>{error}</li>
+                                    ))}
+                                </ul>
+                            </FormError>
+                        )}
+                    </div>
+                    <div className="loginButtonx">
+                        <Button className="formButton btn mt-3" type="submit"> Entrar <img src={icon} alt="loginButton" /></Button>
+
+                    </div>
                 </div>
             </Form>
         </div >

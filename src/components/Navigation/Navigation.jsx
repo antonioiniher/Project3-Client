@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/auth.context'
 import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Navigation = () => {
+const Navigation = ({ setClasses }) => {
 
   const { loggedUser, logout } = useContext(AuthContext)
   const [isAccordionOpen, setAccordionOpen] = useState(false)
@@ -12,6 +12,11 @@ const Navigation = () => {
 
   const handleLinkClick = () => {
     setAccordionOpen(false)
+  }
+
+  const resetClasses = e => {
+    e.preventDefault()
+    setClasses()
   }
 
   const logoutNavigate = () => {
@@ -89,7 +94,7 @@ const Navigation = () => {
             <Link to={'/'}>
               <span className='homeC'> &lt;C &#47;&gt;</span> <span className='home2'>  {loggedUser && "Hola, " + loggedUser.username + "!"} </span>
             </Link>
-            <Link to={"/clases"}>
+            <Link to={"/clases"} onClick={() => resetClasses()}>
               <span className='homeTextNav'> Clases </span>
             </Link>
             {

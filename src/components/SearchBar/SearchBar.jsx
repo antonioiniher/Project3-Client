@@ -12,7 +12,7 @@ const SearchBar = ({ setResults }) => {
   const items = ['JavaScript', 'Ruby', 'C++', 'Java', 'Python', 'PHP']
 
   const handleSearch = (e) => {
-    setQuery(e.target.value);
+    setQuery(e.target.value)
     getFilteredItems(e.target.value)
   };
 

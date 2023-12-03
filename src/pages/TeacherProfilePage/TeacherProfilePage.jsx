@@ -69,7 +69,7 @@ const TeacherProfilePage = () => {
                 loggedUser &&
                 <>
                     <CommentForm loadComments={loadComments} />
-                    <RatingForm />
+                    <RatingForm loadTeacher={loadTeacher} />
                 </>
             }
         </Container>

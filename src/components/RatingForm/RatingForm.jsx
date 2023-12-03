@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import userService from '../../services/User.services'
 import FormError from '../FormError/FormError'
 
-const RatingForm = () => {
+const RatingForm = ({ loadTeacher }) => {
 
     const [showModal, setShowModal] = useState(false)
     const [rating, setRating] = useState(0)
@@ -27,7 +27,11 @@ const RatingForm = () => {
 
         userService
             .editUserWithRating(owner_id, rating)
-            .then(() => setShowModal(false))
+            .then(() => {
+                setShowModal(false)
+                setRating()
+                loadTeacher()
+            })
             .catch(err => setErrors(err.response.data.errorMessages))
 
     }

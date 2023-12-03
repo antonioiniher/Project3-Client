@@ -6,7 +6,7 @@ const RatingCard = ({ rating }) => {
     rating.forEach(e => {
         sumRating += e.value
     })
-    let avgRating = sumRating / rating.length
+    let avgRating = Math.round((sumRating / rating.length))
 
     return (
         <div>

@@ -3,6 +3,8 @@ import { Form, Button } from "react-bootstrap"
 import commentService from "../../services/Comment.services"
 import { useParams } from "react-router-dom"
 import FormError from "../FormError/FormError"
+import "./CommentForm.css"
+
 
 const CommentForm = ({ loadComments }) => {
 
@@ -36,9 +38,9 @@ const CommentForm = ({ loadComments }) => {
     return (
         <div>
 
-            <Form onSubmit={handleSubmit} autocomplete="off">
+            <Form onSubmit={handleSubmit} autocomplete="off" className="formComments">
                 <Form.Group controlId="text">
-                    <Form.Label>Deja tu Comentario</Form.Label>
+                    <Form.Label> Comenta </Form.Label>
                     <Form.Control
                         as="textarea"
                         rows={3}
@@ -49,7 +51,7 @@ const CommentForm = ({ loadComments }) => {
                     />
                 </Form.Group>
                 {errors?.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
-                <Button variant="primary" type="submit">
+                <Button type="submit">
                     Comentar
                 </Button>
             </Form>

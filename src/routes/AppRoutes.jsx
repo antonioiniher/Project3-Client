@@ -12,7 +12,7 @@ import NewClassPage from '../pages/NewClassPage/NewClassPage'
 import ClassesPage from '../pages/ClassesPage/ClassesPage'
 import DetailsClassPage from '../pages/DetailsClassPage/DetailsClassPage'
 import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
-
+import News from '../pages/NewsPage/NewsPage'
 import PrivateRoute from './PrivateRoute'
 import TeacherPrivateRoute from './TeacherPrivateRoute'
 
@@ -29,6 +29,8 @@ const AppRoutes = () => {
             <Route path={'/como-funciona'} element={<HowItWorksPage />} />
             <Route path={'/contacto'} element={<ContactPage />} />
             <Route path={'/perfil/:owner_id'} element={<TeacherProfilePage />} />
+            <Route path={'/noticias'} element={<News />} />
+
 
             {/* TODO: DISPONER DE UNA ÚNICA RUTA PRIVADA */}
             <Route element={<PrivateRoute acceptedRoles={'TEACHER'} />}>

@@ -47,7 +47,7 @@ const TeacherProfilePage = () => {
             .catch(err => console.log(err))
 
     }
-    console.log(user?.rating)
+
     if (!user) {
         return <Loader />
     }
@@ -61,7 +61,7 @@ const TeacherProfilePage = () => {
                 <img src={iconComment} alt="iconComment" className="iconComment" />
             </Row>
             <Row>
-                <CommentCard commentList={commentList} />
+                <CommentCard loadComments={loadComments} commentList={commentList} />
                 <RatingCard rating={user?.rating} />
             </Row>
             {

@@ -28,6 +28,10 @@ class CommentService {
         return this.api.get(`/${teacher_id}`)
     }
 
+    deleteComments(comment_id) {
+        return this.api.delete(`/delete/${comment_id}`)
+    }
+
 
 }
 

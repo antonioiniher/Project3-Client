@@ -12,6 +12,7 @@ const NewClassForm = () => {
         title: '',
         description: '',
         languages: [],
+        city: '',
         classType: ''
     })
     const [errors, setErrors] = useState([])
@@ -20,6 +21,10 @@ const NewClassForm = () => {
 
     const handleInputChange = e => {
         const { value, name } = e.currentTarget
+
+        if (name === "classType" && value === "Remote") {
+            classes.city = ""
+        }
 
         setClasses((prevClasses) => ({
             ...prevClasses,
@@ -64,13 +69,19 @@ const NewClassForm = () => {
                 <Form.Group className="mb-3 classText" controlId="classType">
                     <Form.Label>Tipo de clase</Form.Label>
                     <Form.Select aria-label="Default select example" onChange={handleInputChange} name="classType" className="selectType">
-                        <option className="selectionText">Selecciona una opción</option>
+                        <option className="selectionText" value="">Selecciona una opción</option>
                         <option value="On-site" className="options">Presencial</option>
                         <option value="Hybrid" className="options">Híbrida</option>
                         <option value="Remote" className="options">En remoto</option>
                     </Form.Select>
                 </Form.Group>
-                <div>
+
+                <Form.Group className="mb-3" controlId="city">
+                    <Form.Label>Ciudad donde se imparte la clase</Form.Label>
+                    <Form.Control type="text" value={classes.city} name="city" disabled={classes.classType === "Remote"} onChange={handleInputChange} className="classControl" />
+                </Form.Group>
+
+                <div className="d-grid buttonCreateClass">
                     {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
 
                 </div>

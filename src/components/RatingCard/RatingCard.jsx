@@ -9,7 +9,10 @@ const RatingCard = ({ rating }) => {
     let avgRating = sumRating / rating.length
 
     return (
-        <ProgressBar label={`${avgRating}`} animated now={avgRating} min={1} max={10} />
+        <div>
+            <h1 className="titleRating">Rating</h1>
+            <ProgressBar className="custom-progress-bar" label={`${avgRating}`} animated now={avgRating} min={1} max={10} />
+        </div>
     )
 
 }

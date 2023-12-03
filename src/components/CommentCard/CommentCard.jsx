@@ -25,7 +25,7 @@ const CommentCard = ({ commentList, loadComments }) => {
             {
                 commentList?.map(e => {
                     return (
-                        <Col className='mb-3' md={6} key={e._id}>
+                        <Col md={6} key={e._id}>
                             <Card className="text-center CommentCard">
                                 <Card.Body>
                                     <Card.Title className='CommentTitle'>{e.user.username}</Card.Title>

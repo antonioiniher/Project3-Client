@@ -3,7 +3,8 @@ import { Form, Button } from "react-bootstrap"
 import commentService from "../../services/Comment.services"
 import { useParams } from "react-router-dom"
 import FormError from "../FormError/FormError"
-import "./CommentForm.css"
+import "./CommentForm.css";
+import messageIcon from "../../assets/icon-message-circle.svg"
 
 
 const CommentForm = ({ loadComments }) => {
@@ -38,21 +39,23 @@ const CommentForm = ({ loadComments }) => {
     return (
         <div>
 
-            <Form onSubmit={handleSubmit} autocomplete="off" className="formComments">
-                <Form.Group controlId="text">
-                    <Form.Label> Comenta </Form.Label>
+            <Form onSubmit={handleSubmit} autocomplete="off" >
+                <Form.Group controlId="text" >
+                    <Form.Label className="formComments"> Comenta </Form.Label>
                     <Form.Control
-                        as="textarea"
+                        type="text"
                         rows={3}
                         value={comment.text}
                         onChange={handleInputChange}
                         placeholder="Escribe un comentario..."
                         name="text"
+                        className="commentControl"
                     />
                 </Form.Group>
                 {errors?.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
-                <Button type="submit">
+                <Button type="submit" className="buttonComment">
                     Comentar
+                    <img src={messageIcon} alt="messageIcon" className="messageIcon" />
                 </Button>
             </Form>
 

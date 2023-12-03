@@ -30,11 +30,12 @@ class ClassServices {
         return this.api.get("/all")
     }
 
-    getClassbySearch(language, classType) {
+    getClassbySearch(language, classType, city) {
         return this.api.get('/', {
             params: {
                 language: language,
-                classType: classType
+                classType: classType,
+                city: city
             }
         })
     }

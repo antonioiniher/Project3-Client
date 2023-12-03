@@ -3,7 +3,7 @@ import "./ClassCard.css"
 import { Row, Col } from 'react-bootstrap'
 
 
-const ClassCard = ({ _id, languages, description, classType, title, owner }) => {
+const ClassCard = ({ _id, languages, city, description, classType, title, owner }) => {
 
     return (
 
@@ -18,6 +18,7 @@ const ClassCard = ({ _id, languages, description, classType, title, owner }) => 
                     <div className="custom-card-text">
                         <p style={{ color: "#0bbaa0" }}> Descripción: </p>
                         <p className="descriptionCard"> {description} </p>
+                        {city && <p>Ciudad: {city}</p>}
                     </div>
                     <Link to={`/clase/${_id}`} className="moreDetailsLink">
                         Más detalles de la clase

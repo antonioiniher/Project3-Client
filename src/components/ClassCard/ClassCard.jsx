@@ -10,8 +10,8 @@ const ClassCard = ({ _id, languages, description, classType, title, owner }) => 
         <Col md={4}>
             <div className="card text-center">
                 <div className="cardHeader">
-                    {languages.map(e => <span style={{ color: "#12F7D6" }}>{e} </span>)}
-                    <p>{classType === 'Hybrid' ? <p>Híbrida</p> : classType === 'On-site' ? <p>Presencial</p> : <p>Remota</p>}</p>
+                    {languages.map(e => <span key={e} style={{ color: "#12F7D6" }}>{e} </span>)}
+                    <span>{classType === 'Hybrid' ? <p>Híbrida</p> : classType === 'On-site' ? <p>Presencial</p> : <p>Remota</p>}</span>
                 </div>
                 <div className="cardBody">
                     <h5 className="custom-card-title">{title}</h5>

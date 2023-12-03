@@ -42,7 +42,7 @@ const NewClassForm = () => {
 
         <div className="NewClassForm">
 
-            <Form onSubmit={handleClassSubmit} autocomplete="off">
+            <Form onSubmit={handleClassSubmit} autoComplete="off">
                 <Form.Group className="mb-3" controlId="title">
                     <Form.Label>Nombre</Form.Label>
                     <Form.Control type="text" value={classes.title} name="title" onChange={handleInputChange} className="classControl" />

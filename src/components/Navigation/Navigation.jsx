@@ -1,10 +1,10 @@
 import './Navigation.css'
 import { Container, NavDropdown, Navbar } from "react-bootstrap"
 import { AuthContext } from '../../contexts/auth.context'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Navigation = ({ setClasses }) => {
+const Navigation = ({ loadClasses }) => {
 
   const { loggedUser, logout } = useContext(AuthContext)
   const [isAccordionOpen, setAccordionOpen] = useState(false)
@@ -14,12 +14,8 @@ const Navigation = ({ setClasses }) => {
     setAccordionOpen(false)
   }
 
-  const resetClasses = e => {
-    e.preventDefault()
-    setClasses()
-  }
-
   const logoutNavigate = () => {
+    logout()
     navigate('/')
   }
 
@@ -72,7 +68,6 @@ const Navigation = ({ setClasses }) => {
                   </Link>
                   <hr />
                   <span className='nav-link' onClick={() => {
-                    logout()
                     handleLinkClick()
                     logoutNavigate()
                   }}>
@@ -94,7 +89,10 @@ const Navigation = ({ setClasses }) => {
             <Link to={'/'}>
               <span className='homeC'> &lt;C &#47;&gt;</span> <span className='home2'>  {loggedUser && "Hola, " + loggedUser.username + "!"} </span>
             </Link>
-            <Link to={"/clases"} onClick={() => resetClasses()}>
+            <Link to={"/noticias"}>
+              <span className='homeTextNav'> Noticias </span>
+            </Link>
+            <Link to={"/clases"} onClick={() => loadClasses()}>
               <span className='homeTextNav'> Clases </span>
             </Link>
             {

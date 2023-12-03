@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Form, Button, Row, Col } from "react-bootstrap"
 import authService from "../../services/Auth.services"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
 import FormError from "../FormError/FormError"
 import icon from '../../assets/icon-send.svg'
@@ -16,12 +16,8 @@ const LoginForm = () => {
 
     const [errors, setErrors] = useState([])
 
-
+    const location = useLocation()
     const navigate = useNavigate()
-
-    const redirectHome = () => {
-        navigate("/")
-    }
 
     const { authenticateUser } = useContext(AuthContext)
 
@@ -39,14 +35,15 @@ const LoginForm = () => {
             .then(({ data }) => {
                 localStorage.setItem('authToken', data.authToken)
                 authenticateUser()
-                redirectHome()
+                navigate('/', { state: { from: location.pathname } })
             })
             .catch(err => setErrors(err.response.data.errorMessages))
+
     }
 
     return (
         <div className="loginForm">
-            <Form onSubmit={handleSubmit} autocomplete="off">
+            <Form onSubmit={handleSubmit} autoComplete="off">
                 <div className="emailRow">
                     <Form.Group className="mb-3 emailText" controlId="email">
                         <Form.Label >Email</Form.Label>

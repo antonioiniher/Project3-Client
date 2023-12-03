@@ -22,7 +22,7 @@ const SearchBar = ({ setResults }) => {
   }
 
   return (
-    <Form autocomplete="off">
+    <Form autoComplete="off">
       <Form.Group className="searchBar" controlId="searcher">
         <Form.Control className="searchForm" type="text" placeholder="Busca una clase..." value={query} onChange={handleSearch} />
       </Form.Group>

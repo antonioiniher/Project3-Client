@@ -16,7 +16,6 @@ const CommentForm = ({ loadComments }) => {
     })
 
     const [errors, setErrors] = useState([])
-
     const handleSubmit = (e) => {
 
         e.preventDefault()
@@ -39,7 +38,7 @@ const CommentForm = ({ loadComments }) => {
     return (
         <div>
 
-            <Form onSubmit={handleSubmit} autocomplete="off" >
+            <Form onSubmit={handleSubmit} autoComplete="off" >
                 <Form.Group controlId="text" >
                     <Form.Label className="formComments"> Comenta </Form.Label>
                     <Form.Control
@@ -52,7 +51,7 @@ const CommentForm = ({ loadComments }) => {
                         className="commentControl"
                     />
                 </Form.Group>
-                {errors?.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
+                {errors?.length > 0 && <FormError>{errors?.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
                 <Button type="submit" className="buttonComment">
                     Comentar
                     <img src={messageIcon} alt="messageIcon" className="messageIcon" />

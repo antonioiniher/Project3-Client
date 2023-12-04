@@ -29,7 +29,7 @@ const TeacherClassesList = () => {
     console.log(status)
 
     classService
-      .searchClassAndAccept(classes_id, booking_id, status)
+      .searchClassAndSetStatus(classes_id, booking_id, status)
       .then(() => {
         loadClass()
       })

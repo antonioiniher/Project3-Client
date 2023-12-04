@@ -15,6 +15,7 @@ import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
 import News from '../pages/NewsPage/NewsPage'
 import PrivateRoute from './PrivateRoute'
 import TeacherPrivateRoute from './TeacherPrivateRoute'
+import EditClassPage from '../pages/EditClassPage/EditClassPage'
 
 const AppRoutes = () => {
 
@@ -40,7 +41,7 @@ const AppRoutes = () => {
 
             <Route element={<TeacherPrivateRoute />}>
                 <Route path={'/clase/crear'} element={<NewClassPage />} />
-                <Route path={'/clase/:class_id/editar'} element={<h1>HOLA</h1>} />
+                <Route path={'/clase/:class_id/editar'} element={<EditClassPage />} />
             </Route>
 
             <Route path={'*'} element={<ErrorPage />} />

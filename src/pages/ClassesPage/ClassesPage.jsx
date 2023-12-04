@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container, ButtonGroup, Form, Row, Col } from "react-bootstrap"
+import { Container, Form, Row, Col } from "react-bootstrap"
 import ClassesList from "../../components/ClassesList/ClassesList"
 import classService from "../../services/Class.services"
 import Loader from "../../components/Loader/Loader"
@@ -57,8 +57,6 @@ const ClassesPage = () => {
     loadClasses()
   }
 
-
-  // dar una vuelta, con jorge intente meter cityQuery
 
   return (
     classes

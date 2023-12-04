@@ -1,25 +1,31 @@
-import { useState } from "react"
-import { Button, Col, Form, Row } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
-import FormError from "../FormError/FormError"
-import * as CLASS_CONSTS from './../../consts/class-consts'
-import "./NewClassForm.css"
+import { useEffect, useState } from "react"
+import { Form, Button } from "react-bootstrap"
+import { useNavigate, useParams } from "react-router-dom"
 import classService from "../../services/Class.services"
+import * as CLASS_CONSTS from "./../../consts/class-consts"
 
-const NewClassForm = () => {
+const EditClassPage = () => {
 
-    const [classes, setClasses] = useState({
-        title: '',
-        description: '',
-        languages: [],
-        city: '',
-        classType: ''
-    })
-    const [errors, setErrors] = useState([])
+    const [classes, setClasses] = useState({})
+
+    const { class_id } = useParams()
 
     const navigate = useNavigate()
 
+    useEffect(() => {
+        loadClass()
+    }, [])
+
+    const loadClass = () => {
+        classService
+            .getOneClass(class_id)
+            .then(({ data }) => setClasses(data))
+            .catch(error => console.log(error))
+    }
+
     const handleInputChange = e => {
+
+        e.preventDefault()
 
         const { value, name } = e.currentTarget
 
@@ -37,16 +43,16 @@ const NewClassForm = () => {
 
         e.preventDefault()
 
-        classService
-            .create(classes)
-            .then(() => navigate('/'))
-            .catch(err => setErrors(err.response.data.errorMessages))
 
+        classService
+            .editClass(class_id, classes)
+            .then(() => navigate('/clases'))
+            .catch(error => console.log(error))
     }
 
     return (
 
-        <div className="NewClassForm">
+        <div className="EditClassForm">
 
             <Form onSubmit={handleClassSubmit} autoComplete="off">
                 <Form.Group className="mb-3" controlId="title">
@@ -83,17 +89,19 @@ const NewClassForm = () => {
                 </Form.Group>
 
                 <div className="d-grid buttonCreateClass">
-                    {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
+                    {/* {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>} */}
 
                 </div>
                 <div className="d-grid buttonCreateClass">
-                    <Button className="buttonInside btn-sm" type="submit">Crear clase</Button>
+                    <Button className="buttonInside btn-sm" type="submit">Editar clase</Button>
                 </div>
             </Form>
 
         </div>
-    )
 
+
+
+    )
 }
 
-export default NewClassForm
+export default EditClassPage

@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom"
 import "./ClassCard.css"
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
+import { useContext, useState } from "react"
+import { AuthContext } from "../../contexts/auth.context"
+
+
 
 
 const ClassCard = ({ _id, languages, city, description, classType, title, owner }) => {
+
+    const { loggedUser } = useContext(AuthContext)
+
 
     return (
 
@@ -28,6 +35,27 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner 
                     <span> Profesor: </span><Link to={`/perfil/${owner._id}`} className="ownerClassLink">
                         {owner.username}
                     </Link>
+                </div>
+
+                <div>
+                    {
+                        (loggedUser?.role === 'ADMIN' || owner._id === loggedUser?._id)
+                        &&
+                        <Row>
+                            <Col>
+                                < Link to={`/clase/${_id}/editar`} className="editButton">
+                                    Editar
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Button type="submit" onClick={() => deleteUser()} className="deleteButton">
+                                    Eliminar
+                                </Button>
+                            </Col>
+
+                        </Row>
+                    }
+
                 </div>
             </div>
         </Col>

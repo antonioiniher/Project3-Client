@@ -19,8 +19,8 @@ class ClassServices {
         })
     }
 
-    searchClassAndAccept(classes_id, booking_id, status) {
-        return this.api.put(`/searchClassAndAccept`, { classes_id, booking_id, status })
+    searchClassAndSetStatus(classes_id, booking_id, status) {
+        return this.api.put(`/searchClassAndSetStatus`, { classes_id, booking_id, status })
     }
 
     create(classData) {
@@ -46,6 +46,14 @@ class ClassServices {
 
     getClassByStudent(user_id) {
         return this.api.get(`/getClassByStudent/${user_id}`)
+    }
+
+    getOneClass(class_id) {
+        return this.api.get(`getOneClass/${class_id}`)
+    }
+
+    editClass(class_id, classes) {
+        return this.api.put(`/edit/${class_id}`, { classes })
     }
 
 

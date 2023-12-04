@@ -56,7 +56,6 @@ class ClassServices {
         return this.api.put(`/edit/${class_id}`, { classes })
     }
 
-
     getClassByTeacher() {
         return this.api.get(`/getClassByTeacher`)
     }

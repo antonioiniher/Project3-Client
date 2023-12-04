@@ -58,7 +58,7 @@ const TeacherClassesList = () => {
                   classes.booking.map(elm => {
                     return (
                       <tr>
-                        <td>{elm.students.username}</td>
+                        <td>{elm.students ? elm.students.username : 'Usuario eliminado'}</td>
                         <td>{elm.status}</td>
                         <td>
                           {

@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Form, Button } from "react-bootstrap"
 import commentService from "../../services/Comment.services"
 import { useParams } from "react-router-dom"
 import FormError from "../FormError/FormError"
 import "./CommentForm.css";
+import { AuthContext } from "../../contexts/auth.context"
 
 
 const CommentForm = ({ loadComments }) => {
@@ -13,6 +14,8 @@ const CommentForm = ({ loadComments }) => {
         teacher: owner_id,
         text: ""
     })
+
+    const { loggedUser } = useContext(AuthContext)
 
     const [errors, setErrors] = useState([])
     const handleSubmit = (e) => {
@@ -35,7 +38,8 @@ const CommentForm = ({ loadComments }) => {
     }
 
     return (
-        <div>
+        loggedUser?._id != owner_id &&
+        < div >
 
             <Form onSubmit={handleSubmit} autoComplete="off" >
                 <Form.Group controlId="text" >
@@ -56,7 +60,7 @@ const CommentForm = ({ loadComments }) => {
                 </Button>
             </Form>
 
-        </div>
+        </div >
     )
 }
 

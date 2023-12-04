@@ -30,8 +30,8 @@ const News = () => {
             <h1 className="titleNews">· Noticias más populares de {query.charAt(0).toUpperCase() + query.slice(1)} ·</h1>
             <Container>
                 <Form autoComplete="off" onSubmit={handleFormSubmit}>
-                    <Form.Group className="searchBar" controlId="searcher">
-                        <Form.Control className="searchForm" type="text" placeholder="Busca un lenguaje..." value={query} onChange={handleInputChange} />
+                    <Form.Group className="searchBarNews" controlId="searcher">
+                        <Form.Control className="searchFormNews" type="text" placeholder="Busca un lenguaje..." value={query} onChange={handleInputChange} />
                     </Form.Group>
                 </Form>
             </Container>

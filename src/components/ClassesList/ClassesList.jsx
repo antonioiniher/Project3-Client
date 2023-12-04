@@ -9,7 +9,7 @@ const ClassesList = ({ classes }) => {
     return (
         classes
             ?
-            <Row>
+            <Row className="row">
                 {
                     classes.map(e => <ClassCard {...e} key={e._id} />)
                 }

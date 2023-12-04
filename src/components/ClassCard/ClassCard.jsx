@@ -1,16 +1,37 @@
 import { Link } from "react-router-dom"
 import "./ClassCard.css"
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, Button, Modal } from 'react-bootstrap'
 import { useContext, useState } from "react"
 import { AuthContext } from "../../contexts/auth.context"
+import classService from "../../services/Class.services"
 
 
 
 
-const ClassCard = ({ _id, languages, city, description, classType, title, owner }) => {
+const ClassCard = ({ _id, languages, city, description, classType, title, owner, loadClasses }) => {
 
     const { loggedUser } = useContext(AuthContext)
+    const [showModal, setShowModal] = useState(false)
 
+    const finalActions = () => {
+        setShowModal(false)
+    }
+
+
+
+    const deleteClass = (e) => {
+
+        e.preventDefault()
+
+        classService
+            .deleteClass(_id)
+            .then(() => {
+                setShowModal(false)
+                loadClasses()
+
+            })
+            .catch(error => console.log(error))
+    }
 
     return (
 
@@ -48,15 +69,20 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner 
                                 </Link>
                             </Col>
                             <Col>
-                                <Button type="submit" onClick={() => deleteUser()} className="deleteButton">
-                                    Eliminar
-                                </Button>
+                                <Button className="ratingButton" onClick={() => setShowModal(true)}>Eliminar</Button>
                             </Col>
-
                         </Row>
                     }
-
                 </div>
+                <Modal show={showModal} onHide={() => setShowModal(false)}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>¿Seguro que quieres eliminar la clase?</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Button className='ratingButton' onClick={(e) => deleteClass(e)}>Sí</Button>
+                        <Button className='ratingButton' onClick={finalActions}>No</Button>
+                    </Modal.Body>
+                </Modal>
             </div>
         </Col>
 

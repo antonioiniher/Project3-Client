@@ -99,7 +99,7 @@ const ClassesPage = () => {
 
           </Row>
 
-          <ClassesList classes={classes} />
+          <ClassesList classes={classes} loadClasses={loadClasses} />
 
         </Container>
       </div>

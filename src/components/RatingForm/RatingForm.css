@@ -1,4 +1,6 @@
 .ratingButton {
+    margin-top: 20px;
+    padding-top: 50px;
     background-color: #12F7D6;
     display: inline-block;
     padding: 16px 32px;
@@ -17,9 +19,61 @@
 }
 
 .ratingButton:hover {
-    background-color: #12F7D6;
+    background-color: #f2f5f5;
+    color: black;
 }
 
 .ratingButton:active {
     background-color: #12F7D6;
+}
+
+.errorsModalRating {
+    color: #12F7D6;
+    border: none;
+}
+
+.modalHeaderRating {
+    background-color: #43454D;
+}
+
+.textHeaderRating {
+    color: #12F7D6;
+    font-family: Ubuntu;
+}
+
+.formModalRating {
+    background-color: #1A1E23;
+    color: #12F7D6;
+    border: none;
+    border-bottom: 2px solid #12F7D6;
+    border-radius: 0;
+    border-color: none;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+.formModalRating:focus {
+    background-color: transparent;
+    color: #12F7D6;
+}
+
+.formModalRating::placeholder {
+    background-color: transparent;
+    color: #12F7D6;
+}
+
+.modalBodyRating {
+    background-color: #1A1E23;
+    border: none;
+    border-bottom: 2px solid #12F7D6;
+    border-radius: 0;
+    border-color: none;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
 }

@@ -26,7 +26,6 @@ const StudentClassesList = () => {
 
   return (
     <Container>
-      <img src={arrowsDown} alt="arrowsDown" className="arrowsDown" />
       <h3 className="titleTable">Clases a las que estoy apuntado</h3>
       {
         classes

@@ -28,7 +28,7 @@ const CommentCard = ({ commentList, loadComments }) => {
                         <Col md={6} key={e._id}>
                             <Card className="text-center CommentCard">
                                 <Card.Body>
-                                    <Card.Title className='CommentTitle'>{e.user.username}</Card.Title>
+                                    <Card.Title className='CommentTitle'>{e.user ? e.user.username : <span>Usuario eliminado</span>}</Card.Title>
                                     <Card.Text className='CommentText'>
                                         {e.text}
                                     </Card.Text>

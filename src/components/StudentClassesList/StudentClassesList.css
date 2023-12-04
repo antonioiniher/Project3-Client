@@ -16,13 +16,13 @@
     font-size: 40px;
 }
 
-.arrowsDown {
+/* .arrowsDown {
     display: flex;
     position: absolute;
     height: 150px;
     padding-left: 250px;
     margin-top: -220px;
-}
+} */
 
 .tableHeader,
 .tableRow {

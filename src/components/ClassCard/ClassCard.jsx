@@ -53,16 +53,16 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                     </Link>
                 </div>
                 <div className="cardFooter text-muted">
-                    <span> Profesor: </span><Link to={`/perfil/${owner._id}`} className="ownerClassLink">
-                        {owner.username}
+                    <span> Profesor: </span><Link to={`/perfil/${owner?._id}`} className="ownerClassLink">
+                        {owner?.username}
                     </Link>
                 </div>
 
                 <div>
                     {
-                        (loggedUser?.role === 'ADMIN' || owner._id === loggedUser?._id)
+                        (loggedUser?.role === 'ADMIN' || owner?._id === loggedUser?._id)
                         &&
-                        <Row>
+                        <Row className="mt-5 mb-1">
                             <Col>
                                 < Link to={`/clase/${_id}/editar`} className="editButton">
                                     Editar

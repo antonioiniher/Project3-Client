@@ -4,7 +4,6 @@ import commentService from "../../services/Comment.services"
 import { useParams } from "react-router-dom"
 import FormError from "../FormError/FormError"
 import "./CommentForm.css";
-import messageIcon from "../../assets/icon-message-circle.svg"
 
 
 const CommentForm = ({ loadComments }) => {

@@ -37,11 +37,12 @@ const AppRoutes = () => {
             <Route element={<PrivateRoute acceptedRoles={'TEACHER'} />}>
                 <Route path={'/perfil'} element={<UserProfilePage />} />
                 <Route path={'/perfil/editar'} element={<EditProfilePage />} />
+                <Route path={'/clase/crear'} element={<NewClassPage />} />
+                <Route path={'/clase/:class_id/editar'} element={<EditClassPage />} />
             </Route>
 
             <Route element={<TeacherPrivateRoute />}>
-                <Route path={'/clase/crear'} element={<NewClassPage />} />
-                <Route path={'/clase/:class_id/editar'} element={<EditClassPage />} />
+
             </Route>
 
             <Route path={'*'} element={<ErrorPage />} />

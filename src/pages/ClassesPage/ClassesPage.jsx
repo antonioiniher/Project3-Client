@@ -23,13 +23,13 @@ const ClassesPage = () => {
 
   useEffect(() => {
     loadClasses()
-  }, [])
+  }, [languageQuery, cityQuery, classType])
 
   const loadClasses = () => {
-
     classService
       .getClassbySearch(languageQuery, classType, cityQuery)
       .then(({ data }) => {
+
         setClasses(data)
       })
       .catch(error => console.log(error))

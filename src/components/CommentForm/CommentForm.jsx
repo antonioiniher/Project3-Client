@@ -36,7 +36,6 @@ const CommentForm = ({ loadComments }) => {
 
     return (
         <div>
-
             <Form onSubmit={handleSubmit} autoComplete="off" >
                 <Form.Group controlId="text" >
                     <Form.Label className="formComments"> Comenta </Form.Label>
@@ -51,12 +50,10 @@ const CommentForm = ({ loadComments }) => {
                     />
                 </Form.Group>
                 {errors?.length > 0 && <FormError>{errors?.map(elm => <p key={elm}>{elm}</p>)} </FormError>}
-                <Button type="submit" className="buttonComment">
-                    <span>Comentar</span>
-                </Button>
+                <Button type="submit" className="buttonComment">Comentar</Button>
             </Form>
 
-        </div>
+        </div >
     )
 }
 

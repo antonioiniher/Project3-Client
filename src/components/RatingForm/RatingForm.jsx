@@ -13,7 +13,9 @@ const RatingForm = ({ loadTeacher }) => {
     const { owner_id } = useParams()
 
     const finalActions = () => {
-        setShowModal(false)
+        if (!errors) {
+            setShowModal(false)
+        }
     }
 
     const handleInputChange = e => {
@@ -40,16 +42,16 @@ const RatingForm = ({ loadTeacher }) => {
         <div className="RatingForm">
             <Button className="ratingButton" onClick={() => setShowModal(true)}>Votar</Button>
 
-            <Modal show={showModal} onHide={() => setShowModal(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Votar al profesor</Modal.Title>
+            <Modal show={showModal} onHide={() => setShowModal(false)} className='modalRating'>
+                <Modal.Header closeButton className='modalHeaderRating'>
+                    <Modal.Title className='textHeaderRating'>Votar al profesor</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='modalBodyRating'>
                     <Form onSubmit={handleSubmit} autoComplete="off">
                         <Form.Group className="mb-3" controlId="rating">
-                            <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota con un número del 1 al 10' />
+                            <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota con un número del 1 al 10' className='formModalRating' />
                         </Form.Group>
-                        {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
+                        {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm} className='errorsModalRating'>{elm}</p>)} </FormError>}
                         <Button type='submit' className='ratingButton' onClick={finalActions}>Enviar</Button>
                     </Form>
                 </Modal.Body>

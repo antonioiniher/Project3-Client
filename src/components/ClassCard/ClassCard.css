@@ -6,8 +6,7 @@
     font-family: IBM Plex Mono;
     background-color: #292F36;
     border-color: #12F7D6;
-    min-height: 500px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 .cardHeader {
@@ -16,7 +15,7 @@
     font-size: 30px;
     padding-bottom: 5px;
     border-bottom: 2px solid white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     height: 200px;
 }
 

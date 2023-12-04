@@ -62,7 +62,7 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                     {
                         (loggedUser?.role === 'ADMIN' || owner._id === loggedUser?._id)
                         &&
-                        <Row>
+                        <Row className="mt-5 mb-1">
                             <Col>
                                 < Link to={`/clase/${_id}/editar`} className="editButton">
                                     Editar

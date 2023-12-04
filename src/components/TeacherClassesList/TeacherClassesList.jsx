@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Container, Button } from "react-bootstrap"
-
+import "./TeacherClassesList.css"
 import classService from "../../services/Class.services"
 import Loader from "../Loader/Loader"
 
@@ -39,13 +39,13 @@ const TeacherClassesList = () => {
   return (
     classes
       ?
-      <Container>
-        <h3>Historial de solicitudes de estudiantes para la clase de {classes.title}</h3>
+      <div className="TeacherClassesList">
+        <h3 className="titleClassesList">Historial de solicitudes de estudiantes para la clase de {classes.title}</h3>
         <hr />
         {
           classes.booking.length > 0
             ?
-            <table className="table">
+            <table className="tableClassesList">
               <thead>
                 <tr>
                   <th scope="col">Nombre del alumno </th>
@@ -64,13 +64,12 @@ const TeacherClassesList = () => {
                           {
                             elm.status === 'Pending'
                               ?
-                              <>
-                                <Button variant="dark" value='Accepted' onClick={(event) => setStatus(event, classes._id, elm._id)}>Aceptar</Button>
-                                <Button variant="warning" value='Cancelled' onClick={(event) => setStatus(event, classes._id, elm._id)}>Cancelar</Button>
-                              </>
-
+                              <td className="buttonsContainerList">
+                                <Button className="firstButtonClassesList" value='Accepted' onClick={(event) => setStatus(event, classes._id, elm._id)}>Aceptar</Button>
+                                <Button className="secondButtonClassesList" value='Cancelled' onClick={(event) => setStatus(event, classes._id, elm._id)}>Cancelar</Button>
+                              </td>
                               :
-                              <div>adios</div>
+                              <div>Finalizado </div>
                           }
                         </td>
                       </tr>
@@ -83,7 +82,7 @@ const TeacherClassesList = () => {
             :
             <div>No hay solicitudes</div>
         }
-      </Container>
+      </div>
       :
       <div>No hay solicitudes</div>
   )

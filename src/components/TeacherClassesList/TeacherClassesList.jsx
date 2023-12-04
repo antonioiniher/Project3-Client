@@ -26,8 +26,6 @@ const TeacherClassesList = () => {
 
     const status = event.target.value
 
-    console.log(status)
-
     classService
       .searchClassAndSetStatus(classes_id, booking_id, status)
       .then(() => {

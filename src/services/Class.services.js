@@ -65,6 +65,10 @@ class ClassServices {
         return this.api.get(`/${class_id}`)
     }
 
+    deleteClass(class_id) {
+        return this.api.delete(`/deleteClass/${class_id}`)
+    }
+
 }
 
 const classService = new ClassServices()

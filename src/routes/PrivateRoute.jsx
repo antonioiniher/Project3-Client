@@ -3,7 +3,7 @@ import { Outlet, Navigate, useNavigate } from "react-router-dom"
 import Loader from "../components/Loader/Loader"
 import { AuthContext } from "../contexts/auth.context"
 
-const PrivateRoute = () => {
+const PrivateRoute = ({ acceptedRoles }) => {
 
     const { loggedUser, isLoading } = useContext(AuthContext)
 
@@ -11,11 +11,16 @@ const PrivateRoute = () => {
         return <Loader />
     }
 
-    if (!loggedUser) {
-        return <Navigate to="/inicio-sesion" />
+    if (acceptedRoles && acceptedRoles.includes(loggedUser.role)) {
+        return <Outlet />
     }
 
-    return <Outlet />
+    if (loggedUser) {
+        return <Outlet />
+    }
+
+    return <Navigate to="/inicio-sesion" />
+
 }
 
 export default PrivateRoute

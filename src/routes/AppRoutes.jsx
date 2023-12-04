@@ -14,7 +14,6 @@ import DetailsClassPage from '../pages/DetailsClassPage/DetailsClassPage'
 import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
 import News from '../pages/NewsPage/NewsPage'
 import PrivateRoute from './PrivateRoute'
-import TeacherPrivateRoute from './TeacherPrivateRoute'
 import EditClassPage from '../pages/EditClassPage/EditClassPage'
 
 const AppRoutes = () => {
@@ -32,14 +31,12 @@ const AppRoutes = () => {
             <Route path={'/perfil/:owner_id'} element={<TeacherProfilePage />} />
             <Route path={'/noticias'} element={<News />} />
 
-
-            {/* TODO: DISPONER DE UNA ÚNICA RUTA PRIVADA */}
-            <Route element={<PrivateRoute acceptedRoles={'TEACHER'} />}>
+            <Route element={<PrivateRoute />}>
                 <Route path={'/perfil'} element={<UserProfilePage />} />
                 <Route path={'/perfil/editar'} element={<EditProfilePage />} />
             </Route>
 
-            <Route element={<TeacherPrivateRoute />}>
+            <Route element={<PrivateRoute acceptedRoles={['TEACHER', 'ADMIN']} />}>
                 <Route path={'/clase/crear'} element={<NewClassPage />} />
                 <Route path={'/clase/:class_id/editar'} element={<EditClassPage />} />
             </Route>

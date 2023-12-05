@@ -33,6 +33,7 @@ const StudentClassesList = () => {
         <div className="customTable">
           <div className="tableHeader">
             <div className="headerTitle">Nombre de la clase</div>
+            <div className="headerStatus">Fecha de la reserva</div>
             <div className="headerStatus">Estado de la reserva</div>
           </div>
           <div className="tableBody">
@@ -43,7 +44,22 @@ const StudentClassesList = () => {
                   <div className="rowStatus">
                     {e.booking.map((elm, i) =>
                       elm.students === loggedUser._id ? (
-                        <div className="statusItem" key={i}>{elm.status}</div>
+                        <>
+                          <div className="statusItem" key={i}>{elm.status}</div>
+                          <div className="statusItem" key={elm}>
+                            {new Date(elm.date).toLocaleString('es-ES', {
+                              day: 'numeric',
+                              month: 'long',
+                              year: 'numeric',
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              hour12: false
+                            })}
+                          </div>
+
+
+                        </>
+
                       ) : null
                     )}
                   </div>

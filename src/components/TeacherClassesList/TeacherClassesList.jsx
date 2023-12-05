@@ -50,6 +50,7 @@ const TeacherClassesList = () => {
                 <tr>
                   <th scope="col">Nombre del alumno </th>
                   <th scope="col">Estado de la reserva</th>
+                  <th scope="col">Fecha de la reserva</th>
                   <th scope="col">Acción</th>
                 </tr>
               </thead>
@@ -60,6 +61,16 @@ const TeacherClassesList = () => {
                       <tr>
                         <td>{elm.students ? elm.students.username : 'Usuario eliminado'}</td>
                         <td>{elm.status}</td>
+                        <td className="statusItem" key={elm}>
+                          {new Date(elm.date).toLocaleString('es-ES', {
+                            day: '2-digit',
+                            month: 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: 'numeric',
+                            hour12: false
+                          })}
+                        </td>
                         <td>
                           {
                             elm.status === 'Pending'

@@ -15,6 +15,7 @@ import TeacherProfilePage from '../pages/TeacherProfilePage/TeacherProfilePage'
 import News from '../pages/NewsPage/NewsPage'
 import PrivateRoute from './PrivateRoute'
 import EditClassPage from '../pages/EditClassPage/EditClassPage'
+import CalendarPage from '../pages/CalendarPage/CalendarPage.jsx'
 
 const AppRoutes = () => {
 
@@ -39,6 +40,7 @@ const AppRoutes = () => {
             <Route element={<PrivateRoute acceptedRoles={['TEACHER', 'ADMIN']} />}>
                 <Route path={'/clase/crear'} element={<NewClassPage />} />
                 <Route path={'/clase/:class_id/editar'} element={<EditClassPage />} />
+                <Route path={'/calendario'} element={<CalendarPage />} />
             </Route>
 
             <Route path={'*'} element={<ErrorPage />} />

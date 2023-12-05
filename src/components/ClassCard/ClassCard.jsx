@@ -58,29 +58,25 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                     </Link>
                 </div>
 
-                <div>
+                <div className="buttonsCardClassList">
                     {
                         (loggedUser?.role === 'ADMIN' || owner?._id === loggedUser?._id)
                         &&
                         <Row className="mt-5 mb-1">
-                            <Col>
-                                < Link to={`/clase/${_id}/editar`} className="editButton">
-                                    Editar
-                                </Link>
-                            </Col>
-                            <Col>
-                                <Button className="ratingButton" onClick={() => setShowModal(true)}>Eliminar</Button>
-                            </Col>
+                            < Link to={`/clase/${_id}/editar`} className="editButtonClassCard">
+                                Editar
+                            </Link>
+                            <Button className="deleteButtonClassCard" onClick={() => setShowModal(true)}>Eliminar</Button>
                         </Row>
                     }
                 </div>
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>¿Seguro que quieres eliminar la clase?</Modal.Title>
+                    <Modal.Header closeButton className="headerDeleteModal">
+                        <Modal.Title className="titleModalDeleteClass">¿Seguro que quieres eliminar la clase?</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <Button className='ratingButton' onClick={(e) => deleteClass(e)}>Sí</Button>
-                        <Button className='ratingButton' onClick={finalActions}>No</Button>
+                    <Modal.Body className="bodyDeleteModal">
+                        <Button className='deleteButtonModal' onClick={(e) => deleteClass(e)}>Sí</Button>
+                        <Button className='deleteButtonModal' onClick={finalActions}>No</Button>
                     </Modal.Body>
                 </Modal>
             </div>

@@ -1,4 +1,4 @@
-import { Container, Col, Row, Button } from "react-bootstrap"
+import { Container, Col, Row, Button, Modal } from "react-bootstrap"
 import iconAdress from "../../assets/icon-compass.svg"
 import iconEmail from "../../assets/icon-at-sign.svg"
 import iconPhone from "../../assets/icon-phone.svg"
@@ -14,7 +14,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/auth.context"
 import { useContext } from "react"
 import userService from "../../services/User.services"
-
+import { useState } from "react"
 
 const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSkype, address }) => {
 
@@ -22,11 +22,20 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
   const { logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const deleteUser = () => {
+  const [showModal, setShowModal] = useState(false)
+
+  const finalActions = () => {
+    setShowModal(false)
+  }
+
+  const deleteUser = (e) => {
+
+    if (e) e.preventDefault()
 
     userService
       .deleteUserById(_id)
       .then(() => {
+        setShowModal(false)
         logout()
         navigate('/')
       })
@@ -57,13 +66,23 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
                 </Link>
               </Col>
               <Col>
-                <Button type="submit" onClick={() => deleteUser()} className="deleteButton">
+                <Button type="submit" onClick={() => setShowModal(true)} className="deleteButton">
                   Eliminar
                 </Button>
               </Col>
+              <Modal show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Header closeButton className="headerDeleteModal">
+                  <Modal.Title className="titleModalDeleteClass">¿Seguro que quieres eliminar tu perfil?</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="bodyDeleteModal">
+                  <Button className='deleteButtonModal' onClick={deleteUser}>Sí</Button>
+                  <Button className='deleteButtonModal' onClick={finalActions}>No</Button>
+                </Modal.Body>
+              </Modal>
             </Row>
           }
         </Col >
+
       </Row >
     </Container >
   )

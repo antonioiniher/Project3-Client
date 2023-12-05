@@ -11,15 +11,15 @@ const PrivateRoute = ({ acceptedRoles }) => {
         return <Loader />
     }
 
-    if (acceptedRoles && acceptedRoles.includes(loggedUser.role)) {
-        return <Outlet />
+    if (acceptedRoles && !acceptedRoles.includes(loggedUser.role)) {
+        return <Navigate to="/inicio-sesion" />
     }
 
-    if (loggedUser) {
-        return <Outlet />
+    if (!loggedUser) {
+        return <Navigate to="/inicio-sesion" />
     }
 
-    return <Navigate to="/inicio-sesion" />
+    return <Outlet />
 
 }
 

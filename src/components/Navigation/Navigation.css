@@ -79,11 +79,10 @@
     --bs-accordion-border-color: none !important;
     border-radius: 50px !important;
     display: flex;
-    position: fixed;
-    top: 3.5px;
-    left: 1370px;
+
     background-color: #292F36;
 
+    position: fixed;
 }
 
 .accordion-item:last-of-type .accordion-collapse {
@@ -96,4 +95,9 @@
     border-bottom-right-radius: 40px 40px !important;
     border-bottom-left-radius: 40px 40px !important;
     background-color: #292F36;
+}
+
+.accordionWrapper {
+    width: 64px;
+    height: 56px;
 }

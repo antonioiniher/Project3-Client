@@ -2,3 +2,37 @@
     padding: 50px;
     margin-bottom: 400px;
 }
+
+.buttonEditprofileForm {
+    color: white;
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    background: var(--Brand-1, #12F7D6);
+}
+
+.buttonEditprofileForm:hover {
+    background-color: white;
+    color: black;
+}
+
+.buttonAvatar {
+    color: white;
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    background: var(--Brand-1, #12F7D6);
+
+}
+
+.buttonAvatar:hover {
+    color: white;
+    background-color: black;
+
+}

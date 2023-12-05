@@ -47,11 +47,12 @@ input::-webkit-inner-spin-button {
 
 .optionsRol {
     background-color: #1A1E23;
+    color: #12F7D6 !important;
 }
 
 .selectionText {
     background-color: #43454D;
-    color: white;
+    color: #12F7D6;
 }
 
 .buttonAvatar {

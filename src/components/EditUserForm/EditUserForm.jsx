@@ -107,9 +107,11 @@ const EditUserProfile = () => {
 
           </Row>
 
-          <Form.Group className="mb-3" controlId="avatar">
-            <Form.Label>Avatar</Form.Label>
-            <Form.Control type="file" onChange={handleFileUpload} />
+          <p className="text-center avatarP">Avatar</p>
+
+          <Form.Group className="mb-3 avatarText" controlId="avatar">
+            <Form.Control className="buttonAvatar d-none" type="file" id="fileInput" onChange={handleFileUpload} />
+            <label htmlFor="fileInput" className="buttonAvatar"> Subir archivo</label>
           </Form.Group>
 
           <Row>
@@ -138,7 +140,7 @@ const EditUserProfile = () => {
           <div className="d-grid">
             {errors.length > 0 && <FormError>{errors.map(elm => <p>{elm}</p>)} </FormError>}
 
-            <Button variant="dark" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Editar usuario'}</Button>
+            <Button className="buttonEditprofileForm" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Editar usuario'}</Button>
           </div>
         </Form>
 

@@ -78,3 +78,13 @@
     display: flex;
     justify-content: space-around;
 }
+
+.noRequestsTeacher {
+    color: #12F7D6;
+    padding: 50px;
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: 'Ubuntu Mono', monospace;
+    border-bottom: #12F7D6 solid;
+    margin-bottom: 100px;
+}

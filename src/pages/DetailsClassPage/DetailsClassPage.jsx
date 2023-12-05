@@ -1,5 +1,5 @@
 import "./DetailsClassPage.css"
-import { Container, Col, Row, Button } from "react-bootstrap"
+import { Container, Col, Row, Button, Modal, Form } from "react-bootstrap"
 import classService from "../../services/Class.services"
 import { useNavigate, useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
@@ -10,73 +10,105 @@ import loginIcon from "../../assets/icon-log-in.svg"
 import iconTerminal from "../../assets/icon-terminal.svg"
 
 
+
 const DetailsClassPage = () => {
 
-    const { class_id } = useParams()
-    const { loggedUser } = useContext(AuthContext)
-    const [classes, setClasses] = useState()
+  const { class_id } = useParams()
+  const { loggedUser } = useContext(AuthContext)
+  const [classes, setClasses] = useState()
+  const [date, setDate] = useState()
+  const [showModal, setShowModal] = useState(false)
 
-    useEffect(() => {
-        loadClassDetails()
-    }, [])
+  const finalActions = () => {
+    setShowModal(false)
+  }
 
-    const navigate = useNavigate()
+  useEffect(() => {
+    loadClassDetails()
+  }, [])
+
+  const navigate = useNavigate()
 
 
-    const loadClassDetails = () => {
-        classService
-            .getOneClass(class_id)
-            .then(({ data }) => {
-                setClasses(data)
-            })
-            .catch(err => console.log(err))
-    }
+  const loadClassDetails = () => {
+    classService
+      .getOneClass(class_id)
+      .then(({ data }) => {
+        setClasses(data)
+      })
+      .catch(err => console.log(err))
+  }
 
-    const handleClassRequest = () => {
-        classService
-            .putClassRequest(loggedUser._id, class_id)
-            .then(() => navigate('/perfil'))
-            .catch(error => console.log(error))
-    }
+  const handleClassRequest = (e) => {
 
-    return (
-        classes ?
-            // TODO: RENOMINAR CLASES DE ACCESO A COMPONENTES
-            <div className="allPage">
-                <Container>
-                    <Row className="titleDetails">
-                        <h1>{classes.title}</h1>
-                        <hr />
-                        <h3>{classes.owner?.username}</h3>
-                    </Row>
-                    <Row>
-                        <img src={iconTerminal} alt="iconCloud" className="iconCloud" />
-                        <Col md={{ span: 4, offset: 1 }}>
-                            <h2 className="descriptionTitle">Descripción </h2>
+    e.preventDefault()
 
-                            <p className="descriptionText">{classes.description}</p>
-                        </Col>
-                        <Col md={{ span: 3, offset: 2 }} className="languagesCol">
-                            <p className="languagesName">Languages</p>
-                            {
-                                classes.languages?.map((e, i) => <p key={i}>{e}</p>)
-                            }
-                        </Col>
-                    </Row>
-                    <Row>
-                        {
-                            loggedUser?.role === 'STUDENT'
-                                ?
-                                <Button className="loginButton" onClick={handleClassRequest}>Solicitar clase</Button>
-                                :
-                                <Link to={'/inicio-sesion'} className='loginButton'> Logueate <img src={loginIcon} alt="loginIcon" /></Link>
-                        }
-                    </Row>
-                </Container>
-            </div>
-            :
-            <Loader />
-    )
+    classService
+      .putClassRequest(loggedUser._id, class_id, date)
+      .then(() => navigate('/perfil'))
+      .catch(error => console.log(error))
+  }
+
+  const handleDateChange = (e) => {
+
+    e.preventDefault()
+    const { value, name } = e.currentTarget
+    setDate(value)
+
+  }
+
+  return (
+    classes ?
+      <div className="DetailsClassPage">
+        <Container>
+          <Row className="titleDetails">
+            <h1>{classes.title}</h1>
+            <hr />
+            <h3>{classes.owner?.username}</h3>
+          </Row>
+          <Row>
+            <img src={iconTerminal} alt="iconCloud" className="iconCloud" />
+            <Col md={{ span: 4, offset: 1 }}>
+              <h2 className="descriptionTitle">Descripción </h2>
+
+              <p className="descriptionText">{classes.description}</p>
+            </Col>
+            <Col md={{ span: 3, offset: 2 }} className="languagesCol">
+              <p className="languagesName">Languages</p>
+              {
+                classes.languages?.map((e, i) => <p key={i}>{e}</p>)
+              }
+            </Col>
+          </Row>
+          <Row>
+            {
+              loggedUser?.role === 'STUDENT'
+                ?
+                <Button className="loginButton" onClick={() => setShowModal(true)}>Solicitar clase</Button>
+                :
+                <Link to={'/inicio-sesion'} className='loginButton'> Logueate <img src={loginIcon} alt="loginIcon" /></Link>
+            }
+          </Row>
+
+          <Modal show={showModal} onHide={() => setShowModal(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>Elige la fecha para la clase</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form.Group className="mb-3" controlId="date">
+                <Form.Label for="fecha-hora">Selecciona Fecha y Hora:</Form.Label>
+                <Form.Control type="datetime-local" id="date" name="date" value={date} className="classControl" onChange={(e) => handleDateChange(e)} />
+              </Form.Group>
+              <Button className='ratingButton' onClick={(e) => handleClassRequest(e)}>Solicitar</Button>
+              <Button className='ratingButton' onClick={finalActions}>No</Button>
+            </Modal.Body>
+          </Modal>
+
+        </Container>
+      </div>
+      :
+      <Loader />
+  )
 }
 
 export default DetailsClassPage

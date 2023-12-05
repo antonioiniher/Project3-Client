@@ -7,13 +7,16 @@ const RatingCard = ({ rating }) => {
         sumRating += e.value
     })
     let avgRating = Math.round((sumRating / rating.length))
-
-    return (
-        <div>
-            <h1 className="titleRating">Rating</h1>
-            <ProgressBar className="custom-progress-bar" label={`${avgRating}`} animated now={avgRating} min={1} max={10} />
-        </div>
-    )
+    if (isNaN(avgRating)) {
+        return <p className="noRatingText">Todavía no hay rating del profesor</p>
+    } else {
+        return (
+            <div>
+                <h1 className="titleRating">Rating</h1>
+                <ProgressBar className="custom-progress-bar" label={`${avgRating}`} animated now={avgRating} min={1} max={10} />
+            </div>
+        )
+    }
 
 }
 

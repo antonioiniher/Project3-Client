@@ -22,3 +22,11 @@
     padding-bottom: 20px;
     color: #12F7D6;
 }
+
+.noRatingText {
+    color: #12F7D6;
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 100px;
+    font-family: 'IBM Plex Mono', monospace;
+}

@@ -28,7 +28,10 @@ const Navigation = () => {
             </Link>
             {
               (loggedUser?.role === 'TEACHER' || loggedUser?.role === 'ADMIN') &&
-              <Link to={"/clase/crear"}><span className='homeTextNav'>Crear clase</span></Link>
+              <>
+                <Link to={"/calendario"}><span className='homeTextNav'>Calendario</span></Link>
+                <Link to={"/clase/crear"}><span className='homeTextNav'>Crear clase</span></Link>
+              </>
             }
           </Navbar.Brand>
           <AcordionButton />

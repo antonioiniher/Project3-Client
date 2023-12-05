@@ -3,6 +3,8 @@ import { Container, Button } from "react-bootstrap"
 import "./TeacherClassesList.css"
 import classService from "../../services/Class.services"
 import Loader from "../Loader/Loader"
+import calendar from "../../assets/icon-calendar-target.svg"
+
 
 const TeacherClassesList = () => {
 
@@ -37,19 +39,20 @@ const TeacherClassesList = () => {
 
 
   return (
-    classes
-      ?
-      <div className="TeacherClassesList">
-        <h3 className="titleClassesList">Historial de solicitudes de estudiantes para la clase de {classes.title}</h3>
-        <hr />
-        {
-          classes.booking.length > 0
-            ?
+    classes &&
+    <div className="TeacherClassesList">
+      {
+        classes.booking.length > 0
+          ?
+          <>
+            <h3 className="titleClassesList">Historial de solicitudes de estudiantes para la clase de {classes.title}</h3>
+            <hr />
             <table className="tableClassesList">
               <thead>
                 <tr>
                   <th scope="col">Nombre del alumno </th>
                   <th scope="col">Estado de la reserva</th>
+                  <th scope="col">Fecha de la reserva</th>
                   <th scope="col">Acción</th>
                 </tr>
               </thead>
@@ -60,6 +63,16 @@ const TeacherClassesList = () => {
                       <tr>
                         <td>{elm.students ? elm.students.username : 'Usuario eliminado'}</td>
                         <td>{elm.status}</td>
+                        <td className="statusItem" key={elm}>
+                          {new Date(elm.date).toLocaleString('es-ES', {
+                            day: '2-digit',
+                            month: 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: 'numeric',
+                            hour12: false
+                          })}
+                        </td>
                         <td>
                           {
                             elm.status === 'Pending'
@@ -78,13 +91,12 @@ const TeacherClassesList = () => {
                 }
               </tbody>
             </table>
+          </>
+          :
+          <div className="noRequestsTeacher">No hay solicitudes</div>
+      }
+    </div>
 
-            :
-            <div>No hay solicitudes</div>
-        }
-      </div>
-      :
-      <div>No hay solicitudes</div>
   )
 }
 

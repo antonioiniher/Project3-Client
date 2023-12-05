@@ -1,8 +1,8 @@
 import './Navigation.css'
-import { Container, NavDropdown, Navbar } from "react-bootstrap"
+import { Container, Navbar } from "react-bootstrap"
 import { AuthContext } from '../../contexts/auth.context'
-import { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import AcordionButton from "./AcordionButton"
 
 const Navigation = () => {

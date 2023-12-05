@@ -79,9 +79,7 @@
     --bs-accordion-border-color: none !important;
     border-radius: 50px !important;
     display: flex;
-
     background-color: #292F36;
-
     position: fixed;
 }
 

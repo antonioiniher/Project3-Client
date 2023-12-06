@@ -37,7 +37,7 @@ const EditUserProfile = () => {
 
   const handleAddressChange = e => {
     const { value, name } = e.currentTarget
-    setUser({ ...user, address: { ...user.address, [name]: value, } });
+    setUser({ ...user, address: { ...user.address, [name]: value, } })
   }
 
   const handleFileUpload = e => {

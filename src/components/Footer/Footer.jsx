@@ -2,7 +2,6 @@ import './Footer.css'
 import { Link } from 'react-router-dom'
 import { Row, Col, Container } from 'react-bootstrap'
 
-import iconInbox from "../../assets/icon-inbox.png"
 const Footer = () => {
 
     return (

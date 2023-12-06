@@ -3,8 +3,7 @@ import { useState, useEffect, useContext } from "react"
 import classService from "../../services/Class.services"
 import { AuthContext } from "../../contexts/auth.context"
 import "./StudentClassesList.css"
-import arrowsDown from "../../assets/icon-chevrons-down.svg"
-import React from 'react';
+import React from 'react'
 
 const StudentClassesList = () => {
 

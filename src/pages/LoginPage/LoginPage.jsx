@@ -20,7 +20,6 @@ const LoginPage = () => {
                         <LoginForm />
                     </Col>
                 </Col>
-
             </Row>
 
         </Container>

@@ -4,6 +4,7 @@ import "./TeacherClassesList.css"
 import classService from "../../services/Class.services"
 import Loader from "../Loader/Loader"
 import calendar from "../../assets/icon-calendar-target.svg"
+import React from 'react';
 
 
 const TeacherClassesList = () => {

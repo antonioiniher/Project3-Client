@@ -47,12 +47,12 @@ const RatingForm = ({ loadTeacher }) => {
                     <Modal.Title className='textHeaderRating'>Votar al profesor</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='modalBodyRating'>
-                    <Form onSubmit={handleSubmit} autoComplete="off">
+                    <Form onSubmit={handleSubmit} autoComplete="off" className="formContentCenter">
                         <Form.Group className="mb-3" controlId="rating">
-                            <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota con un número del 1 al 10' className='formModalRating' />
+                            <Form.Control type="number" onChange={handleInputChange} name="rating" placeholder='Vota un valor númerico (1-10)' className='formModalRating' />
                         </Form.Group>
                         {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm} className='errorsModalRating'>{elm}</p>)} </FormError>}
-                        <Button type='submit' className='ratingButton' onClick={finalActions}>Enviar</Button>
+                        <Button type='submit' className='ratingButtonModal' onClick={finalActions}>Enviar</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

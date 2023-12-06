@@ -4,6 +4,7 @@ import classService from "../../services/Class.services"
 import { AuthContext } from "../../contexts/auth.context"
 import "./StudentClassesList.css"
 import arrowsDown from "../../assets/icon-chevrons-down.svg"
+import React from 'react';
 
 const StudentClassesList = () => {
 
@@ -25,54 +26,45 @@ const StudentClassesList = () => {
   }
 
   return (
-    <Container>
+    <Container className="containerTableStudentList">
       <h3 className="titleTable">Clases a las que estoy apuntado</h3>
       {
-        classes
-        &&
-        <div className="customTable">
-          <div className="tableHeader">
-            <div className="headerTitle">Nombre de la clase</div>
-            <div className="headerStatus">Fecha de la reserva</div>
-            <div className="headerStatus">Estado de la reserva</div>
-          </div>
-          <div className="tableBody">
-            {
-              classes.map(e => (
-                <div className="tableRow" key={e.id}>
-                  <div className="rowTitle">{e.title}</div>
-                  <div className="rowStatus">
-                    {e.booking.map((elm, i) =>
-                      elm.students === loggedUser._id ? (
-                        <>
-                          <div className="statusItem" key={i}>{elm.status}</div>
-                          <div className="statusItem" key={elm}>
-                            {new Date(elm.date).toLocaleString('es-ES', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric',
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: false
-                            })}
-                          </div>
-
-
-                        </>
-
-                      ) : null
-                    )}
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-
-
+        classes &&
+        <table className="tableClassesList">
+          <thead>
+            <tr>
+              <th scope="col">Nombre de la clase</th>
+              <th scope="col">Fecha de la reserva</th>
+              <th scope="col">Estado de la reserva</th>
+            </tr>
+          </thead>
+          <tbody>
+            {classes.map(e => (
+              e.booking.map((elm, i) =>
+                elm.students === loggedUser._id && (
+                  <tr key={i}>
+                    <td>{e.title}</td>
+                    <td>
+                      {new Date(elm.date).toLocaleString('es-ES', {
+                        day: '2-digit',
+                        month: 'long',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: 'numeric',
+                        hour12: false
+                      })}
+                    </td>
+                    <td>{elm.status}</td>
+                  </tr>
+                )
+              )
+            ))}
+          </tbody>
+        </table>
       }
     </Container>
   )
+
 }
 
 export default StudentClassesList

@@ -56,31 +56,31 @@
     position: absolute;
     padding-left: 220px;
     margin-top: -280px;
-    height: 100px;
+    height: 150px;
 }
 
 .row2 {
     padding: 30px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .riseUpImg {
     display: flex;
     position: absolute;
     padding-left: 220px;
-    margin-top: 50px;
-    height: 120px;
+    margin-top: 0px;
+    height: 140px;
 }
 
 .row3 {
     padding: 30px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .row4 {
     padding: 30px;
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
 }
 
 .finalText {

@@ -11,7 +11,7 @@ const AboutUs = () => {
             <h1>Sobre nosotros</h1>
             <Row>
                 <Col className='mb-5' md={{ span: 8, offset: 2 }}>
-                    <h6 className='mt-5'>El equipo de programadores de Code Academy ha desarrollado una plataforma web de clases particulares para programadores. Su misión es proporcionar cursos personalizados y conexiones inteligentes entre estudiantes y tutores. Destacan por una interfaz pulida y un sistema de emparejamiento eficiente.</h6>
+                    <h6 className='mt-5  textAboutUs'>El equipo de programadores de Code Academy ha desarrollado una plataforma web de clases particulares para programadores. Su misión es proporcionar cursos personalizados y conexiones inteligentes entre estudiantes y tutores. Destacan por una interfaz pulida y un sistema de emparejamiento eficiente.</h6>
                 </Col>
             </Row>
             <Row className='mt-5'>

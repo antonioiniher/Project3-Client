@@ -91,12 +91,9 @@ const EditClassPage = () => {
                         <Form.Control type="text" value={classes.city} name="city" disabled={classes.classType === "Remote"} onChange={handleInputChange} className="classControl" />
                     </Form.Group>
 
-                    <div className="d-grid buttonCreateClass">
-                        {/* {errors.length > 0 && <FormError>{errors.map(elm => <p key={elm}>{elm}</p>)} </FormError>} */}
 
-                    </div>
-                    <div className="d-grid buttonCreateClass">
-                        <Button className="buttonInside btn-sm" type="submit">Editar clase</Button>
+                    <div className="d-grid buttonEditClass">
+                        <Button className="buttonEditInside btn-sm" type="submit">Editar clase</Button>
                     </div>
                 </Form>
             </Container >

@@ -1,3 +1,7 @@
+.RatingForm {
+    padding-bottom: 80px;
+}
+
 .ratingButton {
     padding-top: 50px;
     background-color: #12F7D6;
@@ -8,7 +12,7 @@
     gap: 16px;
     border-radius: 32px;
     font-family: Ubuntu;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;

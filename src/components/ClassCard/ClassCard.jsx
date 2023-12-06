@@ -36,7 +36,7 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
     return (
 
         <>
-            <div className="card text-center">
+            <div className="text-center cardClass">
                 <div className="cardHeader">
                     {languages.map(e => <span key={e} style={{ color: "#12F7D6" }}>{e} </span>)}
                     <span>{classType === 'Hybrid' ? <p>Híbrida</p> : classType === 'On-site' ? <p>Presencial</p> : <p>Remota</p>}</span>
@@ -48,13 +48,13 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                         <p className="descriptionCard"> {description} </p>
                         {city && <p>Ciudad: {city}</p>}
                     </div>
+                    <div className="cardFooter text-muted">
+                        <span> Profesor: </span><Link to={`/perfil/${owner?._id}`} className="ownerClassLink">
+                            {owner?.username}
+                        </Link>
+                    </div>
                     <Link to={`/clase/${_id}`} className="moreDetailsLink">
                         Más detalles de la clase
-                    </Link>
-                </div>
-                <div className="cardFooter text-muted">
-                    <span> Profesor: </span><Link to={`/perfil/${owner?._id}`} className="ownerClassLink">
-                        {owner?.username}
                     </Link>
                 </div>
 

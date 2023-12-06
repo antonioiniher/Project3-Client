@@ -42,15 +42,18 @@ const UserProfilePage = () => {
         <UserProfileCard {...user} key={user._id} />
         {
           loggedUser?.role === 'STUDENT'
-            ?
-            <StudentClassesList />
-            :
-            loggedUser?.role === 'TEACHER'
-              ?
-              <TeacherClassesList />
-              :
-              <></>
+          &&
+          <StudentClassesList />
         }
+        {
+          loggedUser?.role === 'TEACHER'
+          &&
+          <TeacherClassesList />
+        }
+
+
+
+
 
       </Container>
       :

@@ -11,7 +11,13 @@ const ClassesList = ({ classes, loadClasses }) => {
             ?
             <Row className="row">
                 {
-                    classes.map(e => <ClassCard {...e} key={e._id} loadClasses={loadClasses} />)
+                    classes.map(e => {
+                        return (
+                            <Col md={4}>
+                                <ClassCard {...e} key={e._id} loadClasses={loadClasses} />
+                            </Col>
+                        )
+                    })
                 }
             </Row>
             :

@@ -52,7 +52,7 @@ const DetailsClassPage = () => {
   const handleDateChange = (e) => {
 
     e.preventDefault()
-    const { value, name } = e.currentTarget
+    const { value } = e.currentTarget
     setDate(value)
 
   }

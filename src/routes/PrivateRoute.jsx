@@ -11,16 +11,15 @@ const PrivateRoute = ({ acceptedRoles }) => {
         return <Loader />
     }
 
-    if (acceptedRoles && !acceptedRoles.includes(loggedUser.role)) {
-        return <Navigate to="/inicio-sesion" />
+    if (!loggedUser) {
+        return <Navigate to="/inicio-sesion?err=notlogged" />
     }
 
-    if (!loggedUser) {
-        return <Navigate to="/inicio-sesion" />
+    if (acceptedRoles && !acceptedRoles.includes(loggedUser.role)) {
+        return <Navigate to="/inicio-sesion?err=unauthorized" />
     }
 
     return <Outlet />
-
 }
 
 export default PrivateRoute

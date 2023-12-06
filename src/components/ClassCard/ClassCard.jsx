@@ -35,7 +35,7 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
 
     return (
 
-        <Col md={4}>
+        <>
             <div className="card text-center">
                 <div className="cardHeader">
                     {languages.map(e => <span key={e} style={{ color: "#12F7D6" }}>{e} </span>)}
@@ -70,19 +70,17 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                         </Row>
                     }
                 </div>
-                <Modal show={showModal} onHide={() => setShowModal(false)}>
-                    <Modal.Header closeButton className="headerDeleteModal">
-                        <Modal.Title className="titleModalDeleteClass">¿Seguro que quieres eliminar la clase?</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body className="bodyDeleteModal">
-                        <Button className='deleteButtonModal' onClick={(e) => deleteClass(e)}>Sí</Button>
-                        <Button className='deleteButtonModal' onClick={finalActions}>No</Button>
-                    </Modal.Body>
-                </Modal>
             </div>
-        </Col>
-
-
+            <Modal show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Header closeButton className="headerDeleteModal">
+                    <Modal.Title className="titleModalDeleteClass">¿Seguro que quieres eliminar la clase?</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="bodyDeleteModal">
+                    <Button className='deleteButtonModal' onClick={(e) => deleteClass(e)}>Sí</Button>
+                    <Button className='deleteButtonModal' onClick={finalActions}>No</Button>
+                </Modal.Body>
+            </Modal>
+        </>
     )
 }
 

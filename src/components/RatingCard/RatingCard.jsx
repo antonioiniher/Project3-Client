@@ -2,6 +2,8 @@ import { ProgressBar } from "react-bootstrap"
 import './RatingCard.css'
 
 const RatingCard = ({ rating }) => {
+
+    // TODO:^MOVER LÓGICA DE MEDIA A UTIL GETAVGUSERRATING
     let sumRating = 0
     rating.forEach(e => {
         sumRating += e.value

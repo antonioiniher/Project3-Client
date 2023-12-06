@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import classService from './../../services/Class.services'
@@ -19,15 +19,17 @@ const Calendar = () => {
                     start: new Date(event.date),
                     status: event.status,
                     color: event.status === 'Accepted' ? 'green' : (event.status === 'Pending' ? 'yellow' : 'red'),
-                    time: new Date(event.date).toLocaleTimeString('es-ES', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        hour12: false,
-                    }),
+                    time: formatTime(new Date(event.date))
                 }))
                 setEvents(modifiedEvents)
             })
             .catch((error) => console.log(error))
+    }
+
+    const formatTime = (date) => {
+        const hours = date.getHours().toString().padStart(2, '0')
+        const minutes = date.getMinutes().toString().padStart(2, '0')
+        return `${hours}:${minutes}`
     }
 
     return (
@@ -37,8 +39,6 @@ const Calendar = () => {
             events={events}
             headerToolbar={{
                 left: 'title',
-                // center: 'title',
-                // right: 'dayGridMonth, timeGridWeek, timeGridDay',
             }}
         />
     )

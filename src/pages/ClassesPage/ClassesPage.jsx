@@ -29,7 +29,6 @@ const ClassesPage = () => {
     classService
       .getClassbySearch(languageQuery, classType, cityQuery)
       .then(({ data }) => {
-
         setClasses(data)
       })
       .catch(error => console.log(error))

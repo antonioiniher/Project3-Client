@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import userService from './../../services/User.services'
 import Loader from "../../components/Loader/Loader"
-import { Container, Row } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import UserProfileCard from "../../components/UserProfileCard/UserProfileCard"
 import RatingCard from "../../components/RatingCard/RatingCard"
 import CommentForm from "../../components/CommentForm/CommentForm"
@@ -67,10 +67,12 @@ const TeacherProfilePage = () => {
             </Row>
             {
                 loggedUser &&
-                <>
-                    <CommentForm loadComments={loadComments} />
-                    <RatingForm loadTeacher={loadTeacher} />
-                </>
+                <Row>
+                    <Col>
+                        <CommentForm loadComments={loadComments} />
+                        <RatingForm loadTeacher={loadTeacher} />
+                    </Col>
+                </Row>
             }
         </Container>
 

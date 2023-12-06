@@ -1,6 +1,6 @@
 .contentUser {
     padding: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     margin-top: 30px;
     font-family: 'Ubuntu Mono', monospace;
 }
@@ -15,7 +15,7 @@
 }
 
 .contentUserImg {
-    margin-top: 30px;
+    margin-top: 60px;
     margin-left: 20px;
     margin-right: 80px;
 }

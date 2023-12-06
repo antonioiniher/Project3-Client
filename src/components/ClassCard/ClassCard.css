@@ -2,17 +2,18 @@
     margin-left: 20px;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-family: IBM Plex Mono;
     background-color: #292F36;
     border-color: #12F7D6;
     padding: 20px;
+    min-height: 450px;
 }
 
 .cardHeader {
     background-color: transparent;
     color: #12F7D6;
-    font-size: 30px;
+    font-size: 25px;
     padding-bottom: 5px;
     border-bottom: 2px solid white;
     margin-bottom: 15px;
@@ -27,7 +28,7 @@
 }
 
 .moreDetailsLink:hover {
-    color: #25655c;
+    color: #ffffff;
 }
 
 .ownerClassLink {
@@ -37,7 +38,7 @@
 }
 
 .ownerClassLink:hover {
-    color: #25655c;
+    color: #ffffff;
 }
 
 .eachCard {

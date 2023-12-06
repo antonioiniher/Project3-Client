@@ -39,7 +39,7 @@ const NewUserForm = () => {
 
     authService
       .signup(user)
-      .then(() => navigate('/inicio-sesion'))
+      .then(() => navigate('/'))
       .catch(err => setErrors(err.response.data.errorMessages))
   }
 

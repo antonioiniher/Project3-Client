@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import esLocale from '@fullcalendar/core/locales/es'
 import classService from './../../services/Class.services'
 
 const Calendar = () => {
@@ -40,6 +41,9 @@ const Calendar = () => {
             headerToolbar={{
                 left: 'title',
             }}
+            locale={esLocale}
+            dayHeaderFormat={{ weekday: 'long' }}
+            firstDay={1}
         />
     )
 }

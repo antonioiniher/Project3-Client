@@ -35,7 +35,6 @@ const LoginForm = () => {
             .then(({ data }) => {
                 localStorage.setItem('authToken', data.authToken)
                 authenticateUser()
-                navigate('/', { state: { from: location.pathname } })
                 navigate(-1)
             })
             .catch(err => setErrors(err.response.data.errorMessages))

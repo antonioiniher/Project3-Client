@@ -10,7 +10,7 @@ class NewsService {
     }
 
     getNews(query) {
-        return axios.get(`https://newsapi.org/v2/everything?q=${query}&language=es&pageSize=30&apiKey=4041852faf77477e9c2611e46d2c8b96`)
+        return axios.get(`https://newsapi.org/v2/everything?q=${query}&language=es&sortBy=popularity&pageSize=30&apiKey=4041852faf77477e9c2611e46d2c8b96`)
     }
 
 }

@@ -43,7 +43,7 @@ const News = () => {
                                 <div key={e.title} className="eachNew">
                                     <h2>{e.title}</h2>
                                     <p>{e.description}</p>
-                                    <Link to={e.url} className="linkNews">Llévame a la noticia </Link>
+                                    <Link target="_blank" to={e.url} className="linkNews">Llévame a la noticia </Link>
                                     <p className="sourceName">Fuente: {e.source.name}</p>
                                 </div>
                             </Container >

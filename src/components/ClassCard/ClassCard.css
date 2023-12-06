@@ -1,13 +1,17 @@
-.card {
+.cardClass {
     margin-left: 20px;
-    margin-top: 40px;
     margin-bottom: 30px;
     border-radius: 5px;
     font-family: IBM Plex Mono;
     background-color: #292F36;
     border-color: #12F7D6;
     padding: 20px;
-    min-height: 450px;
+    min-height: 700px;
+    border: #12F7D6 solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .cardHeader {
@@ -20,15 +24,19 @@
     height: 120px;
 }
 
+.cardFooter {
+    padding-bottom: 50px;
+}
+
 .moreDetailsLink {
     font-family: IBM Plex Mono;
-    color: #98FAEC;
+    color: #E7A020;
     text-decoration: none;
-    padding-bottom: 30px;
+    margin-top: auto;
 }
 
 .moreDetailsLink:hover {
-    color: #ffffff;
+    color: #e7d7bb;
 }
 
 .ownerClassLink {

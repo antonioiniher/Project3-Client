@@ -9,6 +9,7 @@ import StudentClassesList from "../../components/StudentClassesList/StudentClass
 import TeacherClassesList from "../../components/TeacherClassesList/TeacherClassesList"
 import iconEdit from "../../assets/icon-edit.svg"
 import iconThrash from "../../assets/icon-trash-2.svg"
+import { Link } from "react-router-dom"
 
 
 const UserProfilePage = () => {
@@ -36,11 +37,9 @@ const UserProfilePage = () => {
       ?
 
       <Container>
-        <img src={iconEdit} alt="iconEdit" className="iconEdit" />
-        <img src={iconThrash} alt="iconTrash" className="iconTrash" />
-
         <UserProfileCard {...user} key={user._id} />
         {
+
           loggedUser?.role === 'STUDENT'
             ?
             <StudentClassesList />

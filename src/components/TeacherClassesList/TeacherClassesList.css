@@ -22,6 +22,7 @@
     text-align: center;
     padding-bottom: 20px;
     padding: 5px;
+    font-family: 'Ubuntu Mono', monospace;
 
 }
 
@@ -30,6 +31,7 @@
     padding-bottom: 20px;
     color: #12F7D6;
     padding: 5px;
+    font-family: IBM Plex Mono;
 
 }
 

@@ -8,6 +8,8 @@ import userIcon from "../../assets/icon-user2.svg"
 import vector1 from "../../assets/Vector.svg"
 import vector2 from "../../assets/Vector-1.svg"
 import arrow from "../../assets/arrow.svg"
+import iconEdit from "../../assets/icon-edit.svg"
+import iconThrash from "../../assets/icon-trash-2.svg"
 
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
@@ -62,12 +64,12 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
             <Row>
               <Col>
                 < Link to={"/perfil/editar"} className="editButton">
-                  Editar
+                  <img src={iconEdit} alt="iconEdit" className="iconEdit" />
                 </Link>
               </Col>
               <Col>
                 <Button type="submit" onClick={() => setShowModal(true)} className="deleteButton">
-                  Eliminar
+                  <img src={iconThrash} alt="iconTrash" className="iconTrash" />
                 </Button>
               </Col>
               <Modal show={showModal} onHide={() => setShowModal(false)}>

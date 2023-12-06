@@ -86,7 +86,8 @@ const TeacherProfilePage = () => {
                 < Row >
                     <Col>
                         <CommentForm loadComments={loadComments} />
-                        <RatingForm loadTeacher={loadTeacher} />
+                        <hr style={{ color: "transparent" }} />
+                        <RatingForm loadTeacher={loadTeacher} className="ratingFormTeacherProfile" />
                     </Col>
                 </Row>
             }

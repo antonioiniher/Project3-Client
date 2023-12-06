@@ -92,16 +92,16 @@ const DetailsClassPage = () => {
           </Row>
 
           <Modal show={showModal} onHide={() => setShowModal(false)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Elige la fecha para la clase</Modal.Title>
+            <Modal.Header closeButton className="headerRequestClass">
+              <Modal.Title className="titleModalRequestClass">Elige la fecha para la clase</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className="bodyRequestModalClass">
               <Form.Group className="mb-3" controlId="date">
-                <Form.Label for="fecha-hora">Selecciona Fecha y Hora:</Form.Label>
-                <Form.Control type="datetime-local" id="date" name="date" value={date} className="classControl" onChange={(e) => handleDateChange(e)} />
+                <Form.Label for="fecha-hora" className="formLabelRequestModalClass">Selecciona Fecha y Hora:</Form.Label>
+                <Form.Control type="datetime-local" id="date" name="date" value={date} className="classControl formControlRequestModalClass" onChange={(e) => handleDateChange(e)} />
               </Form.Group>
-              <Button className='ratingButton' onClick={(e) => handleClassRequest(e)}>Solicitar</Button>
-              <Button className='ratingButton' onClick={finalActions}>No</Button>
+              <Button className='requestButtonModal' onClick={(e) => handleClassRequest(e)}>Solicitar</Button>
+              <Button className='requestButtonModal' onClick={finalActions}>No</Button>
             </Modal.Body>
           </Modal>
 

@@ -82,7 +82,7 @@ const TeacherProfilePage = () => {
                 <CommentCard loadComments={loadComments} commentList={commentList} />
             </Row>
             {
-                (loggedUser && classes._id) &&
+                (loggedUser?.role === 'STUDENT' && classes._id) &&
                 < Row >
                     <Col>
                         <CommentForm loadComments={loadComments} />

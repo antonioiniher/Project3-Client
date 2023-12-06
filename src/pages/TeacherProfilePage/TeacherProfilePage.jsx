@@ -14,6 +14,7 @@ import CommentCard from "../../components/CommentCard/CommentCard"
 import commentService from "../../services/Comment.services"
 import "./TeacherProfilePage.css"
 import iconComment from "../../assets/icon-message-square.svg"
+import classService from "../../services/Class.services"
 
 
 const TeacherProfilePage = () => {
@@ -22,10 +23,12 @@ const TeacherProfilePage = () => {
     const { loggedUser } = useContext(AuthContext)
     const [user, setUser] = useState()
     const { owner_id } = useParams()
+    const [classes, setClasses] = useState({})
 
     useEffect(() => {
         loadTeacher()
         loadComments()
+        loadClass()
     }, [])
 
     const loadTeacher = () => {
@@ -48,6 +51,19 @@ const TeacherProfilePage = () => {
 
     }
 
+    const loadClass = () => {
+
+        classService
+            .filterByStatus(owner_id)
+            .then(({ data }) => {
+                console.log(data)
+                setClasses(data)
+            })
+            .catch(error => console.log(error))
+
+        console.log(classes)
+    }
+
     if (!user) {
         return <Loader />
     }
@@ -66,8 +82,8 @@ const TeacherProfilePage = () => {
                 <CommentCard loadComments={loadComments} commentList={commentList} />
             </Row>
             {
-                loggedUser &&
-                <Row>
+                (loggedUser && classes._id) &&
+                < Row >
                     <Col>
                         <CommentForm loadComments={loadComments} />
                         <hr style={{ color: "transparent" }} />
@@ -75,7 +91,7 @@ const TeacherProfilePage = () => {
                     </Col>
                 </Row>
             }
-        </Container>
+        </Container >
 
 
     )

@@ -41,15 +41,18 @@ const UserProfilePage = () => {
         {
 
           loggedUser?.role === 'STUDENT'
-            ?
-            <StudentClassesList />
-            :
-            loggedUser?.role === 'TEACHER'
-              ?
-              <TeacherClassesList />
-              :
-              <></>
+          &&
+          <StudentClassesList />
         }
+        {
+          loggedUser?.role === 'TEACHER'
+          &&
+          <TeacherClassesList />
+        }
+
+
+
+
 
       </Container>
       :

@@ -60,6 +60,10 @@ class ClassServices {
         return this.api.get(`/getClassByTeacher`)
     }
 
+    filterByStatus(teacher_id) {
+        return this.api.get(`/filterByStatus/${teacher_id}`)
+    }
+
     getOneClass(class_id) {
         return this.api.get(`/${class_id}`)
     }

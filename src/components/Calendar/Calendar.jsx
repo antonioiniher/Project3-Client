@@ -23,6 +23,7 @@ const Calendar = () => {
                     time: formatTime(new Date(event.date))
                 }))
                 setEvents(modifiedEvents)
+                console.log('Evento modificado:', modifiedEvents)
             })
             .catch((error) => console.log(error))
     }
@@ -44,6 +45,7 @@ const Calendar = () => {
             locale={esLocale}
             dayHeaderFormat={{ weekday: 'long' }}
             firstDay={1}
+            height={580}
         />
     )
 }

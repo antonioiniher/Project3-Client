@@ -10,12 +10,14 @@
     margin-top: 200px;
     padding-left: 10px;
     height: 100px;
+    z-index: -1;
 }
 
 .code2 {
     display: flex;
     position: absolute;
     margin-top: 400px;
-    padding-left: 870px;
+    padding-left: 1000px;
     height: 100px;
+    z-index: -1;
 }

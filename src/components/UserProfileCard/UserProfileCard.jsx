@@ -7,6 +7,7 @@ import iconDiscord from "../../assets/discord.svg"
 import userIcon from "../../assets/icon-user2.svg"
 import iconEdit from "../../assets/icon-edit.svg"
 import iconThrash from "../../assets/icon-trash-2.svg"
+import iconDescription from "../../assets/icon-file-text.svg"
 
 import './UserProfileCard.css'
 import { Link, useNavigate } from "react-router-dom"
@@ -15,7 +16,7 @@ import { useContext } from "react"
 import userService from "../../services/User.services"
 import { useState } from "react"
 
-const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSkype, address }) => {
+const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSkype, address, description }) => {
 
   const { loggedUser } = useContext(AuthContext)
   const { logout } = useContext(AuthContext)
@@ -54,7 +55,8 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
           <h4 className="mb-4"><img src={iconRole} alt="iconRole" className="iconRole" />  {role === 'TEACHER' ? 'Profesor' : role === 'STUDENT' ? 'Estudiante' : 'Administrador'}</h4>
           <h5 className="mb-4"><img src={iconPhone} className="iconPhone" />   {phoneNumber}</h5>
           <h5 className="mb-4"><img src={iconDiscord} className="iconDiscord" />   {idSkype} </h5>
-          <h5 className="mb-5"><img src={iconAdress} className="iconAdress" /> {address.street}, {address.city}, {address.country} </h5>
+          <h5 className="mb-4"><img src={iconAdress} className="iconAdress" /> {address.street}, {address.city}, {address.country} </h5>
+          <h5 className="mb-5"><img src={iconDescription} className="iconDescription" /> {description} </h5>
           {
             (loggedUser?.role === 'ADMIN' || loggedUser?._id === _id) &&
 

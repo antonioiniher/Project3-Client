@@ -38,7 +38,7 @@ const StudentClassesList = () => {
             </tr>
           </thead>
           <tbody>
-            {classes.map(e => (
+            {classes?.map(e => (
               e.booking.map((elm, i) =>
                 elm.students === loggedUser._id && (
                   <tr key={i}>
@@ -53,7 +53,7 @@ const StudentClassesList = () => {
                         hour12: false
                       })}
                     </td>
-                    <td>{elm.status}</td>
+                    <td>{elm.status === 'Accepted' ? 'Aceptada' : elm.status === 'Cancelled' ? 'Cancelada' : 'Pendiente'}</td>
                   </tr>
                 )
               )

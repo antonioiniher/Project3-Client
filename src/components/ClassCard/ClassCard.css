@@ -6,12 +6,11 @@
     background-color: #292F36;
     border-color: #12F7D6;
     padding: 20px;
-    min-height: 700px;
+    min-height: 530px;
     border: #12F7D6 solid;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    box-shadow: 0 1px 12px #12F7D6;
 }
 
 .cardHeader {

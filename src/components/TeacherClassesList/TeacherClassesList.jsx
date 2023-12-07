@@ -57,11 +57,11 @@ const TeacherClassesList = () => {
               </thead>
               <tbody>
                 {
-                  classes.booking.map(elm => {
+                  classes.booking?.map(elm => {
                     return (
                       <tr>
                         <td>{elm.students ? elm.students.username : 'Usuario eliminado'}</td>
-                        <td>{elm.status}</td>
+                        <td>{elm.status === 'Accepted' ? 'Aceptada' : elm.status === 'Cancelled' ? 'Cancelada' : 'Pendiente'}</td>
                         <td className="statusItem" key={elm}>
                           {new Date(elm.date).toLocaleString('es-ES', {
                             day: '2-digit',

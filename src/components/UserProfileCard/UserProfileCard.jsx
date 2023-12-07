@@ -51,7 +51,7 @@ const UserProfileCard = ({ _id, username, email, role, avatar, phoneNumber, idSk
           <h1 className="nameProfile"> {username}</h1>
           <hr />
           <h4 className="mb-4 "><img src={iconEmail} alt="iconEmail" className="iconEmail" />   {email}</h4>
-          <h4 className="mb-4"><img src={iconRole} alt="iconRole" className="iconRole" />   {role}</h4>
+          <h4 className="mb-4"><img src={iconRole} alt="iconRole" className="iconRole" />  {role === 'TEACHER' ? 'Profesor' : role === 'STUDENT' ? 'Estudiante' : 'Administrador'}</h4>
           <h5 className="mb-4"><img src={iconPhone} className="iconPhone" />   {phoneNumber}</h5>
           <h5 className="mb-4"><img src={iconDiscord} className="iconDiscord" />   {idSkype} </h5>
           <h5 className="mb-5"><img src={iconAdress} className="iconAdress" /> {address.street}, {address.city}, {address.country} </h5>

@@ -43,7 +43,7 @@ const ContactPage = () => {
                     </Row>
                 </div>
                 <div>
-                    <Link className="formButton btn">Enviar mensaje <img src={icon} alt="" className="buttonImg" /></Link>
+                    <Link className="formButton btn mb-5">Enviar mensaje <img src={icon} alt="" className="buttonImg" /></Link>
                 </div>
             </Container>
 

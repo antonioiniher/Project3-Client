@@ -76,7 +76,7 @@ const EditUserProfile = () => {
         <Form onSubmit={handleUserSubmit} autoComplete="off">
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" value={user.username} name="username" onChange={handleInputChange} className="editUserFormControl" />
+            <Form.Control type="text" value={user.username} name="username" onChange={handleInputChange} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="email">

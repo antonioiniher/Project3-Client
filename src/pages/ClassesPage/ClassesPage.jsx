@@ -63,7 +63,6 @@ const ClassesPage = () => {
       <div className="classContainer">
         <Container>
           <h1 className="listClasses">Listado de clases</h1>
-          <hr />
 
 
           <Row>

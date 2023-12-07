@@ -19,7 +19,7 @@ const Footer = () => {
                             <span><Link to={'/nosotros'} className="linksFooter">Nosotros</Link></span>
                         </Col>
                         <Col md={{ offset: 1 }}>
-                            <span><Link to={'/como-funciona'} className="linksFooter">Como funciona</Link></span>
+                            <span><Link to={'/como-funciona'} className="linksFooter">Cómo funciona</Link></span>
                         </Col>
                         <Col md={{ offset: 1 }}>
                             <span><Link to={'/contacto'} className="linksFooter">Contacto</Link></span>

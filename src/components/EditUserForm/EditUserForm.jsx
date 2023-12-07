@@ -76,12 +76,12 @@ const EditUserProfile = () => {
         <Form onSubmit={handleUserSubmit} autoComplete="off">
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control type="text" value={user.username} name="username" onChange={handleInputChange} />
+            <Form.Control type="text" value={user.username} name="username" onChange={handleInputChange} className="editUserFormControl" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="email">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" value={user.email} name="email" onChange={handleInputChange} />
+            <Form.Control type="email" value={user.email} name="email" onChange={handleInputChange} className="editUserFormControl" />
           </Form.Group>
 
           <Row>
@@ -89,19 +89,19 @@ const EditUserProfile = () => {
             <Col>
               <Form.Group className="mb-3" controlId="street">
                 <Form.Label>Calle</Form.Label>
-                <Form.Control type="text" value={user.address?.street} name="street" onChange={handleAddressChange} />
+                <Form.Control type="text" value={user.address?.street} name="street" onChange={handleAddressChange} className="editUserFormControl" />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3" controlId="city">
                 <Form.Label>Ciudad</Form.Label>
-                <Form.Control type="text" value={user.address?.city} name="city" onChange={handleAddressChange} />
+                <Form.Control type="text" value={user.address?.city} name="city" onChange={handleAddressChange} className="editUserFormControl" />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3" controlId="country">
                 <Form.Label>Pais</Form.Label>
-                <Form.Control type="text" value={user.address?.country} name="country" onChange={handleAddressChange} />
+                <Form.Control type="text" value={user.address?.country} name="country" onChange={handleAddressChange} className="editUserFormControl" />
               </Form.Group>
             </Col>
 
@@ -119,20 +119,20 @@ const EditUserProfile = () => {
             <Col>
               <Form.Group className="mb-3" controlId="phoneNumber">
                 <Form.Label>Teléfono de contacto</Form.Label>
-                <Form.Control type="number" value={user.phoneNumber} name="phoneNumber" onChange={handleInputChange} />
+                <Form.Control type="number" value={user.phoneNumber} name="phoneNumber" onChange={handleInputChange} className="editUserFormControl" />
               </Form.Group>
             </Col>
 
             <Col>
               <Form.Group className="mb-3" controlId="idSkype">
                 <Form.Label>Cuenta de Skype</Form.Label>
-                <Form.Control type="text" value={user.idSkype} name="idSkype" onChange={handleInputChange} />
+                <Form.Control type="text" value={user.idSkype} name="idSkype" onChange={handleInputChange} className="editUserFormControl" />
               </Form.Group>
             </Col>
 
             <Form.Group className="mb-3" controlId="description">
               <Form.Label>Cuéntanos algo sobre ti</Form.Label>
-              <Form.Control type="textarea" value={user.description} name="description" onChange={handleInputChange} />
+              <Form.Control type="textarea" value={user.description} name="description" onChange={handleInputChange} className="editUserFormControl" />
             </Form.Group>
 
           </Row>

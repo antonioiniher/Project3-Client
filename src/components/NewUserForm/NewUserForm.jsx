@@ -151,7 +151,7 @@ const NewUserForm = () => {
         )}
         <div className="d-grid buttonSignUp">
 
-          <Button className="buttonInside" type="submit" style={{ backgroundColor: 'transparent' }} disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
+          <Button className="buttonInside" type="submit" disabled={isLoading}>{isLoading ? 'Cargando imagen...' : 'Crear usuario'}</Button>
         </div>
 
       </Form >

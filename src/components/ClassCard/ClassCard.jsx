@@ -62,11 +62,15 @@ const ClassCard = ({ _id, languages, city, description, classType, title, owner,
                     {
                         (loggedUser?.role === 'ADMIN' || owner?._id === loggedUser?._id)
                         &&
-                        <Row className="mt-5 mb-1">
-                            < Link to={`/clase/${_id}/editar`} className="editButtonClassCard">
-                                Editar
-                            </Link>
-                            <Button className="deleteButtonClassCard" onClick={() => setShowModal(true)}>Eliminar</Button>
+                        <Row className="mt-1 mb-1">
+                            <Col>
+                                < Link to={`/clase/${_id}/editar`} className="editButtonClassCard">
+                                    Editar
+                                </Link>
+                            </Col>
+                            <Col>
+                                <Button className="deleteButtonClassCard" onClick={() => setShowModal(true)}>Eliminar</Button>
+                            </Col>
                         </Row>
                     }
                 </div>

@@ -82,12 +82,15 @@ const DetailsClassPage = () => {
           </Row>
           <Row>
             {
-              (loggedUser?.role === 'STUDENT' || loggedUser?.role === 'TEACHER') &&
-              <Button className="loginButton" onClick={() => setShowModal(true)}>Solicitar clase</Button>
-            }
-            {
-              !loggedUser &&
-              <Link to={'/inicio-sesion'} className='loginButton'> Logueate <img src={loginIcon} alt="loginIcon" /></Link>
+              loggedUser?.role === 'STUDENT'
+                ?
+                <Button className="loginButton" onClick={() => setShowModal(true)}>Solicitar clase</Button>
+                :
+                (loggedUser?.role === 'TEACHER' || loggedUser?.role === 'ADMIN')
+                  ?
+                  <></>
+                  :
+                  <Link to={'/inicio-sesion'} className='loginButton'> Logueate <img src={loginIcon} alt="loginIcon" /></Link>
             }
           </Row>
 
